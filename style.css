@@ -209,6 +209,17 @@ canvas {
   color: #333;
 }
 
+/* Style for the half-outside image */
+
+.half-outside-image {
+  position: absolute;
+  top: -50px; /* Adjust this to control how much of the image is outside */
+  left: 50%; /* Center the image horizontally in its column */
+  transform: translateX(-50%);
+  z-index: 1;
+  border-radius: 50px;
+}
+
 
 /* Responsiveness */
 @media (max-width: 768px) {
