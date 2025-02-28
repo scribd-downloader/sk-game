@@ -25,7 +25,7 @@ document.getElementById('contactForm').addEventListener('submit', function(event
     document.getElementById('contactForm').reset();
 
     const responseMessage = document.getElementById('responseMessage');
-    responseMessage.textContent = 'We have received your request and will respond soon.';
+    responseMessage.textContent = 'We have received your message Thank you for your message! We Will get back to you as soon as possible.';
     responseMessage.classList.add('alert', 'alert-success');
 
     // Remove message after 10 seconds

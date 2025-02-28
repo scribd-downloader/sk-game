@@ -175,6 +175,9 @@ canvas {
   margin-top: 20px;
   color: #ff6700;
 }
+.heading-color{
+  color: #ff6700;
+}
 
 .chara {
   list-style: none;
@@ -208,16 +211,15 @@ canvas {
   font-weight: bold;
   color: #333;
 }
-
-/* Style for the half-outside image */
+ /* Style for the half-outside image */
 
 .half-outside-image {
-  position: absolute;
-  top: -50px; /* Adjust this to control how much of the image is outside */
-  left: 50%; /* Center the image horizontally in its column */
-  transform: translateX(-50%);
-  z-index: 1;
-  border-radius: 50px;
+        position: absolute;
+        top: -50px; /* Adjust this to control how much of the image is outside */
+        left: 50%; /* Center the image horizontally in its column */
+        transform: translateX(-50%);
+        z-index: 1;
+        border-radius: 50px;
 }
 
 

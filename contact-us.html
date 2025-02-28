@@ -1,9 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="お困りですか？下記よりお問い合わせください。お問い合わせの前に、プライバシーポリシーとDMCA規則をご確認ください。"/>
+    <meta name="description" content="Suikaゲームサポートへようこそ ご質問やサポートが必要ですか？ 下記のフォームよりお問い合わせください。"/>
+     <!-- Twitter Card -->
+     <meta name="twitter:card" content="summary_large_image" />
+     <meta name="twitter:site" content="@SuikaGameJP" />
+     <meta name="twitter:title" content="お問合せ - Contact Us" />
+     <meta name="twitter:description" content="Suikaゲームサポートへようこそ ご質問やサポートが必要ですか？ 下記のフォームよりお問い合わせください。" />
+     <meta name="twitter:image" content="https://suikagame.pro/Images/suika-game-featured.webp" />
+     <meta name="twitter:url" content="https://suikagame.pro/contact-us" />
+
+     <meta name="robots" content="index, follow">
+     <meta property="og:title" content="お問合せ - Contact Us" />
+     <meta property="og:site_name" content="Suika Game" />
+     <meta property="og:url" content="https://suikagame.pro/contact-us" />
+     <meta property="og:description" content="Suikaゲームサポートへようこそ ご質問やサポートが必要ですか？ 下記のフォームよりお問い合わせください。" />
+     <meta property="og:type" content="website" />
+     <meta property="og:image" content="https://suikagame.pro/Images/suika-game-featured.webp" />
+     <meta property="og:image:width" content="1200" />
+     <meta property="og:image:height" content="630" />
+
     <link rel="icon" type="image/png" href="./favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="./favicon/favicon.svg" />
     <link rel="shortcut icon" href="./favicon/favicon.ico" />
@@ -13,14 +31,19 @@
     <link rel="stylesheet" href="./style.css">
     <title>お問合せ - Contact Us</title>
 </head>
+<style>
+    a{
+        text-decoration: none;
+    }
+</style>
 <body>
      <!-- Header section with a navbar -->
 
   <header>
     <nav class="navbar navbar-expand-lg nav-bg sticky-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="./Images/Suika Game.png" alt="スイカゲーム" title="スイカゲーム" width="200" height="20">
+            <a class="navbar-brand" href="/">
+                <img src="./Images/Suika Game.webp" alt="スイカゲーム" title="スイカゲーム" width="200" height="20">
               </a>
         </div>
     </nav>
@@ -31,28 +54,36 @@
         <h1  class="text-center"> お問合せ </h1> 
         <br/>
         <br/>
-        <p>Need help ? Contact us below. Please review our <a href="'/privacy-policy">Privacy Policy</a> and <a href="/disclaimer">DMCA</a> Rules before submitting .</p>
+        <p>Suikaゲームサポートへようこそ！ ご質問やサポートが必要ですか？ 下記のフォームよりお問い合わせください。</p>
+
+<p>お困りですか？ 下記よりご連絡ください。送信前に<a href="/privacy-policy">プライバシーポリシー</a> と <a href="/disclaimer">免責事項</a>ルールをご確認ください。</p>
+
+<p>ご連絡をお待ちしております！ Suika Gameについてご質問、改善のご提案、またはご意見をお聞かせください。 <a href="mailto:suika@gmail.com">suika@gmail.com</a>までメールでお問い合わせいただくか、下記のフォームをご利用ください。できる限り迅速に対応いたします。</p>
+
+<p>皆様からのフィードバックは大変重要です。 Suika Gameコミュニティに参加して、ゲームを最高のものにするためにご協力ください。ご意見をお聞かせください、ご質問をお寄せください。一緒に素晴らしいゲーム体験を作りましょう！</p>
         <form id="contactForm" class="row g-3">
             <div class="col-md-8 mx-auto">
                 <div class="form-floating mb-3">
                     <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
-                    <label for="email">Enter email address</label>
+                    <label for="email">メールアドレスを入力してください</label>
                 </div>
             </div>
             <div class="col-md-8 mx-auto">
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
-                    <label for="name">Full Name</label>
+                    <label for="name">フルネーム</label>
                 </div>
             </div>
             <div class="col-md-8 mx-auto">
                 <div class="form-floating mb-3">
                     <textarea class="form-control" placeholder="Leave a comment here" id="message" style="height: 100px" required></textarea>
-                    <label for="message">Message</label>
+                    <label for="message">メッセージ</label>
                 </div>
+                <p>ご不明な点がございましたら、お気軽にお問い合わせください。コンタクトフォームのご利用に問題がある場合は、<a href="mailto:suika@gmail.com">suika@gmail.com</a>までメールにてご連絡ください。皆様からのフィードバックを大切にしておりますので、ご連絡いただけるよう努めております。</p>
             </div>
             <div class="d-grid gap-2 col-6 mx-auto">
-                <button type="submit" class="btn btn-warning text-light fw-semibold btn-lg">Submit</button>
+                <button type="submit" class="btn btn-warning text-light fw-semibold btn-lg">
+                    提出する</button>
             </div>
         </form>
         <div id="responseMessage" class="mt-3"></div>
@@ -65,7 +96,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6 text-md-start text-center mb-2 mb-md-0">
-                <p class="mb-0 text-light fw-bold">suikagame.pro &copy; 2024 ウォーターメロンは株式会社ポップインとは一切関係ありません。</p>
+                <p class="mb-0 text-light fw-bold">suikagame.pro &copy; 2025 ウォーターメロンは株式会社ポップインとは一切関係ありません。</p>
             </div>
             <div class="col-md-6 text-md-end text-center">
                 <ul class="list-inline mb-0">
