@@ -532,7 +532,7 @@ canvas {
   /* Change the text color to white */
   .navbar-brand,
   .nav-link {
-    color: #000 !important; /* Ensure the text color is white */
+    color: #fff !important; /* Ensure the text color is white */
     font-weight: bold;
   }
   @keyframes animate {
