@@ -10,7 +10,9 @@ body {
   background-color: #F8B840;
   height: 40px;
 }
-
+.ft-bg{
+  background-color: #F8B840;
+}
 /* Change the text color to white */
 .navbar-brand,
 .nav-link {
