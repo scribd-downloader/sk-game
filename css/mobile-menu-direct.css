@@ -1,0 +1,209 @@
+/* Mobile Direct Navigation Links */
+@media (max-width: 991.98px) {
+  /* Hide the toggler button */
+  .navbar-toggler {
+    display: none !important;
+  }
+  
+  /* Show the navbar - CRITICAL FIX */
+  .navbar-collapse, 
+  .navbar-collapse.collapse {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    margin-top: 1rem !important;
+    position: relative !important;
+    width: 100% !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  
+  /* Display nav items in a horizontal scrollable row */
+  .navbar-nav {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    margin: 0 !important;
+    padding: 0.5rem 0 !important;
+    width: 100% !important;
+    scrollbar-width: none !important; /* Firefox */
+  }
+  
+  /* Hide scrollbar */
+  .navbar-nav::-webkit-scrollbar {
+    display: none !important;
+  }
+  
+  /* Style nav items */
+  .nav-item {
+    flex: 0 0 auto !important;
+    margin: 0 0.25rem !important;
+    white-space: nowrap !important;
+  }
+  
+  /* Style nav links */
+  .nav-link {
+    padding: 0.5rem 0.75rem !important;
+    font-size: 0.875rem !important;
+    background-color: rgba(248, 184, 64, 0.1) !important;
+    border-radius: 1.5rem !important;
+    color: #1A1718 !important;
+    transition: all 0.2s ease !important;
+    border: 1px solid rgba(248, 184, 64, 0.3) !important;
+  }
+  
+  /* Active link style */
+  .nav-link.active {
+    background-color: rgba(248, 184, 64, 0.3) !important;
+    border-color: rgba(248, 184, 64, 0.6) !important;
+    font-weight: 600 !important;
+  }
+  
+  /* Hover effects */
+  .nav-link:hover {
+    background-color: rgba(248, 184, 64, 0.2) !important;
+    transform: translateY(-2px) !important;
+  }
+}
+
+/* For very small screens, reduce padding further */
+@media (max-width: 360px) {
+  .nav-link {
+    padding: 0.4rem 0.6rem !important;
+    font-size: 0.75rem !important;
+  }
+}
+
+/* Desktop styles remain unchanged */
+@media (min-width: 992px) {
+  .navbar-nav {
+    flex-direction: row !important;
+  }
+  
+  .nav-item {
+    margin: 0 5px;
+  }
+  
+  .nav-link {
+    padding: 8px 15px !important;
+    color: #1A1718 !important;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-link.active {
+    font-weight: 600;
+    background-color: rgba(248, 184, 64, 0.2);
+  }
+  
+  .nav-link:hover {
+    background-color: rgba(248, 184, 64, 0.1);
+    transform: translateY(-2px);
+  }
+}
+
+/* Mobile Navigation - Dedicated Approach */
+.mobile-nav {
+  background-color: rgba(248, 184, 64, 0.95);
+  position: fixed;
+  top: 56px; /* Height of navbar */
+  left: 0;
+  right: 0;
+  z-index: 1029;
+  padding: 10px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  position: sticky;
+  position: -webkit-sticky; /* For Safari */
+  transition: top 0.3s ease;
+}
+
+.mobile-nav-links {
+  display: flex;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  padding: 0.25rem 0;
+}
+
+.mobile-nav-links::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
+.mobile-nav-link {
+  flex: 0 0 auto;
+  padding: 8px 15px;
+  margin: 0 4px;
+  white-space: nowrap;
+  color: #1A1718;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.mobile-nav-link:first-child {
+  margin-left: 0;
+}
+
+.mobile-nav-link:last-child {
+  margin-right: 0;
+}
+
+.mobile-nav-link.active {
+  background-color: white;
+  font-weight: 600;
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-nav-link:hover, 
+.mobile-nav-link:focus {
+  background-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+  text-decoration: none;
+  color: #1A1718;
+}
+
+/* Adjust padding on content to make room for fixed mobile nav */
+@media (max-width: 991.98px) {
+  .navbar {
+    position: sticky !important;
+    position: -webkit-sticky !important; /* For Safari */
+    top: 0 !important;
+    z-index: 1030 !important;
+  }
+  
+  .mobile-nav {
+    position: sticky !important;
+    position: -webkit-sticky !important; /* For Safari */
+    top: 56px !important; /* Height of navbar */
+    z-index: 1029 !important;
+  }
+  
+  body {
+    padding-top: 0 !important; /* Remove fixed padding */
+  }
+  
+  /* Fix for specific page headers */
+  .page-header {
+    margin-top: 120px !important; /* Adjusted margin for the sticky headers */
+    padding-top: 1rem !important;
+  }
+}
+
+/* Small screens */
+@media (max-width: 360px) {
+  .mobile-nav-link {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+} 

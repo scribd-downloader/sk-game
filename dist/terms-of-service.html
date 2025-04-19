@@ -2,9 +2,10 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>利用規約 - Terms of Service</title>
     <meta name="description" content="Suika Gameへようこそ！本利用規約は、suikagame.proにあるsuika gameのウェブサイトの利用について規定するものです。当社のウェブサイトにアクセスし、使用することで suika ゲーム"/>
-
+    
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@SuikaGameJP" />
@@ -28,173 +29,675 @@
     <link rel="shortcut icon" href="./favicon/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
     <link rel="manifest" href="./favicon/site.webmanifest" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <title>利用規約 - Terms of Service</title>
-    <style>
-        a {
+    
+    
+    
+    
+     
+       <style>
+        body {
+            overflow-x: hidden;
+            padding-top: 80px;
+        }
+        
+        .terms-section {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 1;
+            visibility: visible;
+            display: block;
+            max-width: 100%;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .terms-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        h1.terms-title {
+            font-size: 2.2rem;
+            color: #2d922d;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+        
+        h2.terms-heading {
+            font-size: 1.8rem;
+            color: #2d922d;
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #F8B840;
+            padding-bottom: 0.5rem;
+            display: block;
+        }
+        
+        h3.terms-subheading {
+            font-size: 1.4rem;
+            color: #2d922d;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .terms-text {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #333;
+            margin-bottom: 1rem;
+            display: block;
+            width: 100%;
+        }
+        
+        .terms-link {
+            color: #2d922d;
             text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        
+        .terms-link:hover {
+            color: #F8B840;
+            text-decoration: underline;
+        }
+        
+        .terms-card {
+            background-color: #f9f9f9;
+            border-left: 4px solid #2d922d;
+            padding: 1.25rem;
+            margin: 1.25rem 0;
+            border-radius: 0 8px 8px 0;
+            transition: transform 0.3s ease;
+            display: block;
+            width: 100%;
+        }
+        
+        .terms-card:hover {
+            transform: translateX(5px);
+        }
+        
+        .last-updated {
+            font-style: italic;
+            color: #666;
+            text-align: right;
+            margin-bottom: 2rem;
+            display: block;
+        }
+        
+        .terms-icon {
+            color: #F8B840;
+            margin-right: 0.5rem;
+        }
+        
+        .contact-section {
+            background-color: #f5f5f5;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-top: 3rem;
+            text-align: center;
+            display: block;
+        }
+        
+        .contact-section .contact-icon {
+            font-size: 2.5rem;
+            color: #2d922d;
+            margin-bottom: 1rem;
+        }
+        
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background-color: #2d922d;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .scroll-to-top.visible {
+            opacity: 1;
+        }
+        
+        .table-of-contents {
+            background-color: #f5f5f5;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            display: block;
+        }
+        
+        .table-of-contents h3 {
+            color: #2d922d;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .table-of-contents ul {
+            list-style-type: none;
+            padding-left: 0;
+            display: block;
+        }
+        
+        .table-of-contents li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+            display: block;
+        }
+        
+        .table-of-contents li:before {
+            content: "•";
+            color: #F8B840;
+            position: absolute;
+            left: 0;
+        }
+        
+        .table-of-contents a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .table-of-contents a:hover {
+            color: #2d922d;
+        }
+        
+        .page-header {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 2rem 0;
+            margin-top: 15px;
+            margin-bottom: 2rem;
+            display: block;
+        }
+        
+        .section-divider {
+            height: 3px;
+            width: 50px;
+            background-color: #F8B840;
+            margin: 1rem auto;
+        }
+        
+        .fruits-container {
+            z-index: -1;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding-top: 70px;
+            }
+            
+            .terms-section {
+                padding: 1.25rem;
+                margin-top: 1rem;
+            }
+            
+            h1.terms-title {
+                font-size: 1.8rem;
+            }
+            
+            h2.terms-heading {
+                font-size: 1.4rem;
+            }
+            
+            h3.terms-subheading {
+                font-size: 1.2rem;
+            }
+            
+            .terms-text {
+                font-size: 1rem;
+                display: block;
+                width: 100%;
+            }
+            
+            .terms-card {
+                padding: 1rem;
+                margin: 1rem 0;
+            }
+            
+            .page-header {
+                padding: 1.5rem 0;
+            }
+            
+            .lead {
+                font-size: 1rem;
+            }
+        }
+        
+        /* Fix for very small screens */
+        @media (max-width: 576px) {
+            body {
+                font-size: 16px;
+                padding-top: 55px;
+            }
+            
+            .terms-section {
+                padding: 1rem;
+            }
+            
+            .terms-text {
+                font-size: 0.95rem;
+                line-height: 1.6;
+            }
+            
+            .container {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+            
+            .table-of-contents {
+                padding: 1rem;
+            }
+            
+            .terms-card {
+                padding: 0.75rem;
+            }
+            
+            .page-header {
+                padding: 1rem 0;
+                margin-top: 0;
+            }
         }
     </style>
-  <link rel="stylesheet" href="/assets/style-54f8b096.css">
+  <script type="module" crossorigin src="/assets/scripts-f220cf82.js"></script>
+  <link rel="stylesheet" href="/assets/scripts-58b723ea.css">
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 </head>
-<body>
-     <!-- Header section with a navbar -->
+<body class="suika-bg terms-of-service-page">
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
 
-     <header>
-        <nav class="navbar navbar-expand-lg nav-bg sticky-top">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="/">
-                    <img src="./Images/Suika Game.webp" alt="スイカゲーム" title="スイカゲーム" width="200" height="20">
-                  </a>
-                  <a class="nav-link text-white" href="/suika-game-version">
-                    スイカバージョン</a>
+    <!-- Floating Fruits Background -->
+    <div class="fruits-container" id="fruits-container"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg fixed-top nav-bg" id="mainNav">
+        <div class="container">
+            <a class="d-flex align-items-center" href="/">
+                <img src="./Images/Suika Game.webp" alt="Suika Game" class="me-2">
+            </a>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="/suika-game-version">スイカバージョン</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about-us">私たちについて</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact-us">お問合せ</a></li>
+                </ul>
             </div>
-        </nav>
+        </div>
+    </nav>
+    
+    <!-- Mobile Only Navigation (visible only on small screens) -->
+    <div class="mobile-nav d-block d-lg-none">
+        <div class="container">
+            <div class="mobile-nav-links">
+                <a href="/suika-game-version" class="mobile-nav-link active">スイカバージョン</a>
+                <a href="/about-us" class="mobile-nav-link">私たちについて</a>
+                <a href="/contact-us" class="mobile-nav-link">お問合せ</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h1 class="page-title animate__animated animate__fadeIn">利用規約</h1>
+                    <div class="section-divider"></div>
+                    <p class="lead mb-0 animate__animated animate__fadeIn animate__delay-1s">スイカゲームのご利用条件</p>
+                </div>
+            </div>
+        </div>
     </header>
 
-<br/>
-<br/>
-    
-   <div class="container">
-    <section>
-        <h1  class="text-center">利用規約 - Terms of Service</h1> 
-        <br/>
-        <br/>
-        <p class="fw-semibold">
-            すいかゲームへようこそ ！これらの利用規約は、<a href="/">suikagame.pro</a> に位置するsuikaゲームのウェブサイトのご利用を規定します。当社のウェブサイトsuikaゲームにアクセスし、使用することで、これらの条件に拘束されることを認識し、同意するものとします。安全、合法的で楽しい経験を確保するために、慎重にお読みください。
-            </p>
-    <br/>
-    <br/>
-    <h2>用語</h2>
-    <br/>
-    <br/>
-    <p class="fw-semibold">本利用規約では、以下の用語を使用します：</p>
-    <p class="fw-semibold">「クライアント」、「あなた」、「あなたの」： 当社のウェブサイトにアクセスし、当社の条件に同意した個人を指します。</p>
-    <p class="fw-semibold"> 「会社」、「私たち」、「私たちの」、「私たち」： すいかゲームおよびその運営会社を指します。</p>
-    <p class="fw-semibold">「当事者」、「両当事者」、「私たち」： お客様と当社を総称して指します。</p>
-    <p class="fw-semibold">これらの用語は、適用される法律および規則に従っている。上記の用語の単数形、複数形、または大文字での用法は互換性があり、同じ意味を持ちます。</p>
-    <br/>
-    <br/>
-    <h2>ユーザーの行動</h2>
-    <br/>
-    <br/>
-    <p class="fw-semibold">翠華ゲームの利用者は、良好な環境を確保するために、以下のルールを遵守しなければなりません：</p>
-    <br/>
-    <br/>
-    <h3>禁止されている活動 ：</h3>
-    <br/>
-    <br/>
-    <p class="fw-semibold">不正アクセス：使用許可を得ていないアカウント、システム、またはデータにアクセスしようとしないでください。</p>
-    <p class="fw-semibold">コンテンツの不正使用：ゲームアセット、コード、デザインを、複製や再配布を含む不正な目的で使用することは避けてください。</p>
-    <p class="fw-semibold">妨害行為 : ウェブサイトの機能またはユーザー体験を妨害することを目的としたいかなる行為も固く禁じられています。</p>
-    <p class="fw-semibold">知的財産の尊重：Suika Gameに掲載されているすべてのコンテンツは著作権法により保護されています。利用者は、明示的な許可なく、いかなるコンテンツも複製、改変、配布してはならない。.</p>
-    <p class="fw-semibold">これらのガイドラインを遵守することで、すべての利用者が安全で楽しい時間を過ごすことができます。</p>
-    <br/>
-    <br/>
-    <h2>クッキー</h2>
-    <br/>
-    <br/>
-    <p class="fw-semibold">Suika Gameのユーザーエクスペリエンスを向上させるためにクッキーを使用しています。当社のウェブサイトでは、お客様の利便性を向上させるためにクッキーを使用しています。私たちの <a href="/privacy-policy">プライバシーポリシー</a> をご覧ください。クッキーを使用すると、次のことが可能になります：</p>
-    <p class="fw-semibold">あなたの好みと設定を覚えておく。</p>
-    <p class="fw-semibold">ウェブサイトの必須機能を有効にする。</p>
-    <p class="fw-semibold">分析およびターゲットプロモーションのために広告パートナーと協力する。</p>
-    <br/>
-    <br/>
-    <h2>プライバシー</h2>
-    <br/>
-    <br/>
-    <p class="fw-semibold">お客様のプライバシーは当社にとって重要です。当社がお客様の個人情報をどのように収集し、使用し、保護するかについては、当社のプライバシーポリシーをご覧ください。</p>
-    <br/>
-    <br/>
-    <h2>権利の留保</h2>
-    <br/>
-    <br/>
-    <p class="fw-semibold">我々はその権利を留保する：</p>
-    <p class="fw-semibold">本利用規約に準拠しないリンクまたはコンテンツの削除を要請すること。</p>
-    <p class="fw-semibold">本利用規約および関連ポリシーはいつでも変更することができます。当ウェブサイトの継続的な利用は、変更を含む利用規約の受諾を意味します。</p>
-    <br/>
-    <br/>
-    <h2>ライセンス</h2>
-    <br/>
-    <br/>
-    <p class="fw-semibold">別段の明示がない限り、当ウェブサイトに掲載されているすべての知的財産権は水華ゲームに帰属します。利用者は、本規約に記載された制限の下、個人的かつ非商業的な利用のために本コンテンツにアクセスすることができます。</p>
-    <br/>
-    <br/>
-    <h2>当社コンテンツへのハイパーリンク</h2>
-    <br/>
-    <br/>
-    <p class="fw-semibold">政府機関、検索エンジン、報道機関などの組織は、以下の条件に基づき、当社のホームページまたはその他のウェブサイトのコンテンツにリンクを張ることができます：</p>
-    <p class="fw-semibold">リンクは誤解を招くものではない。</p>
-    <p class="fw-semibold">また、スポンサーや推薦を偽るものではありません。</p>
-    <p class="fw-semibold">リンクしている組織のサイト内の文脈に合っている。</p>
-    <p class="fw-semibold">その他のリンク依頼については、評判、関連性、文脈に基づいて評価します。リンク依頼に対する回答には1～2週間かかります。</p>
-    <br/>
-    <br/>
-    <h2>IFフレーム</h2>
-    <br/>
-    <br/>
-    <p class="fw-semibold">書面による事前の承認なしに、当社のウェブページの視覚的な表示や外観を変更するフレームを作成することはできません。</p>
-    <br/>
-    <br/>
-    <h2>免責事項</h2>
-    <br/>
-    <br/>
-    <p class="fw-semibold">法律で認められている範囲において、Suika Gameはウェブサイトおよびその使用に関するすべての保証および責任を除外します。これには以下が含まれます：</p>
-    <p class="fw-semibold">誤り、不正確な情報、不完全な情報。</p>
-    <p class="fw-semibold">ウェブサイトの一時的な使用不能。</p>
-    <p class="fw-semibold">当ウェブサイトのコンテンツの利用により発生した問題。</p>
-    <p class="fw-semibold">詳細については、こちらをご覧ください。 <a href="/disclaimer">免責事項ポリシー</a></p>
-    <br/>
-    <br/>
-    <h2>リンクまたはコンテンツの削除</h2>
-    <br/>
-    <br/>
-    <p class="fw-semibold">もし、スイカゲーム上で不快または不適切と思われるコンテンツやリンクを発見した場合は、<a href= "/contact-us">お問い合わせ</a>（support@suikagame.pro）までご連絡ください。私たちはあなたの要求を検討し、必要に応じて措置を講じますが、直接回答する義務はありません。</p>
-    <br/>
-    <br/>
-    <h2>連絡先</h2>
-    <br/>
-    <br/>
-    <p class="fw-semibold">本利用規約についてご質問がある場合、またはさらなるサポートが必要な場合は、：</p>
-    <br/>
-    <br/>
-    <p class="fw-semibold">電子メール ： support@suikagame.pro</p>
-    <p class="fw-semibold">ウェブサイト： https://suikagame.pro</p>
-    <br/>
-    <br/>
-    <p class="fw-semibold">Suika Gameをご利用いただきありがとうございます。私たちは、すべてのユーザーに安全でポジティブなゲーム環境を提供することをお約束します。</p>
-</section>
-   </div>
-   <br/>
-   <br/>
-    <!-- Footer Start -->
-    <footer class="ft-bg p-1">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-6 text-md-start text-center mb-2 mb-md-0">
-                    <p class="mb-0 text-light fw-bold">suikagame.pro &copy; 2025 ウォーターメロンは株式会社ポップインとは一切関係ありません。</p>
+    <!-- Scroll to Top Button -->
+    <div class="scroll-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Terms Content -->
+    <section class="py-4">
+        <div class="container">
+            <div class="terms-section">
+                <div class="last-updated">
+                    <p><strong>最終更新日:</strong> 2025年1月25日</p>
                 </div>
-                <div class="col-md-6 text-md-end text-center">
-                    <ul class="list-inline mb-0">
-                        <li class="list-inline-item d-block d-md-inline">
-                            <a class="ft-link text-light fw-bold text-decoration-none" href="/disclaimer">免責事項</a>
-                        </li>
-                        <li class="list-inline-item d-block d-md-inline">
-                            <a class="ft-link text-light fw-bold text-decoration-none" href="/terms-of-service">利用規約</a>
-                        </li>
-                        <li class="list-inline-item d-block d-md-inline">
-                            <a class="ft-link text-light fw-bold text-decoration-none" href="/privacy-policy">プライバシーポリシー</a>
-                        </li>
-                        <li class="list-inline-item d-block d-md-inline">
-                            <a class="ft-link text-light fw-bold text-decoration-none" href="/contact-us">お問合せ</a>
-                        </li>
+                
+                <div class="table-of-contents">
+                    <h3><i class="fas fa-list terms-icon"></i> 目次</h3>
+                    <ul>
+                        <li><a href="#introduction">はじめに</a></li>
+                        <li><a href="#terms">用語</a></li>
+                        <li><a href="#user-behavior">ユーザーの行動</a></li>
+                        <li><a href="#cookies">クッキー</a></li>
+                        <li><a href="#privacy">プライバシー</a></li>
+                        <li><a href="#reserved-rights">権利の留保</a></li>
+                        <li><a href="#license">ライセンス</a></li>
+                        <li><a href="#hyperlinks">当社コンテンツへのハイパーリンク</a></li>
+                        <li><a href="#iframe">iフレーム</a></li>
+                        <li><a href="#disclaimer">免責事項</a></li>
+                        <li><a href="#removal">リンクやコンテンツの削除</a></li>
+                        <li><a href="#contact">お問い合わせ</a></li>
                     </ul>
+                </div>
+                
+                <div id="introduction">
+                    <h2 class="terms-title text-center">利用規約</h2>
+                    
+                    <p class="terms-text">
+                        スイカゲームへようこそ！この利用規約は、<a href="/" class="terms-link">suikagame.pro</a> にあるスイカゲームウェブサイトのご利用に適用されます。当ウェブサイトにアクセスし利用することにより、お客様はこれらの条件に拘束されることを認め、同意したものとみなされます。安全で合法的かつ楽しい体験を確保するために、これらの条件を注意深くお読みください。
+                    </p>
+                </div>
+                
+                <div id="terms">
+                    <h2 class="terms-heading">用語</h2>
+                    
+                    <p class="terms-text">この利用規約では、以下の用語を使用しています：</p>
+                    
+                    <div class="terms-card">
+                        <p class="terms-text"><i class="fas fa-user terms-icon"></i>「クライアント」、「あなた」、「あなたの」とは、当社のウェブサイトにアクセスし、当社の利用規約に同意する個人を指します。</p>
+                    </div>
+                    
+                    <div class="terms-card">
+                        <p class="terms-text"><i class="fas fa-building terms-icon"></i>「会社」、「私たち」、「私たちの」、「当社」とは、スイカゲームとその運営会社を指します。</p>
+                    </div>
+                    
+                    <div class="terms-card">
+                        <p class="terms-text"><i class="fas fa-handshake terms-icon"></i>「当事者」、「両当事者」、「我々」とは、あなたと当社を集合的に指します。</p>
+                    </div>
+                    
+                    <p class="terms-text">これらの用語は、適用される法律および規制に準拠しています。上記の用語の単数形、複数形、または大文字の使用は互換性があり、同じ意味を持ちます。</p>
+                </div>
+                
+                <div id="user-behavior">
+                    <h2 class="terms-heading">ユーザーの行動</h2>
+                    
+                    <p class="terms-text">スイカゲームのユーザーは、良好な環境を確保するために以下のルールを遵守する必要があります：</p>
+                    
+                    <h3 class="terms-subheading">禁止行為：</h3>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="terms-card">
+                                <h4><i class="fas fa-ban terms-icon"></i> 不正アクセス</h4>
+                                <p class="terms-text">許可されていないアカウント、システム、またはデータへのアクセスを試みないでください。</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="terms-card">
+                                <h4><i class="fas fa-copy terms-icon"></i> コンテンツの不正使用</h4>
+                                <p class="terms-text">ゲームアセット、コード、またはデザインを複製や再配布を含む不正な目的で使用することは避けてください。</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="terms-card">
+                                <h4><i class="fas fa-exclamation-triangle terms-icon"></i> 妨害行為</h4>
+                                <p class="terms-text">ウェブサイトの機能やユーザー体験を妨害することを意図したいかなる行為も厳しく禁じられています。</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="terms-card">
+                                <h4><i class="fas fa-copyright terms-icon"></i> 知的財産権の尊重</h4>
+                                <p class="terms-text">スイカゲーム上のすべてのコンテンツは著作権法によって保護されています。ユーザーは明示的な許可なしにコンテンツを複製、修正、または配布してはなりません。</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p class="terms-text">これらのガイドラインに従うことで、すべてのユーザーが安全で楽しい体験を享受できます。</p>
+                </div>
+                
+                <div id="cookies">
+                    <h2 class="terms-heading">クッキー</h2>
+                    
+                    <p class="terms-text">当社はスイカゲームでの体験を向上させるためにクッキーを使用しています。詳細については <a href="/privacy-policy" class="terms-link">プライバシーポリシー</a> をご覧ください。クッキーを使用することで以下が可能になります：</p>
+                    
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="terms-card text-center">
+                                <i class="fas fa-save fa-3x mb-3 terms-icon"></i>
+                                <p class="terms-text">お客様の設定や好みを記憶する</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="terms-card text-center">
+                                <i class="fas fa-cogs fa-3x mb-3 terms-icon"></i>
+                                <p class="terms-text">ウェブサイトの必須機能を有効にする</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="terms-card text-center">
+                                <i class="fas fa-chart-line fa-3x mb-3 terms-icon"></i>
+                                <p class="terms-text">分析やターゲット広告のために広告パートナーと協力する</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="privacy">
+                    <h2 class="terms-heading">プライバシー</h2>
+                    
+                    <p class="terms-text">お客様のプライバシーは当社にとって重要です。当社がお客様の個人情報をどのように収集、使用、および保護するかについては、<a href="/privacy-policy" class="terms-link">プライバシーポリシー</a> をご参照ください。</p>
+                </div>
+                
+                <div id="reserved-rights">
+                    <h2 class="terms-heading">権利の留保</h2>
+                    
+                    <p class="terms-text">当社は以下の権利を留保します：</p>
+                    
+                    <div class="terms-card">
+                        <p class="terms-text"><i class="fas fa-trash-alt terms-icon"></i> 当社の利用規約に準拠していないリンクやコンテンツの削除を要請する権利。</p>
+                    </div>
+                    
+                    <div class="terms-card">
+                        <p class="terms-text"><i class="fas fa-edit terms-icon"></i> これらの利用規約および関連ポリシーをいつでも変更する権利。当ウェブサイトを継続して利用することは、変更を含む利用規約の受諾を意味します。</p>
+                    </div>
+                </div>
+                
+                <div id="license">
+                    <h2 class="terms-heading">ライセンス</h2>
+                    
+                    <p class="terms-text">特に明記されていない限り、ウェブサイト上のすべての知的財産権はスイカゲームに帰属します。ユーザーはこれらの利用規約に記載された制限事項に従い、個人的かつ非商業的な使用のためにコンテンツにアクセスすることができます。</p>
+                </div>
+                
+                <div id="hyperlinks">
+                    <h2 class="terms-heading">当社コンテンツへのハイパーリンク</h2>
+                    
+                    <p class="terms-text">政府機関、検索エンジン、ニュース機関などの組織は、以下の条件の下で当社のホームページやその他のウェブサイトコンテンツにリンクすることができます：</p>
+                    
+                    <ul class="terms-text">
+                        <li>リンクが誤解を招くものではないこと</li>
+                        <li>スポンサーシップや推薦を偽って示唆するものではないこと</li>
+                        <li>リンク元の組織のサイトの文脈に適していること</li>
+                    </ul>
+                    
+                    <p class="terms-text">その他のリンク要請については、評判、関連性、コンテキストに基づいて評価されます。リンク要請への回答には1〜2週間かかることがあります。</p>
+                </div>
+                
+                <div id="iframe">
+                    <h2 class="terms-heading">iフレーム</h2>
+                    
+                    <p class="terms-text">事前の書面による許可なしに、当社のウェブページの視覚的な表示や外観を変更するフレームを作成することはできません。</p>
+                </div>
+                
+                <div id="disclaimer">
+                    <h2 class="terms-heading">免責事項</h2>
+                    
+                    <p class="terms-text">法律で許される範囲内で、スイカゲームはウェブサイトおよびその使用に関するすべての保証および責任を除外します。これには以下が含まれます：</p>
+                    
+                    <div class="terms-card">
+                        <p class="terms-text"><i class="fas fa-exclamation-circle terms-icon"></i> エラー、不正確または不完全な情報</p>
+                    </div>
+                    
+                    <div class="terms-card">
+                        <p class="terms-text"><i class="fas fa-power-off terms-icon"></i> ウェブサイトの一時的な利用不能</p>
+                    </div>
+                    
+                    <div class="terms-card">
+                        <p class="terms-text"><i class="fas fa-bug terms-icon"></i> ウェブサイトのコンテンツの使用から生じる問題</p>
+                    </div>
+                    
+                    <p class="terms-text">詳細については、<a href="/disclaimer" class="terms-link">免責事項ポリシー</a> をご覧ください</p>
+                </div>
+                
+                <div id="removal">
+                    <h2 class="terms-heading">リンクやコンテンツの削除</h2>
+                    
+                    <p class="terms-text">スイカゲーム上に不快または不適切と思われるコンテンツやリンクを見つけた場合は、support@suikagame.pro まで <a href="/contact-us" class="terms-link">お問い合わせ</a> ください。当社はお客様のリクエストを検討し、必要に応じて措置を講じますが、直接回答する義務はありません。</p>
+                </div>
+                
+                <div id="contact">
+                    <h2 class="terms-heading">お問い合わせ</h2>
+                    
+                    <p class="terms-text">これらの利用規約についてご質問がある場合や、さらなるサポートが必要な場合：</p>
+                    
+                    <div class="contact-section">
+                        <i class="fas fa-envelope-open-text contact-icon"></i>
+                        <p class="terms-text">メール: support@suikagame.pro</p>
+                        <p class="terms-text">ウェブサイト: https://suikagame.pro</p>
+                    </div>
+                    
+                    <div class="alert alert-success mt-4" role="alert">
+                        <i class="fas fa-heart terms-icon"></i>
+                        <p class="terms-text mb-0">スイカゲームをご利用いただきありがとうございます。当社はすべてのユーザーに安全でポジティブなゲーム環境を提供することを約束します。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" style="background-color: #F8B840; padding: 40px 0 20px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <div class="footer-brand mb-4">
+                        <img src="./Images/Suika Game.webp" alt="Suika Game" class="img-fluid me-2">
+                    </div>
+                    <p>スイカゲームは、真の習得は制御ではなく、戦略と偶然の絶妙なバランスにあることを私たちに教えてくれます。</p>
+                    <div class="social-links mt-4">
+                        <a href="#" class="social-link facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link twitter" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                    <h4 class="footer-title">クイックリンク</h4>
+                    <ul class="footer-links list-unstyled">
+                        <li><a href="/" class="footer-link">メインページ</a></li>
+                        <li><a href="/suika-game-version" class="footer-link">スイカバージョン</a></li>
+                        <li><a href="/about-us" class="footer-link">会社概要</a></li>
+                        <li><a href="/contact-us" class="footer-link">お問い合わせ</a></li>
+                    </ul> 
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                    <h4 class="footer-title">法的情報</h4>
+                    <ul class="footer-links list-unstyled">
+                        <li><a href="/privacy-policy" class="footer-link">プライバシーポリシー</a></li>
+                        <li><a href="/disclaimer" class="footer-link">免責事項</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-4">
+                    <h4 class="footer-title">ニュースレター</h4>
+                    <p>スイカゲームに関する最新情報を受け取るには、登録してください</p>
+                    <form class="newsletter-form">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="メールアドレス" aria-label="メールアドレス">
+                            <button class="btn btn-primary" type="submit">登録</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom text-center pt-4 mt-5 border-top">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="copyright mb-0 text-wrap text-md-nowrap">suikagame.pro &copy; 2025 スイカゲームはアラジンX株式会社と提携していません。</p>
+                    </div>
                 </div>
             </div>
         </div>
     </footer>
-    <!-- Footer End -->
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    
+    
+    <!-- Custom JS for Terms of Service page -->
+    <script>
+        // Make sure content is visible
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ensure all elements are visible
+            document.querySelectorAll('.terms-section, .terms-text, .terms-heading, .terms-title').forEach(function(el) {
+                el.style.display = 'block';
+                el.style.visibility = 'visible';
+                el.style.opacity = '1';
+            });
+            
+            const scrollToTopButton = document.querySelector('.scroll-to-top');
+            
+            // Show button when user scrolls down
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollToTopButton.classList.add('visible');
+                } else {
+                    scrollToTopButton.classList.remove('visible');
+                }
+            });
+            
+            // Scroll to top when button is clicked
+            scrollToTopButton.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Table of contents smooth scrolling
+            document.querySelectorAll('.table-of-contents a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 </body>
-</html>
+</html> 

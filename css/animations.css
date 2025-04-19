@@ -1,0 +1,1067 @@
+/* 
+ * Suika Game - Animations Stylesheet
+ * Contains all animations and motion effects
+ */
+
+/* ===== Keyframes Animations ===== */
+
+/* Floating animation for elements */
+@keyframes float {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(3deg);
+    }
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+/* Fruit rotation animation */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Fruit falling animation */
+@keyframes fall {
+    0% {
+        transform: translateY(-100vh) rotate(0deg);
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Pulse animation for buttons */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 102, 82, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 102, 82, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 102, 82, 0);
+    }
+}
+
+/* Shake animation for game events */
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-5px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(5px);
+    }
+}
+
+/* Bounce animation */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Glow animation for special elements */
+@keyframes glow {
+    0% {
+        filter: drop-shadow(0 0 2px rgba(248, 184, 64, 0.6));
+    }
+    50% {
+        filter: drop-shadow(0 0 10px rgba(248, 184, 64, 0.9));
+    }
+    100% {
+        filter: drop-shadow(0 0 2px rgba(248, 184, 64, 0.6));
+    }
+}
+
+/* Shimmer effect for gradient elements */
+@keyframes shimmer {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+/* Text reveal animation */
+@keyframes textReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Background shine animation */
+@keyframes backgroundShine {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+/* Scale pulse animation */
+@keyframes scalePulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Header animation for gold bars */
+@keyframes headerShine {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+/* Footer wave animation */
+@keyframes footerWave {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Glowing border animation */
+@keyframes glowingBorder {
+    0% {
+        box-shadow: 0 0 5px rgba(248, 184, 64, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(248, 184, 64, 0.8), 0 0 30px rgba(248, 184, 64, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(248, 184, 64, 0.5);
+    }
+}
+
+/* Enhanced hover scale effect */
+@keyframes hoverScale {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.08);
+    }
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+/* Text Gradient animation */
+@keyframes textGradient {
+    0% {
+        background-position: 0 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+/* ===== Applied Animations ===== */
+
+/* Animate fruit images in hero section */
+.hero-image {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Play button glow effect */
+.play-btn {
+    animation: pulse 2s infinite;
+}
+
+/* Disable Wave animation for performance */
+.wave-decoration {
+    display: none;
+    animation: none !important;
+}
+
+/* Wave animation for decoration elements - DISABLED */
+@keyframes wave {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 0;
+    }
+}
+
+/* Floating fruits background animation */
+.fruit-animation {
+    position: absolute;
+    opacity: 0;
+    z-index: 1;
+    animation: fall var(--fall-duration, 8s) linear forwards;
+    animation-delay: var(--fall-delay, 0s);
+}
+
+/* Gradient border animation for special elements */
+.animated-border {
+    position: relative;
+}
+
+.animated-border::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(90deg, var(--suika-gold), var(--suika-gold-dark), var(--suika-gold));
+    background-size: 200% 100%;
+    border-radius: inherit;
+    z-index: -1;
+    animation: shimmer 3s linear infinite;
+}
+
+/* Custom cursor hover effect */
+.custom-cursor-hover {
+    animation: glow 2s ease-in-out infinite;
+}
+
+/* Section fade-in animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered animation for multiple elements */
+.stagger-animation > * {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.stagger-animation.visible > *:nth-child(1) {
+    transition-delay: 0s;
+}
+
+.stagger-animation.visible > *:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.stagger-animation.visible > *:nth-child(3) {
+    transition-delay: 0.4s;
+}
+
+.stagger-animation.visible > *:nth-child(4) {
+    transition-delay: 0.6s;
+}
+
+.stagger-animation.visible > * {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hover animations for feature cards */
+.feature-card:hover .feature-icon img {
+    animation: bounce 1s ease infinite;
+}
+
+/* Game fruit animations */
+.game-fruit {
+    transition: transform 0.3s ease;
+}
+
+.game-fruit:hover {
+    transform: scale(1.1) rotate(10deg);
+    animation: glow 2s ease-in-out infinite;
+}
+
+/* Button hover effects */
+.btn-hover-effect {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-hover-effect::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    z-index: -1;
+    transition: all 0.5s ease;
+}
+
+.btn-hover-effect:hover::after {
+    left: 100%;
+}
+
+/* Page transitions */
+.page-transition {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Torii gate animation */
+.torii-gate {
+    animation: footerWave 8s ease-in-out infinite;
+}
+
+/* Social link animation */
+.social-link:hover {
+    animation: pulse 1s ease infinite;
+}
+
+/* Text animations */
+.animate-text {
+    display: inline-block;
+    opacity: 0;
+    animation: textReveal 0.5s ease-out forwards;
+}
+
+/* Delay each character in text animations */
+.animate-text:nth-child(1) { animation-delay: 0.1s; }
+.animate-text:nth-child(2) { animation-delay: 0.2s; }
+.animate-text:nth-child(3) { animation-delay: 0.3s; }
+.animate-text:nth-child(4) { animation-delay: 0.4s; }
+.animate-text:nth-child(5) { animation-delay: 0.5s; }
+.animate-text:nth-child(6) { animation-delay: 0.6s; }
+.animate-text:nth-child(7) { animation-delay: 0.7s; }
+.animate-text:nth-child(8) { animation-delay: 0.8s; }
+.animate-text:nth-child(9) { animation-delay: 0.9s; }
+.animate-text:nth-child(10) { animation-delay: 1.0s; }
+
+/* Navbar animation */
+.nav-bg, .ft-bg {
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-bg::before, .ft-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 300%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+      transparent, 
+      rgba(255, 255, 255, 0.3), 
+      rgba(255, 255, 255, 0.1),
+      transparent);
+    animation: headerShine 5s linear infinite;
+}
+
+/* Button scale effect */
+.btn:hover {
+    animation: scalePulse 0.6s ease;
+}
+
+/* Game component animations */
+.game-container {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.game-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Fruit item hover animation */
+.fruit-item {
+    transition: transform 0.3s ease;
+}
+
+.fruit-item:hover {
+    transform: scale(1.15);
+    z-index: 2;
+}
+
+.fruit-item:hover .fruit-image {
+    animation: glow 2s ease-in-out infinite;
+}
+
+/* ===== Interactive Mouse Effects ===== */
+
+/* Mouse trail effect */
+.mouse-trail {
+    display: none !important;
+}
+
+/* Text hover effect */
+.hover-underline {
+    position: relative;
+    display: inline-block;
+}
+
+.hover-underline::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--suika-gold);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+.hover-underline:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Blinking cursor animation */
+.typing-cursor {
+    display: none !important;
+}
+
+/* Reduce animations if user prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .animation-paused {
+        animation-play-state: paused !important;
+        transition: none !important;
+    }
+}
+
+/* Enhanced header animations */
+#mainNav .navbar-brand {
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+#mainNav .navbar-brand:hover {
+    transform: scale(1.05);
+}
+
+.logo-text {
+    background: linear-gradient(45deg, #F8B840, #D99B2A, #FFECC2, #F8B840);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: textGradient 6s ease infinite;
+}
+
+/* Enhanced navigation link hover effects */
+#mainNav .nav-link {
+    transition: all 0.3s ease;
+}
+
+#mainNav .nav-link:hover {
+    color: var(--suika-red) !important;
+    text-decoration: underline !important;
+}
+
+#mainNav .nav-link::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* Enhanced footer elements */
+.footer {
+    position: relative;
+    overflow: hidden;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background: linear-gradient(180deg, transparent, rgba(248, 184, 64, 0.3));
+}
+
+.footer .social-link {
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.footer .social-link:hover {
+    transform: translateY(-5px) scale(1.15);
+    color: var(--suika-gold-dark);
+    animation: none;
+}
+
+.footer .social-link::after {
+    display: none !important;
+    content: none !important;
+}
+
+.footer-links a {
+    position: relative;
+    display: inline-block;
+    padding: 2px 0;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-links a:hover {
+    transform: translateX(5px);
+    color: #000;
+}
+
+.footer-links a::after {
+    display: none !important;
+    content: none !important;
+}
+
+.footer-brand {
+    position: relative;
+}
+
+.footer-brand img {
+    animation: float 6s ease-in-out infinite;
+}
+
+.footer h5 {
+    position: relative;
+    display: inline-block;
+}
+
+.footer h5::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--suika-gold-dark), var(--suika-gold-light));
+    transition: width 0.3s ease;
+}
+
+.footer h5:hover::after {
+    width: 100%;
+}
+
+.btn-primary {
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.btn-primary::before {
+    display: none !important;
+    content: none !important;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    z-index: -1;
+    animation: headerShine 3s infinite;
+}
+
+.newsletter-form .form-control:focus {
+    border-color: var(--suika-gold);
+    box-shadow: 0 0 0 0.25rem rgba(248, 184, 64, 0.25);
+    animation: glowingBorder 2s infinite;
+}
+
+/* Enhanced animation for hoverable elements */
+.hover-glow {
+    transition: all 0.3s ease;
+}
+
+.hover-glow:hover {
+    filter: brightness(1.2);
+    transform: translateY(-3px);
+    animation: hoverScale 0.5s ease forwards;
+}
+
+/* Floating fruits with different speeds and rotations */
+.floating-fruit {
+    position: absolute;
+    opacity: 0.5;
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1));
+    z-index: 1;
+    transition: transform 0.2s ease, opacity 0.2s ease, filter 0.2s ease;
+    will-change: transform;
+}
+
+.floating-fruit:nth-child(1) {
+    top: 15%;
+    left: 10%;
+    animation: float 7s ease-in-out infinite;
+}
+
+.floating-fruit:nth-child(2) {
+    top: 25%;
+    right: 15%;
+    animation: float 6s ease-in-out 1s infinite;
+}
+
+.floating-fruit:nth-child(3) {
+    top: 60%;
+    left: 15%;
+    animation: float 8s ease-in-out 2s infinite;
+}
+
+.floating-fruit:nth-child(4) {
+    top: 40%;
+    right: 10%;
+    animation: float 9s ease-in-out 3s infinite;
+}
+
+.floating-fruit:nth-child(5) {
+    top: 80%;
+    left: 20%;
+    animation: float 10s ease-in-out 4s infinite;
+}
+
+.floating-fruit:nth-child(6) {
+    top: 70%;
+    right: 20%;
+    animation: float 11s ease-in-out 5s infinite;
+}
+
+.floating-fruit:hover {
+    transform: scale(1.2) rotate(10deg);
+    opacity: 1;
+    filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.2));
+    cursor: pointer;
+}
+
+/* Pulsating animation for buttons */
+.pulsating-btn {
+    animation: pulse 1.5s infinite;
+}
+
+/* Gradient animation */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Spinning animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Fade-in animation for sections */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Fade-in-up animation for content */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade-in-down animation for dropdowns */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slide-in-right animation */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Slide-in-left animation */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Pop-in animation for interactive elements */
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Background candy animation */
+.candy-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.candy {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    opacity: 0.6;
+    filter: blur(1px);
+    animation: candy-fall linear infinite;
+}
+
+@keyframes candy-fall {
+    from {
+        transform: translateY(-100vh) rotate(0deg);
+    }
+    to {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+/* Animations for scroll reveal */
+.reveal {
+    position: relative;
+    opacity: 0;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+}
+
+.reveal-left {
+    transform: translateX(-50px);
+}
+
+.reveal-right {
+    transform: translateX(50px);
+}
+
+.reveal-up {
+    transform: translateY(50px);
+}
+
+.reveal-down {
+    transform: translateY(-50px);
+}
+
+.reveal-scale {
+    transform: scale(0.8);
+}
+
+.reveal.active.reveal-left,
+.reveal.active.reveal-right,
+.reveal.active.reveal-up,
+.reveal.active.reveal-down,
+.reveal.active.reveal-scale {
+    transform: translate(0) scale(1);
+}
+
+/* Animation delays for cascading effects */
+.delay-100 {
+    animation-delay: 0.1s;
+    transition-delay: 0.1s;
+}
+
+.delay-200 {
+    animation-delay: 0.2s;
+    transition-delay: 0.2s;
+}
+
+.delay-300 {
+    animation-delay: 0.3s;
+    transition-delay: 0.3s;
+}
+
+.delay-400 {
+    animation-delay: 0.4s;
+    transition-delay: 0.4s;
+}
+
+.delay-500 {
+    animation-delay: 0.5s;
+    transition-delay: 0.5s;
+}
+
+/* Fast loading animation */
+.loading-fast {
+    position: relative;
+    overflow: hidden;
+    animation: none !important;
+}
+
+.loading-fast::after {
+    display: none !important;
+    content: none !important;
+    animation: none !important;
+}
+
+@keyframes loading-shine {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 0; }
+}
+
+/* Candy background colors */
+.bg-candy-red {
+    background-color: #FF6B6B;
+}
+
+.bg-candy-orange {
+    background-color: #FF9E53;
+}
+
+.bg-candy-yellow {
+    background-color: #FFDA77;
+}
+
+.bg-candy-green {
+    background-color: #5BA379;
+}
+
+.bg-candy-blue {
+    background-color: #4ECDC4;
+}
+
+.bg-candy-purple {
+    background-color: #A06CD5;
+}
+
+.bg-candy-pink {
+    background-color: #F5B2AC;
+}
+
+/* Candy gradient backgrounds */
+.bg-candy-gradient-1 {
+    background: linear-gradient(45deg, #FF6B6B, #FF9E53);
+}
+
+.bg-candy-gradient-2 {
+    background: linear-gradient(45deg, #FFDA77, #5BA379);
+}
+
+.bg-candy-gradient-3 {
+    background: linear-gradient(45deg, #4ECDC4, #A06CD5);
+}
+
+.bg-candy-gradient-4 {
+    background: linear-gradient(45deg, #F5B2AC, #FF6B6B);
+}
+
+/* Animation for scroll-triggered elements */
+@media (prefers-reduced-motion: no-preference) {
+    [data-animation] {
+        opacity: 0;
+    }
+    
+    [data-animation].animated {
+        opacity: 1;
+    }
+    
+    [data-animation="fade-in"] {
+        animation: fadeIn 0.5s ease forwards;
+    }
+    
+    [data-animation="fade-in-up"] {
+        animation: fadeInUp 0.5s ease forwards;
+    }
+    
+    [data-animation="fade-in-down"] {
+        animation: fadeInDown 0.6s ease forwards;
+    }
+    
+    [data-animation="slide-in-right"] {
+        animation: slideInRight 0.5s ease forwards;
+    }
+    
+    [data-animation="slide-in-left"] {
+        animation: slideInLeft 0.5s ease forwards;
+    }
+    
+    [data-animation="pop-in"] {
+        animation: popIn 0.4s cubic-bezier(0.26, 0.53, 0.74, 1.48) forwards;
+    }
+}
+
+/* Fast loading blur effect */
+.loading-blur {
+    filter: blur(3px);
+    transition: filter 0.4s ease;
+}
+
+.loaded {
+    filter: blur(0);
+}
+
+/* Media query for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Ripple effect for buttons */
+.ripple-effect {
+    display: none !important;
+}
+
+.btn-active {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 102, 82, 0.7);
+}
+
+/* Fix section headings */
+.section-heading {
+    position: relative; 
+    overflow: visible;
+    background: none !important;
+    -webkit-background-clip: initial !important;
+    background-clip: initial !important;
+    color: var(--suika-black) !important;
+    animation: none !important;
+}
+
+.section-heading::before, .section-heading::after {
+    display: none !important;
+    content: none !important;
+    animation: none !important;
+}
+
+/* Fix section dividers */
+.section-divider {
+    background: var(--suika-gold) !important;
+    animation: none !important;
+}
+
+/* Disable fancy animations and SVG backgrounds */
+.section-heading::before,
+.section-heading::after,
+.btn-primary::before,
+.btn-primary::after,
+.btn-secondary::before,
+.btn-secondary::after,
+.nav-bg::before, 
+.ft-bg::before,
+.footer::before,
+.animated-border::before {
+    display: none !important;
+    content: none !important;
+    background: none !important;
+    background-image: none !important;
+}
+
+/* Simplify animations */
+.animate-text {
+    animation: none !important;
+    opacity: 1 !important;
+    display: inline !important;
+}
+
+/* Fix ripple effect */
+.ripple-effect {
+    display: none !important;
+}
+
+/* Fix hover animations */
+#mainNav .nav-link::after,
+.footer-links a::after,
+.footer .social-link::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* Fix navbar hover effect */
+#mainNav .nav-link:hover {
+    color: var(--suika-red) !important;
+    text-decoration: underline !important;
+}
+
+/* Fix button hover effect */
+.btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Change typing cursor animation */
+.typing-cursor {
+    display: none !important;
+} 

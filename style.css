@@ -1,26 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap');
-
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #f8dcab;
-  box-sizing: border-box;
-}
-.nav-bg{
-  background-color: #F8B840;
-  height: 40px;
-}
-.ft-bg{
-  background-color: #F8B840;
-}
-/* Change the text color to white */
-.navbar-brand,
-.nav-link {
-  color: #fff !important; 
-  font-weight: bold;
-}
 
 #game-container {
+  margin-top: 55px;
   width: 400px;  
   height: 540px; 
   position: relative;
@@ -33,7 +13,7 @@ body {
   height: 200px;
   display: inline-block;
   position: absolute;
-  top: 13%;
+  top: 110px;
   left: 70%;
   transform: translateX(-50%);
   box-shadow: inset 0 0 25px rgba(250, 144, 45, 0.75);
@@ -68,7 +48,7 @@ body {
   height: 200px;
   display: inline-block;
   position: absolute;
-  top: 15%;
+  top: 110px;
   left: 15%;
   transform: translateX(-50%);
   box-shadow: inset 0 0 25px rgba(250, 144, 45, 0.75);
@@ -158,15 +138,8 @@ canvas {
 .candies_display{
   width: 400px;
   position: absolute;
-  top: 50%;
+  top: 330px;
   left: 82%;
-  transform: translateX(-50%);
-}
-.key_controls{
-  width: 400px;
-  position: absolute;
-  top: 55%;
-  left: 18%;
   transform: translateX(-50%);
 }
 
@@ -213,18 +186,6 @@ canvas {
   font-weight: bold;
   color: #333;
 }
- /* Style for the half-outside image */
-
-.half-outside-image {
-        position: absolute;
-        top: -50px; /* Adjust this to control how much of the image is outside */
-        left: 50%; /* Center the image horizontally in its column */
-        transform: translateX(-50%);
-        z-index: 1;
-        border-radius: 50px;
-}
-
-
 /* Responsiveness */
 @media (max-width: 768px) {
   body {
@@ -244,7 +205,7 @@ canvas {
   height: 130px;
   display: inline-block;
   position: absolute;
-  top: 11%;
+  top: 180px;
   left: 78%;
   transform: translateX(-50%);
   box-shadow: inset 0 0 25px rgba(250, 144, 45, 0.75);
@@ -278,7 +239,7 @@ canvas {
   height: 130px;
   display: inline-block;
   position: absolute;
-  top: 11%;
+  top: 170px;
   left: 5%;
   transform: translateX(-50%);
   box-shadow: inset 0 0 25px rgba(250, 144, 45, 0.75);
@@ -349,10 +310,6 @@ canvas {
   width: 50px;
 }
 
-.nav-bg{
-  background-color: #F8B840;
-  height: 50px;
-}
 
 .modal-custom {
       max-width: 100%;
@@ -378,15 +335,8 @@ canvas {
 .candies_display{
   width: 350px;
   position: relative;
-  top: 100%;
-  left: 70%;
-  transform: translateX(-50%);
-}
-.key_controls{
-  width: 300px;
-  position: absolute;
-  top: 60%;
-  left: 21%;
+  top: 170%;
+  left: 50%;
   transform: translateX(-50%);
 }
 }
@@ -400,15 +350,15 @@ canvas {
     position: relative;
     overflow: visible;
     background-color: #E9C163;
-    margin-top: 110px;
+    margin-top: 70px;
   }
   #nextCandy{
     width: 100px;
     height: 100px;
     display: inline-block;
     position: absolute;
-    top: 11%;
-    left: 60%;
+    top: 150px;
+    left: 65%;
     transform: translateX(-50%);
     box-shadow: inset 0 0 25px rgba(250, 144, 45, 0.75);
     border-radius: 50%;
@@ -441,8 +391,8 @@ canvas {
     height: 100px;
     display: inline-block;
     position: absolute;
-    top: 11%;
-    left: 15%;
+    top: 150px;
+    left: 7%;
     transform: translateX(-50%);
     box-shadow: inset 0 0 25px rgba(250, 144, 45, 0.75);
     border-radius: 50%;
@@ -516,17 +466,11 @@ canvas {
     background-color: #F8B840;
     height: 50px;
   }
-  .key_controls{
-    width: 300px;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-  }
 
   .candies_display{
     width: 350px;
     position: relative;
-    top: 90%;
+    top: 40px;
     left: 50%;
     transform: translateX(-50%);
   }

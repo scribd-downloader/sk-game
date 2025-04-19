@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [
     vitePluginSitemap({
       hostname: 'https://suikagame.pro',
-      routes: ['/', '/disclaimer', '/privacy-policy', '/terms-of-service', '/contact-us', '/suika-game-version',
+      routes: ['/', '/disclaimer', '/privacy-policy', '/terms-of-service', '/contact-us','/about-us', '/suika-game-version',
         '/suika-game-multiple-player',
         '/suika-game-summer-holiday',
         '/suika-game-sunset-beach',
@@ -36,6 +36,7 @@ export default defineConfig({
         privacyPolicy: resolve(__dirname, 'privacy-policy.html'),
         termsOfService: resolve(__dirname, 'terms-of-service.html'),
         contactUs: resolve(__dirname, 'contact-us.html'),
+        aboutUs: resolve(__dirname, 'about-us.html'),
         suikaGameVersion: resolve(__dirname, 'suika-game-version.html'),
         suikaGameMultiplePlayer: resolve(__dirname, 'suika-game-multiple-player.html'),
         suikaGameSummerHoliday: resolve(__dirname, 'suika-game-summer-holiday.html'),
@@ -62,6 +63,7 @@ export default defineConfig({
           '/privacy-policy': '/privacy-policy.html',
           '/terms-of-service': '/terms-of-service.html',
           '/contact-us': '/contact-us.html',
+          '/about-us': '/about-us.html',
           '/suika-game-version': '/suika-game-version.html',
           '/suika-game-multiple-player': '/suika-game-multiple-player.html',
         '/suika-game-summer-holiday': '/suika-game-summer-holiday.html',
@@ -98,6 +100,9 @@ export default defineConfig({
       });
       server.middlewares.use('/contact-us.html', (req, res) => {
         res.sendFile(resolve(__dirname, 'contact-us.html'));
+      });
+      server.middlewares.use('/about-us.html', (req, res) => {
+        res.sendFile(resolve(__dirname, 'about-us.html'));
       });
       server.middlewares.use('/suika-game-version.html', (req, res) => {
         res.sendFile(resolve(__dirname, 'suika-game-version.html'));

@@ -1,13 +1,13 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#1A1718">
+    <title>スイカゲーム公式版 - オンラインで無料プレイ！フルーツ合体ゲーム [Suika 日本語版]</title>
+    <meta name="description"
     content="スイカゲームはパソコンや携帯電話IOSで無料でプレイすることができます。ウォーターメロンゲームは、同じ種類のフルーツを戦略的に組み合わせて、より大きなフルーツを作るゲームです。" />
   <meta name="robots" content="index, follow">
-
   <!-- Open Graph -->
   <meta property="og:title" content="スイカゲーム公式版 - オンラインで無料プレイ！フルーツ合体ゲーム [Suika 日本語版]" />
   <meta property="og:site_name" content="Suika Game" />
@@ -17,73 +17,82 @@
   <meta property="og:image" content="https://suikagame.pro/Images/suika-game-featured.webp" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@SuikaGameJP" />
-  <meta name="twitter:title" content="スイカゲーム - 無料で遊べる楽しいフルーツ戦略ゲーム" />
-  <meta name="twitter:description"
-    content="スイカゲームはパソコンや携帯電話IOSで無料でプレイすることができます。ウォーターメロンゲームは、同じ種類のフルーツを戦略的に組み合わせて、より大きなフルーツを作るゲームです。" />
-  <meta name="twitter:image" content="https://suikagame.pro/Images/suika-game-featured.webp" />
-
+  
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@SuikaGameJP" />
+    <meta name="twitter:title" content="スイカゲーム - 無料で遊べる楽しいフルーツ戦略ゲーム" />
+    <meta name="twitter:description"
+      content="スイカゲームはパソコンや携帯電話IOSで無料でプレイすることができます。ウォーターメロンゲームは、同じ種類のフルーツを戦略的に組み合わせて、より大きなフルーツを作るゲームです。" />
+    <meta name="twitter:image" content="https://suikagame.pro/Images/suika-game-featured.webp" />
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96">
   <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg">
   <link rel="shortcut icon" href="/favicon/favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
   <link rel="manifest" href="/favicon/site.webmanifest">
-
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-  
-
-  <title>スイカゲーム公式版 - オンラインで無料プレイ！フルーツ合体ゲーム [Suika 日本語版]</title>
-  <script type="module" crossorigin src="/assets/bundle-eb2575d9.js"></script>
-  <link rel="stylesheet" href="/assets/style-54f8b096.css">
+    <!-- Preload critical assets -->
+    <link rel="preload" href="./Images/Suika Game.webp" as="image">
+    <link rel="preload" href="./Images/suika game featured.webp" as="image">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+    
+    
+    
+    
+    
+    
+    
+    <!-- Ultra-aggressive mobile menu fix (highest priority) -->
+  <script type="module" crossorigin src="/assets/scripts-f220cf82.js"></script>
+  <script type="module" crossorigin src="/assets/faq-3b21b401.js"></script>
+  <script type="module" crossorigin src="/assets/bundle-a1aed70e.js"></script>
+  <link rel="stylesheet" href="/assets/scripts-58b723ea.css">
+  <link rel="stylesheet" href="/assets/faq-699a95af.css">
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 </head>
+<body class="suika-bg index-page">
 
-<style>
-  .feature-section {
-    padding: 60px 20px;
-    text-align: center;
-  }
+   <!-- Custom Cursor -->
+   <div class="custom-cursor"></div>
 
-  .feature-card {
-    border: none;
-    border-radius: 15px;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    background-color: #fa902dbf;
-    color: #fff;
-    min-height: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-  }
+   <!-- Floating Fruits Background -->
+   <div class="fruits-container" id="fruits-container"></div>
 
-  .feature-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-  }
-</style>
+      <!-- Scroll to Top Button -->
+      <div class="scroll-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
 
-<body>
-  <!-- Header section with a navbar -->
-
-  <header>
-    <nav class="navbar navbar-expand-lg nav-bg sticky-top">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="/">
-          <img src="./Images/Suika Game.webp" alt="スイカゲーム" title="スイカゲーム" width="200" height="20">
+   <!-- Navigation Bar -->
+   <nav class="navbar navbar-expand-lg fixed-top nav-bg" id="mainNav">
+    <div class="container">
+        <a class="d-flex align-items-center" href="/">
+            <img src="./Images/Suika Game.webp" alt="Suika Game" class="me-2">
         </a>
-        <a class="nav-link text-white" href="/suika-game-version">スイカバージョン</a>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="/suika-game-version">スイカバージョン</a></li>
+                <li class="nav-item"><a class="nav-link" href="/about-us">私たちについて</a></li>
+                <li class="nav-item"><a class="nav-link" href="/contact-us">お問合せ</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+ <!-- Mobile Only Navigation (visible only on small screens) -->
+ <div class="mobile-nav d-lg-none">
+  <div class="container">
+      <div class="mobile-nav-links">
+          <a href="/suika-game-version" class="mobile-nav-link">スイカバージョン</a>
+          <a href="/about-us" class="mobile-nav-link">私たちについて</a>
+          <a href="/contact-us" class="mobile-nav-link">お問合せ</a>
       </div>
-    </nav>
-  </header>
-
+  </div>
+</div>
   <!-- Main game content area -->
   <main class="container d-flex justify-content-center align-items-center mt-1">
     <div id="game-container" class="border"></div>
@@ -102,18 +111,9 @@
     <div class="next"></div>
   </aside>
 
-
-  <!-- Key Controls Start-->
-  <div class="key_controls">
-    <img src="./Images/suika game control keys.webp" alt="ウォーターメロンゲームキーボードコントロールキー" width="300"
-      title="ウォーターメロンゲームキーボードコントロールキー">
-  </div>
-  <!-- Key Controls End-->
-
   <!-- Candies Display Table -->
 
   <div class="candies_display">
-    <h2 class="characters-title">Suika スイカゲーム</h2>
     <ul class="chara container">
       <li class="col-6">
         <img src="./icons/00_cherry.png" alt="チェリー" title="チェリー">
@@ -162,329 +162,8 @@
     </ul>
   </div>
 
-  <br />
-  <br />
-  <br />
-  <br />
-  <!-- Candies Display Table end -->
+<br/>
 
-  <!-- Main Content Section -->
-  <div class="container">
-    <section>
-      <h1 id="suika" class="text-center heading-color">Suika Game - スイカゲーム</h1>
-      <br />
-      <br />
-      <!-- New Section Start -->
-      <div class="text-center">
-        <img src="./Images/suika game featured.webp" class="img-fluid w-100" alt="Suika Game Featured"
-          title="Suika Game Featured" style="max-width: 600px; height: auto;">
-      </div>
-
-      <!-- New Section End -->
-      <br /><br />
-      <p>
-        スイカゲームはパソコンやiOSを含む携帯電話で無料でプレイできます。  
-        「スイカゲーム」は、ウォーターメロンやパイナップルなどのフルーツを境界線を越えないように箱の中に積み上げるゲームです。同じ種類のフルーツを戦略的に組み合わせて、より大きく価値のあるフルーツを作り、最終的に最高得点のスイカを目指します。  
-        目標は、スイカを作るためにフルーツを組み合わせ続け、箱があふれる前にスコアを最大化することです。このパズルゲームは、フルーツマッチの楽しさとテトリスのような積み重ねのチャレンジが融合しています。
-        </p>
-        
-      <br />
-      <br />
-
-      <!-- New Section Start -->
-      <div class="card border-0 shadow-lg mb-4" style="background: #E9C163; position: relative; overflow: visible;">
-        <div class="row g-0 align-items-start">
-          <!-- Left Side: Heading and Paragraphs -->
-          <div class="col-md-6 px-4 py-4">
-            <h2 class="text-center p-5">Suikaゲームをオンラインでプレイ</h2>
-            <p>
-              Suikaゲームは、オンラインで簡単にプレイでき、ダウンロードや特別なプラグインは必要ありません。プレイ方法はこちら：
-            </p>
-            <p>
-              できればタッチスクリーン対応のデバイス、または操作しやすいマウスを備えたデバイスでブラウザを開いてください。
-            </p>
-            <p>
-              「Play the Suika Game Online」と検索して、フルーツマージゲーム <b>suikagame.pro</b> を見つけてください。バージョンによっては、進行状況を保存したり、ハイスコアを記録したりできる場合もあります。
-            </p>
-            <p>
-              ゲームを開始し、Suikaモードを選択してください。ほとんどのバージョンにはクラシックモードがありますが、時間制限モードやマルチプレイヤーモードがあるバージョンもあります。
-            </p>
-            <p>
-              すいかゲームをプレイするには、プレイボタンを押してください。画面上に空のボックスが表示されます。Aキーで左へ、Dキーで右へ、Sキーでフルーツを落とします。積み重ねたり組み合わせたりして戦略を考えましょう！クリックやタップした位置とフルーツの落ちる位置が一致するため、戦略的に配置して効率よくフルーツを積み重ねてください！
-            </p>
-          </div>
-          
-          <!-- Right Side: Images -->
-          <div class="col-md-6 text-center py-3">
-            <img src="./Images/play suika watermelon game step 1.webp" class="half-outside-image img-fluid mb-4"
-              alt="すいかゲームで遊ぶ ステップ 1" title="すいかゲームで遊ぶ ステップ 1" width="100" />
-            <br />
-            <img src="./Images/suika watermelon game start.webp" class="img-fluid" alt="すいかゲームをする" title="すいかゲームをする"
-              width="300" />
-          </div>
-        </div>
-      </div>
-      <br />
-      <br />
-      <br />
-
-      <br />
-      <br />
-      <!-- New Section Start -->
-      <div class="card border-0 shadow-lg mb-4" style="background: #E9C163; position: relative; overflow: visible;">
-        <div class="row g-0 align-items-start">
-          <!-- Left Side: Heading and Paragraphs -->
-          <div class="col-md-6 px-4 py-3">
-            <h2 class="text-center p-5">Suika スイカゲームのルール</h2>
-            <br />
-            <br />
-            <p>Suikaゲームのルールはシンプルですが、高得点を狙うには戦略が必要です：</p>
-            <p><b>マッチするフルーツを組み合わせよう：</b>
-              フルーツは互いに重なり合い、同じフルーツが2つぶつかると合体してより大きなフルーツになります。例えば、2つのチェリーがプラムに、2つのプラムがオレンジに、といった具合に最終的に大きなスイカができます。
-            </p>
-            <p><b>高得点を狙おう：</b>
-              合体したフルーツはすべて得点になり、大きなフルーツほどより多くの得点を獲得できます。高得点の鍵は、スペースがなくなる前にできるだけ多くの大きなフルーツを作ることです。
-            </p>
-            <p><b>オーバーフローを避けよう：</b>
-              積み重ねたフルーツが画面の上端を超えるとゲームオーバーになるため、慎重な計画とタイミングが不可欠です。
-            </p>
-            <p><b>戦略的な配置を考えよう：</b>
-              フルーツを積み重ねるときは、将来の動きを考慮してスペースを確保することが重要です。多くの場合、フルーツを横に広げてから縦に合体させるのが効果的です。
-            </p>
-          </div>
-          
-          <br />
-          <!-- Right Side: Images -->
-          <div class="col-md-6 text-center py-3">
-            <img src="./Images/play suika watermelon game step 2.webp" class="half-outside-image img-fluid mb-4"
-              alt="スイカスイカゲームをプレイするステップ 2" title="スイカスイカゲームをプレイするステップ 2" width="100" />
-            <br />
-            <img src="./Images/merge suika fruits.webp" class="img-fluid" alt="果実を合わせる" title="果実を合わせる" width="300" />
-          </div>
-        </div>
-      </div>
-      <!-- New Section Start End -->
-      <br />
-      <br />
-      <br />
-      <!-- New Section Start -->
-      <div class="card border-0 shadow-lg mb-4" style="background: #E9C163; position: relative; overflow: visible;">
-        <div class="row g-0 align-items-start">
-          <!-- Left Side: Heading and Paragraphs -->
-          <div class="col-md-6 px-4 py-3">
-            <h2 class="text-center p-5">オンラインでSuikaゲームをプレイするメリット</h2>
-            <p>Suikaゲームをオンラインでプレイすると、カジュアルゲームのラインナップに加える価値がある、いくつかのメリットがあります：</p>
-            <p><b>ダウンロード不要：</b> ブラウザから直接プレイできるため、大きなファイルをダウンロードしたり、ストレージを圧迫したりする心配がありません。</p>
-            <p><b>クイック＆アクセスしやすい：</b> 複雑な操作が不要なSuikaゲームなら、誰でもすぐにプレイを始められます。</p>
-            <p><b>全年齢対象：</b> Suikaゲームのシンプルなゲーム性により、あらゆる年齢層のプレイヤーが楽しめます。</p>
-            <p><b>無料でプレイ可能：</b> Suikaゲームは完全無料なので、コストをかけずに楽しめる手軽な選択肢となります。</p>
-          </div>
-          
-          <br />
-          <!-- Right Side: Images -->
-          <div class="col-md-6 text-center py-3">
-            <img src="./Images/play suika watermelon game step 3.webp" class="half-outside-image img-fluid mb-4"
-              alt="すいかゲームで遊ぶ ステップ 3" title="すいかゲームで遊ぶ ステップ 3" width="100" />
-            <br />
-            <img src="./Images/suika watermelon game over.webp" class="img-fluid" alt="すいかゲームオーバー" title="すいかゲームオーバー"
-              width="300" />
-          </div>
-        </div>
-      </div>
-      <!-- New Section Start End -->
-      <br />
-      <br />
-      <br />
-      <br />
-      <!-- New Section Start -->
-      <div class="card border-0 shadow-lg mb-4" style="min-height: 400px; background :#E9C163;">
-        <div class="row align-items-center g-0">
-          <div class="col-md-6">
-            <div class="card-body text-center text-md-start px-4">
-              <div class="d-inline-flex align-items-center mb-3">
-                <span class="badge bg-danger text-uppercase py-2 px-3 me-2 fw-bold"
-                  style="font-size: 0.75rem; letter-spacing: 1px;">
-                  スイカで遊ぶ
-                </span>
-                <h3 class="m-0">オンライン・スイカゲームをプレイし、クラシックファミコン™とスーパーファミコン™のゲーム機能にアクセスする。</h3>
-              </div>
-              <p class="card-text text-muted mb-3">
-                suikagame.proでクラシックゲームの世界に飛び込もう！suikagame.proのプラットフォームでは、本格的なファミコン™やスーパーファミコン™のゲームをブラウザ上で直接体験しながら、Suikaゲームもオンラインでプレイできます。ダウンロードやインストールは不要で、純粋にレトロゲームを楽しめます。
-              </p>              
-              <div class="mb-3">
-                <span class="text-danger fw-bold me-3">オンラインプレー</span>
-                <span class="text-danger fw-bold">セーブ・データ・クラウド</span>
-              </div>
-              <a href="#" class="btn btn-danger fw-bold px-4 py-2">さらに詳しく</a>
-            </div>
-          </div>
-          <div class="col-md-6 text-center">
-            <img src="./Images/play suika.webp" class="img-fluid" alt="スイカで遊ぶ" title="スイカで遊ぶ"
-              style="max-width: 90%; padding: 20px;" />
-          </div>
-        </div>
-      </div>
-      <br />
-      <br />
-      <!-- New Section Start End -->
-      <h2>Suika すいかげーむ pc</h2>
-      <br />
-      <p>
-        箱からフルーツがあふれる前に、できるだけ高得点を目指してSuikaゲームを楽しみましょう。同じフルーツを戦略的に組み合わせて大きなフルーツを作り、最終的な目標であるスイカを完成させましょう。しかし、注意してください！フルーツが上部の赤いラインを超えるとゲーム終了です。箱がすぐにいっぱいにならないよう、効率よく合体させて積み重ねることにチャレンジしてください。ハイスコアを更新できるかな？
-      </p>      
-      <br />
-      <br />
-      <!-- New Section Start -->
-      <div class="card border-0 shadow-lg mb-4" style="background: #E9C163;">
-        <div class="row g-0 align-items-start">
-<!-- Left Side: Heading and Paragraphs -->
-<div class="col-md-6 px-4 py-3">
-  <h2 class="mb-3 text-center">Suikaゲームで最高得点を出すためのヒントとコツ</h2>
-  <p>Suikaでハイスコアを目指し、リーダーボードの上位に入るために、いくつかの方法とSuikaゲームの戦略を改善するためのトリックを紹介します：</p>
-  <p>トッププレイヤーを参考にする：  
-    ウェブサイトやソーシャルメディアの中には、トッププレイヤーの戦略を紹介しているものがあります。これらを参考にすることで、Suikaの最適なスタックや合体（マージ）の戦術について新たな洞察を得ることができます。</p>
-  <p>習うより慣れろ：  
-    どんなゲームでもそうですが、Suikaはプレイすればするほど上達します。フルーツの組み合わせやその反応に慣れることで、時間をかけてより賢い動きができるようになります。</p>
-  <p>得点の高い果物に集中する：  
-    より大きなフルーツを作ることを優先しましょう。小さなコンボを犠牲にしてでも、大きなフルーツのためのスペースを確保する価値があります。</p>
-  <p>落ち着いて集中すること：  
-    Suikaには忍耐が必要です。次の一手を打つ前に深呼吸をして、盤面をしっかり見極めましょう。</p>
-</div>
-
-          <br />
-          <!-- Right Side: Images -->
-          <div class="col-md-6 text-center position-relative mt-5">
-            <img src="./Images/best score in Watermelon Game.webp" class="img-fluid position-relative mt-5" alt="スイカで遊ぶ"
-              title="スイカで遊ぶ" style="max-width: 90%; padding: 20px;" />
-          </div>
-        </div>
-      </div>
-      <!-- New Section Start End -->
-      <br />
-      <br />
-      <br />
-      <h2>友達とウォーターメロンゲームをする</h2>
-      <br />
-      <p>
-        スイカゲームは、ソロプレイだけではありません。フレンドとつながり、ハイスコアを共有し、リーダーボードで切磋琢磨しましょう。  
-        ランキングを競い合いながら、お互いのモチベーションを高め、スコアを更新するスリルを味わいましょう。  
-        実績を共有することで、Suikaゲームの楽しさがさらに広がります
-      </p>
-      
-      <br />
-      <br />
-      <h2>スイカゲーム王へのロードマップ</h2>
-      <br />
-      <p>
-        スイカゲームキングでは、スキルだけでなく、忍耐力と戦略も重要です。  
-        初心者でも熟練プレイヤーでも、フルーツのマージをマスターするには、適応力が求められます。  
-        改善と挑戦を重ねながら練習し、失敗から学び、そして最も重要なのは、Suikaゲームを楽しむことです。
-      </p>
-      
-      <br />
-      <br />
-
-      <h2>なぜSuikaは今遊ぶべき最も面白いフルーツ合体ゲームなのか</h2>
-      <br />
-      <p>
-        病みつきになるフルーツ合体ゲーム「Suika」は、視覚的にも楽しい体験を提供します。  
-        鮮やかで漫画のようなグラフィックが、陽気で魅力的な雰囲気を作り出しています。  
-        各フルーツは丁寧にデザインされており、一目で識別できるほど視覚的にも魅力的です。  
-        このシンプルで洗練された美しさは、あらゆる年齢層のプレイヤーに響き、  
-        リラックスしながら高揚感のあるゲーム体験を楽しめます。  
-      </p>
-      
-      <br />
-      <br />
-      <p>
-        プレイヤーは、完璧なマージの連鎖が決まったときの純粋な喜びを味わえるが、  
-        その直後に失敗の連鎖が続き、イライラさせられたり、思わず笑ってしまったりすることもある。  
-      </p>
-      
-      <p>
-        <strong>Suikaコミュニティとミーム：</strong>  
-        この「Suika」ゲームは、プレイヤーたちが経験談やヒント、  
-        そして愉快なゲームプレイのクリップを共有する専用のオンラインコミュニティを生み出した。  
-        「Suika」はそのユニークなメカニズムによって、数え切れないほどのミームやジョークが生まれ、  
-        その人気をさらに加速させている。  
-      </p>
-      
-      <br />
-      <br />
-      <h2>「スイカゲーム 」が当たるコンペティション </h2>
-      <br />
-      <p>
-        Suikaゲーム（または「すいかゲーム」）は、  
-        フルーツを組み合わせる魅力的なメカニズムと、  
-        次第に難しくなるゲームプレイによって、世界中のプレイヤーを魅了してきました。  
-      </p>
-      
-      <p>
-        高得点を獲得し、最終的にスイカを作るというチャレンジは、  
-        世界中のプレイヤーの間で競争を盛り上げています。  
-      </p>
-      
-      <p>
-        ソーシャルメディアやオンラインリーダーボードを通じて、  
-        プレイヤーは自分の成果を披露し、他のプレイヤーに挑戦することができます。  
-      </p>
-      
-      <br />
-      <br />
-      <h2 class="text-center">よくある質問</h2>
-      <br /><br />
-      
-      <h3>すいかゲームとは？</h3>
-      <br />
-      <p>「すいかゲーム」は、同じフルーツ同士がぶつかると合体して、より大きなフルーツになるパズルゲームです。  
-      同じフルーツを組み合わせて大きなフルーツを作るのが楽しい！  
-      最終目標は、巨大なスイカを育てることです！</p>
-      <br />
-      
-      <h3>スイカゲームアプリは無料ですか？</h3>
-      <br />
-      <p>はい、スイカゲームアプリは基本的に無料でダウンロードしてプレイできます。  
-      ただし、追加機能や広告を削除するためのアプリ内課金が含まれる場合があります。</p>
-      <br />
-      
-      <h3>スイカゲーム ハロウィン 2025 はいつから？</h3>
-      <br />
-      <p>2025年10月24日、Suika Gameのハロウィンアップデートが実施されました。  
-      不気味なハロウィンテーマでゲームをお楽しみいただけます。</p>
-      <br />
-      
-      <h3>本物のスイカゲームはどれですか？</h3>
-      <br />
-      <p>「本物の」スイカゲームはひとつではありません。  
-      複数のゲームがこの名前を共有しており、それぞれが合体パズルというジャンルを独自にアレンジしています。  
-      人気のあるバージョンは以下の通り：</p>
-      <ul>
-        <li><b>すいかゲーム</b>： シンプルな物理ベースのゲームプレイで知られる日本のオリジナルゲーム。</li>
-        <li><b>スイカマージゲーム</b>： スイカと他の果物を合体させるゲーム。</li>
-        <li><b>ビッグスイカ合体ゲーム</b>： 一番大きなスイカを育てるために他のプレイヤーと競争するバージョン。</li>
-      </ul>
-      <br />
-      
-      <h3>ルートヴィヒがプレイする「すいかゲーム」とは？</h3>
-      <br />
-      <p>Ludwigがプレイするのは、シンプルかつ中毒性の高いゲームプレイで知られる  
-      日本のパズルゲームの元祖「Suika Game」です。  
-      このゲームでは、様々なフルーツを容器に落とし、同じフルーツを合体させて  
-      より大きなフルーツを作ります。  
-      最終目標は、巨大なスイカを育てることです。</p>
-      <br />
-      
-      <h3>Suika ゲームのブロック解除方法</h3>
-      <br />
-      <p>ブロックされていないSuika Gameをプレイするには、  
-      <a href="https://suikagame.pro" class="text-decoration-none">suikagame.pro</a> にアクセスしてください。  
-      ウェブブラウザで直接ゲームをプレイできます。</p>
-      
-      <br />
-    </section>
-
-  </div>
-  <!-- Main Content Section End -->
 
   <!-- Game Over Modal -->
   <div class="modal fade" id="gameOverModal" tabindex="-1" aria-hidden="true">
@@ -505,37 +184,1200 @@
     </div>
   </div>
 
-  <!-- Footer Start -->
-  <footer class="ft-bg p-1">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-6 text-md-start text-center mb-2 mb-md-0">
-          <p class="mb-0 text-light fw-bold">suikagame.pro &copy; 2025 ウォーターメロンは株式会社ポップインとは一切関係ありません。</p>
-        </div>
-        <div class="col-md-6 text-md-end text-center">
-          <ul class="list-inline mb-0">
-            <li class="list-inline-item d-block d-md-inline">
-              <a class="ft-link text-light fw-bold text-decoration-none" href="/disclaimer">免責事項</a>
-            </li>
-            <li class="list-inline-item d-block d-md-inline">
-              <a class="ft-link text-light fw-bold text-decoration-none" href="/terms-of-service">利用規約</a>
-            </li>
-            <li class="list-inline-item d-block d-md-inline">
-              <a class="ft-link text-light fw-bold text-decoration-none" href="/privacy-policy">プライバシーポリシー</a>
-            </li>
-            <li class="list-inline-item d-block d-md-inline">
-              <a class="ft-link text-light fw-bold text-decoration-none" href="/contact-us">お問合せ</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <!-- Footer End -->
-  <!-- JavaScript includes -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.14.2/matter.min.js"></script>
-  
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Hero Section -->
 
+  <header class="hero-section" style="background-color: #F8ECD1;" id="game-section">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-lg-7">
+                <div class="hero-content">
+                    <h1 class="mb-4 japanese-text">Suika Game - スイカゲーム</h1>
+                    <p>スイカゲームはパソコンやiOSを含む携帯電話で無料でプレイできます。</p>
+                    <p class="d-md-block">「スイカゲーム」は、ウォーターメロンやパイナップルなどのフルーツを境界線を越えないように箱の中に積み上げるゲームです。同じ種類のフルーツを戦略的に組み合わせて、より大きく価値のあるフルーツを作り、最終的に最高得点のスイカを目指します。</p>
+                    <p class="d-lg-block">目標は、スイカを作るためにフルーツを組み合わせ続け、箱があふれる前にスコアを最大化することです。</p>
+                    <p class="d-xl-block">このパズルゲームは、フルーツマッチの楽しさとテトリスのような積み重ねのチャレンジが融合しています。</p>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="hero-image">
+                    <img src="./Images/suika game featured.webp" alt="スイカゲーム特集" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Floating Fruits -->
+    <img src="./icons/00_cherry.png" alt="チェリー" class="floating-fruit d-md-block">
+    <img src="./icons/01_strawberry.png" alt="いちご" class="floating-fruit d-md-block">
+    <img src="./icons/02_grape.png" alt="グレープ" class="floating-fruit d-md-block">
+    <img src="./icons/03_orange.png" alt="オレンジ" class="floating-fruit d-md-block">
+    <img src="./icons/04_lemon.png" alt="レモン " class="floating-fruit d-md-block">
+    <img src="./icons/05_pear.png" alt="梨" class="floating-fruit d-md-block">
+</header>  
+
+
+
+ <!-- How to Play Section -->
+ <section class="how-to-play py-5 reveal reveal-up">
+  <div class="container">
+      <div class="row justify-content-center">
+          <div class="col-lg-8 text-center mb-5">
+              <h2 class="japanese-text" data-animation="fade-in-up">プレイ方法</h2>
+              <div class="section-divider"></div>
+              <p class="section-subheading" data-animation="fade-in-up" data-delay="200">簡単なステップでフルーツ合体の技術をマスターしよう</p>
+          </div>
+      </div>
+      <div class="row g-4">
+          <div class="col-md-6 col-lg-3" data-animation="slide-in-left" data-delay="100">
+              <div class="step-card">
+                  <div class="step-number">1</div>
+                  <h2 class="japanese-text">フルーツを落とす</h2>
+                  <img src="./Images/suika watermelon game start.webp" alt="スイカゲーム開始" width="200" height="150" class="step-image">
+                  <p>上部でフルーツの位置を決め、適切なタイミングで容器に落としましょう。</p>
+              </div>
+          </div>
+          <div class="col-md-6 col-lg-3" data-animation="slide-in-left" data-delay="200">
+              <div class="step-card">
+                  <div class="step-number">2</div>
+                  <h2 class="japanese-text">同じフルーツを合体</h2>
+                  <img src="./Images/merge suika fruits.webp" alt="スイカの実を合わせる" width="200" height="150" class="step-image">
+                  <p>同じ種類のフルーツが2つ衝突すると、次の種類のより大きなフルーツに合体します。</p>
+              </div>
+          </div>
+          <div class="col-md-6 col-lg-3" data-animation="slide-in-left" data-delay="300">
+              <div class="step-card">
+                  <div class="step-number">3</div>
+                  <h2 class="japanese-text">慎重に積み上げる</h2>
+                  <img src="./Images/Stack Carefully.webp" alt="慎重に積み重ねる" width="200" height="150" class="step-image">
+                  <p>効率的に合体させ、容器があふれないように戦略的にフルーツを積み上げましょう。</p>
+              </div>
+          </div>
+          <div class="col-md-6 col-lg-3" data-animation="slide-in-left" data-delay="400">
+              <div class="step-card">
+                  <div class="step-number">4</div>
+                  <h2 class="japanese-text">スイカを作る</h2>
+                  <img src="./Images/Reach Watermelon.webp" alt="リーチスイカ" width="200" height="150" class="step-image">
+                  <p>最終目標は継続的に合体させて最大のフルーツであるスイカを作ることです。</p>
+              </div>
+          </div>
+      </div>
+      
+      <div class="evolution-path mt-5 reveal reveal-up">
+          <h2 class="text-center japanese-text mb-3" style="width: 100%; display: block; text-align: center;" data-animation="fade-in-up">フルーツの進化パス</h2>
+          <div class="section-divider mb-4 mx-auto"></div>
+          <div class="fruits-row mt-4" data-animation="pop-in" data-delay="200">
+              <div class="fruit-item">
+                  <img src="./icons/00_cherry.png" alt="さくらんぼ" class="fruit-image">
+                  <div class="fruit-name">さくらんぼ</div>
+              </div>
+              <div class="fruit-item">
+                  <img src="./icons/01_strawberry.png" alt="いちご" class="fruit-image">
+                  <div class="fruit-name">いちご</div>
+              </div>
+              <div class="fruit-item">
+                  <img src="./icons/02_grape.png" alt="ぶどう" class="fruit-image">
+                  <div class="fruit-name">ぶどう</div>
+              </div>
+              <div class="fruit-item">
+                  <img src="./icons/03_orange.png" alt="オレンジ" class="fruit-image">
+                  <div class="fruit-name">オレンジ</div>
+              </div>
+              <div class="fruit-item">
+                  <img src="./icons/04_lemon.png" alt="レモン" class="fruit-image">
+                  <div class="fruit-name">レモン</div>
+              </div>
+              <div class="fruit-item">
+                  <img src="./icons/05_pear.png" alt="梨" class="fruit-image">
+                  <div class="fruit-name">梨</div>
+              </div>
+              <div class="fruit-item">
+                  <img src="./icons/06_apple.png" alt="りんご " class="fruit-image">
+                  <div class="fruit-name">りんご </div>
+              </div>
+              <div class="fruit-item">
+                  <img src="./icons/07_peach.png" alt="桃" class="fruit-image">
+                  <div class="fruit-name">桃</div>
+              </div>
+              <div class="fruit-item">
+                  <img src="./icons/08_pineapple.png" alt="パイナップル" class="fruit-image">
+                  <div class="fruit-name">パイナップル</div>
+              </div>
+              <div class="fruit-item">
+                  <img src="./icons/09_melon.png" alt="メロン" class="fruit-image">
+                  <div class="fruit-name">メロン</div>
+              </div>
+              <div class="fruit-item">
+                  <img src="./icons/10_watermelon.png" alt="スイカ" class="fruit-image">
+                  <div class="fruit-name">スイカ </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="features-section py-5 reveal reveal-up">
+  <div class="container">
+      <div class="row justify-content-center">
+          <div class="col-lg-8 text-center mb-5">
+              <h2 class="japanese-text glow-text" data-animation="fade-in-up">スイカゲームの特徴</h2>
+              <div class="section-divider animated-divider"></div>
+              <p class="section-subheading" data-animation="fade-in-up" data-delay="200">スイカゲームの魅力を発見しよう</p>
+          </div>
+      </div>
+      
+      <!-- Interactive Feature Cards -->
+      <div class="feature-cards-container">
+          <!-- Card 1 -->
+          <div class="feature-card-wrapper" data-animation="slide-in-right" data-delay="100">
+              <div class="feature-card interactive" data-animation="pop-in" data-delay="200">
+                  <div class="feature-icon text-center">
+                      <img src="./Images/play suika watermelon game step 1.webp" alt="スイカゲーム ステップ1をプレイする" class="img-fluid mx-auto d-block pulse-animation">
+                      <div class="feature-badge">簡単</div>
+                  </div>
+                  <h2 class="feature-title">Suikaゲームをオンラインでプレイ</h2>
+                  <div class="feature-content-toggle">
+                      <div class="feature-content-short">
+                          <p>Suikaゲームは、ブラウザで直接プレイできる中毒性のあるフルーツマージゲームです。ダウンロード不要、特別なプラグインも必要ありません。</p>
+                          <button class="read-more-btn">もっと読む <i class="fas fa-chevron-down"></i></button>
+                      </div>
+                      <div class="feature-content-full">
+                          <p>Suikaゲームは、オンラインで簡単にプレイでき、ダウンロードや特別なプラグインは必要ありません。プレイ方法はこちら：</p>
+                          <ul class="feature-list">
+                              <li><i class="fas fa-check-circle"></i> タッチスクリーンまたはマウスを備えたデバイスでブラウザを開く</li>
+                              <li><i class="fas fa-check-circle"></i> suikagame.pro でフルーツマージゲームを見つける</li>
+                              <li><i class="fas fa-check-circle"></i> Suikaモードを選択（クラシック、時間制限、マルチプレイヤーなど）</li>
+                              <li><i class="fas fa-check-circle"></i> Aキー(左)、Dキー(右)、Sキー(ドロップ)でプレイ</li>
+                              <li><i class="fas fa-check-circle"></i> タップやクリックで正確に配置して戦略的にフルーツを積み重ね</li>
+                          </ul>
+                          <div class="play-now-container">
+                              <a href="#game-section" class="play-now-btn">今すぐプレイ <i class="fas fa-play-circle"></i></a>
+                          </div>
+                          <button class="read-less-btn">閉じる <i class="fas fa-chevron-up"></i></button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          
+          <!-- Card 2 -->
+          <div class="feature-card-wrapper" data-animation="slide-in-right" data-delay="200">
+              <div class="feature-card interactive" data-animation="pop-in" data-delay="300">
+                  <div class="feature-icon text-center">
+                      <img src="./Images/play suika watermelon game step 2.webp" alt="スイカゲーム ステップ2をプレイする" class="img-fluid mx-auto d-block pulse-animation">
+                      <div class="feature-badge">戦略的</div>
+                  </div>
+                  <h2 class="feature-title">Suika スイカゲームのルール</h2>
+                  <div class="feature-content-toggle">
+                      <div class="feature-content-short">
+                          <p>Suikaゲームのルールはシンプルですが、高得点を狙うには戦略が必要です。同じフルーツを組み合わせて大きなフルーツを作りましょう。</p>
+                          <button class="read-more-btn">もっと読む <i class="fas fa-chevron-down"></i></button>
+                      </div>
+                      <div class="feature-content-full">
+                          <div class="rule-card">
+                              <div class="rule-icon"><i class="fas fa-object-group"></i></div>
+                              <div class="rule-content">
+                                  <h3>Suikaゲームのルールはシンプルですが、高得点を狙うには戦略が必要です：</h3>
+                                  <p>フルーツは互いに重なり合い、同じフルーツが2つぶつかると合体してより大きなフルーツになります。例えば、2つのチェリーがプラムに、2つのプラムがオレンジに、といった具合に最終的に大きなスイカができます。</p>
+                              </div>
+                          </div>
+                          <div class="rule-card">
+                              <div class="rule-icon"><i class="fas fa-trophy"></i></div>
+                              <div class="rule-content">
+                                  <h3>高得点を狙おう</h3>
+                                  <p>合体したフルーツはすべて得点になり、大きなフルーツほどより多くの得点を獲得できます。高得点の鍵は、スペースがなくなる前にできるだけ多くの大きなフルーツを作ることです。</p>
+                              </div>
+                          </div>
+                          <div class="rule-card">
+                              <div class="rule-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                              <div class="rule-content">
+                                  <h3>オーバーフローを避けよう</h3>
+                                  <p>積み重ねたフルーツが画面の上端を超えるとゲームオーバーになるため、慎重な計画とタイミングが不可欠です。</p>
+                              </div>
+                          </div>
+                          <div class="rule-card">
+                              <div class="rule-icon"><i class="fas fa-chess"></i></div>
+                              <div class="rule-content">
+                                  <h3>戦略的な配置を考えよう</h3>
+                                  <p>フルーツを積み重ねるときは、将来の動きを考慮してスペースを確保することが重要です。多くの場合、フルーツを横に広げてから縦に合体させるのが効果的です。</p>
+                              </div>
+                          </div>
+                          <div class="strategy-tip">
+                              <div class="tip-icon"><i class="fas fa-lightbulb"></i></div>
+                              <p>プロのヒント: 小さいフルーツは端に、大きいフルーツは中央に配置すると効率的です！</p>
+                          </div>
+                          <button class="read-less-btn">閉じる <i class="fas fa-chevron-up"></i></button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          
+          <!-- Card 3 -->
+          <div class="feature-card-wrapper" data-animation="slide-in-right" data-delay="300">
+              <div class="feature-card interactive" data-animation="pop-in" data-delay="400">
+                  <div class="feature-icon text-center">
+                      <img src="./Images/play suika watermelon game step 3.webp" alt="スイカゲーム ステップ3をプレイする" class="img-fluid mx-auto d-block pulse-animation">
+                      <div class="feature-badge">人気</div>
+                  </div>
+                  <h2 class="feature-title">オンラインでSuikaゲームをプレイするメリット</h2>
+                  <div class="feature-content-toggle">
+                      <div class="feature-content-short">
+                          <p>Suikaゲームをオンラインでプレイすると、カジュアルゲームのラインナップに加える価値がある、いくつかのメリットがあります。</p>
+                          <button class="read-more-btn">もっと読む <i class="fas fa-chevron-down"></i></button>
+                      </div>
+                      <div class="feature-content-full">
+                          <div class="benefits-grid">
+                              <div class="benefit-item">
+                                  <div class="benefit-icon"><i class="fas fa-cloud-download-alt"></i></div>
+                                  <h3>ダウンロード不要</h3>
+                                  <p>ブラウザから直接プレイできるため、大きなファイルをダウンロードしたり、ストレージを圧迫したりする心配がありません。</p>
+                              </div>
+                              <div class="benefit-item">
+                                  <div class="benefit-icon"><i class="fas fa-bolt"></i></div>
+                                  <h3>クイック＆アクセスしやすい</h3>
+                                  <p>複雑な操作が不要なSuikaゲームなら、誰でもすぐにプレイを始められます。</p>
+                              </div>
+                              <div class="benefit-item">
+                                  <div class="benefit-icon"><i class="fas fa-users"></i></div>
+                                  <h3>全年齢対象</h3>
+                                  <p>Suikaゲームのシンプルなゲーム性により、あらゆる年齢層のプレイヤーが楽しめます。</p>
+                              </div>
+                              <div class="benefit-item">
+                                  <div class="benefit-icon"><i class="fas fa-dollar-sign"></i></div>
+                                  <h3>無料でプレイ可能</h3>
+                                  <p>Suikaゲームは完全無料なので、コストをかけずに楽しめる手軽な選択肢となります。</p>
+                              </div>
+                          </div>
+                          <div class="stats-container">
+                              <div class="stat-item">
+                                  <div class="stat-number counter" data-target="130504">0</div>
+                                  <div class="stat-label">プレイヤー</div>
+                              </div>
+                              <div class="stat-item">
+                                  <div class="stat-number counter" data-target="4.8">0</div>
+                                  <div class="stat-label">平均評価</div>
+                              </div>
+                              <div class="stat-item">
+                                  <div class="stat-number counter" data-target="12">0</div>
+                                  <div class="stat-label">フルーツの種類</div>
+                              </div>
+                          </div>
+                          <div class="play-now-container">
+                              <a href="#game-section" class="play-now-btn">今すぐプレイ <i class="fas fa-play-circle"></i></a>
+                          </div>
+                          <button class="read-less-btn">閉じる <i class="fas fa-chevron-up"></i></button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- Play Call to Action -->
+      <div class="row mt-5 justify-content-center">
+          <div class="col-md-8 text-center">
+              <div class="feature-cta">
+                  <h2>スイカゲームの魅力を体験しよう！</h2>
+                  <p>今すぐプレイして、中毒性のあるフルーツマージゲームの楽しさを発見しましょう。</p>
+                  <a href="#game-section" class="btn btn-lg btn-play pulsing-btn">
+                      <i class="fas fa-gamepad me-2"></i> プレイを始める
+                  </a>
+                  <div class="online-players">
+                      <div class="player-avatars">
+                          <div class="player-avatar" style="background-image: url('./Images/田中 春樹.webp')"></div>
+                          <div class="player-avatar" style="background-image: url('./Images/小林 陸.webp')"></div>
+                          <div class="player-avatar" style="background-image: url('./Images/坂本 結衣.webp')"></div>
+                          <div class="player-avatar">+963</div>
+                      </div>
+                      <p>今オンラインで<span class="highlight-text">966人</span>がプレイ中！</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<!-- Japanese Traditional Design Section -->
+<section class="japanese-design-section py-5">
+  <div class="container">
+      <div class="row justify-content-center">
+          <div class="col-lg-8 text-center mb-5">
+              <h2 class="japanese-text">オンライン・スイカゲームをプレイし、クラシックファミコン™とスーパーファミコン™のゲーム機能にアクセスする。</h2>
+              <div class="section-divider"></div>
+              <p class="section-subheading">suikagame.proでクラシックゲームの世界に飛び込もう！suikagame.proのプラットフォームでは、本格的なファミコン™やスーパーファミコン™のゲームをブラウザ上で直接体験しながら、Suikaゲームもオンラインでプレイできます。ダウンロードやインストールは不要で、純粋にレトロゲームを楽しめます。</p>
+          </div>
+      </div>
+      
+      <div class="row align-items-center mb-5">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+              <div class="design-image-left">
+                  <img src="./Images/best score in Watermelon Game.webp" alt="スイカゲームで最高得点" class="img-fluid rounded-3 shadow">
+              </div>
+          </div>
+          <div class="col-lg-6">
+              <div class="design-content">
+                  <h2 class="mb-3"><span class="japanese-text">Suikaゲームで最高得点を出すためのヒントとコツ</span></h2>
+                  <p>Suikaでハイスコアを目指し、リーダーボードの上位に入るために、いくつかの方法とSuikaゲームの戦略を改善するためのトリックを紹介します：</p>
+                  <p>トッププレイヤーを参考にする： ウェブサイトやソーシャルメディアの中には、トッププレイヤーの戦略を紹介しているものがあります。これらを参考にすることで、Suikaの最適なスタックや合体（マージ）の戦術について新たな洞察を得ることができます。</p>
+                  <p><strong>習うより慣れろ ：</strong> どんなゲームでもそうですが、Suikaはプレイすればするほど上達します。フルーツの組み合わせやその反応に慣れることで、時間をかけてより賢い動きができるようになります。</p>
+                  <p><strong>得点の高い果物に集中する ：</strong> より大きなフルーツを作ることを優先しましょう。小さなコンボを犠牲にしてでも、大きなフルーツのためのスペースを確保する価値があります。</p>
+                  <p><strong>落ち着いて集中すること ：</strong> Suikaには忍耐が必要です。次の一手を打つ前に深呼吸をして、盤面をしっかり見極めましょう。</p>
+              </div>
+          </div>
+      </div>
+      
+      <div class="row align-items-center mb-5 flex-lg-row-reverse">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+              <div class="design-image-right">
+                  <img src="./Images/play suika.webp" alt="スイカで遊ぶ" class="img-fluid rounded-3 shadow">
+              </div>
+          </div>
+          <div class="col-lg-6">
+              <div class="design-content">
+                  <h2 class="mb-3"><span class="japanese-text">Suika すいかげーむ pc</span></h2>
+                  <p>箱からフルーツがあふれる前に、できるだけ高得点を目指してSuikaゲームを楽しみましょう。同じフルーツを戦略的に組み合わせて大きなフルーツを作り、最終的な目標であるスイカを完成させましょう。しかし、注意してください！フルーツが上部の赤いラインを超えるとゲーム終了です。箱がすぐにいっぱいにならないよう、効率よく合体させて積み重ねることにチャレンジしてください。ハイスコアを更新できるかな？</p>
+                  <div class="traditional-colors mt-4">
+                      <div class="color-palette d-flex">
+                          <div class="color-swatch" style="background-color: #D42434;">
+                              <span>Sを押してドロップします</span>
+                          </div>
+                          <div class="color-swatch" style="background-color: #176643;">
+                              <span>Aを押して左へ </span>
+                          </div>
+                          <div class="color-swatch" style="background-color: #E6B422;">
+                              <span> Dを右に押します </span>
+                          </div>
+                      </div>
+                      <p class="mt-4 text-center small">これらのキーを押してキャンディーを左、右、またはドロップします</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+      <div class="row align-items-center">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+              <div class="design-image-left">
+                  <img src="./Images/suika-1.webp" alt="粋華の伝統文様" class="img-fluid rounded-3 shadow">
+              </div>
+          </div>
+          <div class="col-lg-6">
+              <div class="design-content">
+                  <h2 class="mb-3"><span class="japanese-text">スイカゲーム王へのロードマップ</span></h2>
+                  <p>スイカゲームキングでは、スキルだけでなく、忍耐力と戦略も重要です。 初心者でも熟練プレイヤーでも、フルーツのマージをマスターするには、適応力が求められます。 改善と挑戦を重ねながら練習し、失敗から学び、そして最も重要なのは、Suikaゲームを楽しむことです。</p>
+                  <div class="pattern-showcase mt-4">
+                      <div class="row g-2">
+                          <div class="col-3">
+                              <div class="pattern-item" style="background-image: url('./Images/suika-7.webp')"></div>
+                          </div>
+                          <div class="col-3">
+                              <div class="pattern-item" style="background-image: url('./Images/suika-2.webp')"></div>
+                          </div>
+                          <div class="col-3">
+                              <div class="pattern-item" style="background-image: url('./Images/suika-3.webp')"></div>
+                          </div>
+                          <div class="col-3">
+                              <div class="pattern-item" style="background-image: url('./Images/suika-5.webp')"></div>
+                          </div>
+                      </div>
+                      <p class="mt-2 text-center small">Suika ゲームスコアを最大化するには、果物を組み合わせ、大きな果物を賢くコントロールし、揺るぎない落ち着きと精度を維持します。</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+      <div class="row mt-5 justify-content-center">
+          <div class="col-lg-8 text-center">
+              <div class="japanese-quote">
+                  <h3 class="japanese-text">友達とウォーターメロンゲームをする</h3>
+                      <p>スイカゲームは、ソロプレイだけではありません。フレンドとつながり、ハイスコアを共有し、リーダーボードで切磋琢磨しましょう。 ランキングを競い合いながら、お互いのモチベーションを高め、スコアを更新するスリルを味わいましょう。 実績を共有することで、Suikaゲームの楽しさがさらに広がります</p>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<!-- Gameplay Showcase Section -->
+<section class="gameplay-showcase py-5">
+  <div class="container">
+      <div class="row justify-content-center">
+          <div class="col-lg-8 text-center mb-5">
+              <h2 class="japanese-text">
+                  Suikaのゲームプレイショーケース</h2>
+              <div class="section-divider"></div>
+              <p class="section-subheading">スイカゲームのエキサイティングな瞬間をご覧ください</p>
+          </div>
+      </div>
+      
+      <!-- Carousel Container with medium-sized images centered -->
+      <div class="row justify-content-center mb-5">
+          <div class="col-lg-10 col-xl-8">
+              <div id="gameplayCarousel" class="carousel slide responsive-carousel" data-bs-ride="carousel">
+                  <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#gameplayCarousel" data-bs-slide-to="0" class="active"></button>
+                      <button type="button" data-bs-target="#gameplayCarousel" data-bs-slide-to="1"></button>
+                      <button type="button" data-bs-target="#gameplayCarousel" data-bs-slide-to="2"></button>
+                      <button type="button" data-bs-target="#gameplayCarousel" data-bs-slide-to="3"></button>
+                  </div>
+                  <div class="carousel-inner">
+                      <div class="carousel-item active">
+                          <img src="./Images/suika-1.webp" class="d-block w-100 carousel-img" alt="エキサイティングなゲームプレイ">
+                          <div class="carousel-caption">
+                              <h4>エキサイティングなゲームプレイ</h4>
+                              <p>戦略的にフルーツを落とし、より大きなバージョンに合体する興奮を体験しましょう</p>
+                          </div>
+                      </div>
+                      <div class="carousel-item">
+                          <img src="./Images/suika-7.webp" class="d-block w-100 carousel-img" alt="suika戦略プランニング">
+                          <div class="carousel-caption">
+                              <h4>戦略的プランニング</h4>
+                              <p>スペースを最大化し、最適な合体チャンスを作るために慎重に動きを計画しましょう</p>
+                          </div>
+                      </div>
+                      <div class="carousel-item">
+                          <img src="./Images/suika-4.webp" class="d-block w-100 carousel-img" alt="スイカ連鎖反応">
+                          <div class="carousel-caption">
+                              <h4>連鎖反応</h4>
+                              <p>一つの合体が大量のポイントを獲得するための一連の組み合わせを引き起こす様子をご覧ください</p>
+                          </div>
+                      </div>
+                      <div class="carousel-item">
+                          <img src="./Images/suika-6.webp" class="d-block w-100 carousel-img" alt="suika 勝利の瞬間">
+                          <div class="carousel-caption">
+                              <h4>勝利の瞬間</h4>
+                              <p>スイカを作るのが究極の成果です - あなたはそれを達成できますか？</p>
+                          </div>
+                      </div>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#gameplayCarousel" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon"></span>
+                      <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#gameplayCarousel" data-bs-slide="next">
+                      <span class="carousel-control-next-icon"></span>
+                      <span class="visually-hidden">Next</span>
+                  </button>
+              </div>
+          </div>
+      </div>
+      
+      <!-- Cards below the slider but above the text section -->
+      <div class="row mb-5">
+          <div class="col-md-4 mb-4">
+              <div class="slider-card">
+                  <img src="./Images/suika game multi-player mode.webp" alt="スイカのヒント" class="slider-card-img">
+                  <div class="slider-card-body">
+                      <h3 class="japanese-text">なぜSuikaは今遊ぶべき最も面白いフルーツ合体ゲームなのか</h3>
+                      <p>スイカゲームは、ソロプレイだけではありません。フレンドとつながり、ハイスコアを共有し、リーダーボードで切磋琢磨しましょう。 ランキングを競い合いながら、お互いのモチベーションを高め、スコアを更新するスリルを味わいましょう。 実績を共有することで、Suikaゲームの楽しさがさらに広がります。プレイヤーは、完璧なマージの連鎖が決まったときの純粋な喜びを味わえるが、 その直後に失敗の連鎖が続き、イライラさせられたり、思わず笑ってしまったりすることもある。</p>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-4 mb-4">
+              <div class="slider-card">
+                  <img src="./Images/suika game multiplayer mode 5.webp" alt="Suika 高度な戦略" class="slider-card-img">
+                  <div class="slider-card-body">
+                      <h3 class="japanese-text">Suikaコミュニティとミーム</h3>
+                      <p>この「Suika」ゲームは、プレイヤーたちが経験談やヒント、 そして愉快なゲームプレイのクリップを共有する専用のオンラインコミュニティを生み出した。 「Suika」はそのユニークなメカニズムによって、数え切れないほどのミームやジョークが生まれ、 その人気をさらに加速させている。</p>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-4 mb-4">
+              <div class="slider-card">
+                  <img src="./Images/suika game multiplayer mode 3.webp" alt="suikaコミュニティのヒント" class="slider-card-img">
+                  <div class="slider-card-body">
+                      <h3 class="japanese-text">「スイカゲーム 」が当たるコンペティション</h3>
+                      <p>Suikaゲーム（または「すいかゲーム」）は、 フルーツを組み合わせる魅力的なメカニズムと、 次第に難しくなるゲームプレイによって、世界中のプレイヤーを魅了してきました。高得点を獲得し、最終的にスイカを作るというチャレンジは、 世界中のプレイヤーの間で競争を盛り上げています。ソーシャルメディアやオンラインリーダーボードを通じて、 プレイヤーは自分の成果を披露し、他のプレイヤーに挑戦することができます。</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+      <!-- Spacer before text section -->
+      <div class="spacer-30"></div>
+      
+      <!-- Text Section Below Slider with White Background -->
+      <div class="row justify-content-center">
+          <div class="col-lg-10">
+              <div class="slider-text-section">
+                  <h2>スイカゲームを最大限に楽しむ方法</h2>
+                  <p>スイカゲームでは、戦略的思考と素早い判断力が高いスコアを達成するために不可欠です。フルーツを効率的に積み重ねて合体させ、最大のフルーツであるスイカを作り出すことを目指しましょう。</p>
+                  <p>上端のラインを超えないように注意しながら、同じ種類のフルーツを組み合わせて効率的に進化させていきます。スペースの管理がとても重要なため、フルーツの落とし方や位置を慎重に考えることが勝利への鍵です。</p>
+                  <p>初心者も熟練者も、このシンプルながらも奥深いゲームを存分にお楽しみください！</p>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<!-- User Reviews Section -->
+<section class="reviews-section py-5">
+  <div class="container">
+      <div class="row justify-content-center">
+          <div class="col-lg-8 text-center mb-5">
+              <h2 class="japanese-text">
+                  Suikaゲームプレイヤーレビュー</h2>
+              <div class="section-divider"></div>
+              <p class="section-subheading">世界中のプレイヤーが、この中毒性のあるパズルゲーム「Suika」でフルーツを組み合わせるためのハイスコアと戦略を共有しています。コミュニティは、満足のいくチャレンジとバイラルな楽しさについて何と言っていますか!</p>
+          </div>
+      </div>
+      
+      <!-- Interactive Review Cards -->
+      <div class="row">
+          <div class="col-12">
+              <div class="reviews-slider">
+                  <div class="review-card">
+                      <div class="review-card-inner">
+                          <div class="review-header">
+                              <div class="reviewer-avatar">
+                                  <img src="./Images/田中 春樹.webp" alt="田中 春樹">
+                              </div>
+                              <div class="reviewer-info">
+                                  <h3 class="reviewer-name">田中 春樹</h3>
+                                  <p class="reviewer-title">カジュアルゲーマー</p>
+                              </div>
+                          </div>
+                          <div class="stars">
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                          </div>
+                          <div class="review-content">
+                              <p class="review-text">「このSuikaは本当にハマる！一度プレイしたら止まらない！物理エンジンも完璧だし、フルーツが合わさる感覚も最高。ぜひ一度プレイしてみてほしい。」</p>
+                          </div>
+                          <div class="review-date">2024年12月15日</div>
+                      </div>
+                  </div>
+                  
+                  <div class="review-card">
+                      <div class="review-card-inner">
+                          <div class="review-header">
+                              <div class="reviewer-avatar">
+                                  <img src="./Images/小林 陸.webp" alt="小林 陸">
+                              </div>
+                              <div class="reviewer-info">
+                                  <h3 class="reviewer-name">小林 陸</h3>
+                                  <p class="reviewer-title">戦略ゲーム愛好家</p>
+                              </div>
+                          </div>
+                          <div class="stars">
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star-half-alt"></i>
+                          </div>
+                          <div class="review-content">
+                              <p class="review-text">このゲームはもう手放せません！とてもシンプルなのに、中毒性があります。フルーツを合体させて巨大なスイカを作る時の満足感は計り知れません。物理演算も驚くほど魅力的で、毎回違った感覚を味わえます。リラックスしてプレイするのに最適なカジュアルゲームです。</p>
+                          </div>
+                          <div class="review-date">2024年11月28日</div>
+                      </div>
+                  </div>
+                  
+                  <div class="review-card">
+                      <div class="review-card-inner">
+                          <div class="review-header">
+                              <div class="reviewer-avatar">
+                                  <img src="./Images/坂本 結衣.webp" alt="坂本 結衣">
+                              </div>
+                              <div class="reviewer-info">
+                                  <h3 class="reviewer-name">坂本 結衣</h3>
+                                  <p class="reviewer-title">アートディレクター</p>
+                              </div>
+                          </div>
+                          <div class="stars">
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                          </div>
+                          <div class="review-content">
+                              <p class="review-text">最初は単純なマッチングゲームだと思っていましたが、Suika Gameは驚くほど奥深いゲームです。ドロップの計画とフルーツの物理特性を予測することが、成功の鍵となります。簡単に始められるものの、マスターするのは難しい、ちょっとした頭の体操にぴったりのゲームです。</p>
+                          </div>
+                          <div class="review-date">2025年1月5日</div>
+                      </div>
+                  </div>
+                  
+                  <div class="review-card">
+                      <div class="review-card-inner">
+                          <div class="review-header">
+                              <div class="reviewer-avatar">
+                                  <img src="./Images/ひなた.webp" alt="ひなた">
+                              </div>
+                              <div class="reviewer-info">
+                                  <h3 class="reviewer-name">ひなた</h3>
+                                  <p class="reviewer-title">モバイルゲーマー</p>
+                              </div>
+                          </div>
+                          <div class="stars">
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-regular fa-star"></i>
+                          </div>
+                          <div class="review-content">
+                              <p class="review-text">ハイスコ​​ア更新にハマってます！このゲームはリプレイ性も抜群です。ラウンドごとに新たなチャレンジがあり、ポイントを最大限に稼ぐために様々な戦略を試すのが大好きです。シンプルなコンセプトが完璧に実現されていて、何時間もプレイしてしまいます。</p>
+                          </div>
+                          <div class="review-date">
+                              2025年4月3日</div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+      <!-- View More Reviews Button -->
+      <div class="row mt-4">
+          <div class="col-12 text-center">
+              <button class="view-more-reviews-btn">
+                  <i class="fa-solid fa-comments me-2"></i>もっとレビューを見る
+              </button>
+          </div>
+      </div>
+      
+      <!-- Leave a Review CTA -->
+      <div class="row mt-5">
+          <div class="col-lg-8 mx-auto">
+              <div class="leave-review-card">
+                  <h2>あなたの体験を共有してください</h2>
+                  <p>スイカゲームを楽しんでいますか？あなたのフィードバックは私たちにとって大切です。ぜひ感想を聞かせてください！</p>
+                  <button class="leave-review-btn">
+                      <i class="fa-solid fa-pencil me-2"></i>レビューを書く
+                  </button>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="cta-section">
+  <div class="container">
+      <div class="cta-content">
+          <h2 class="cta-title">スイカゲームをプレイする準備はできましたか ?</h2>
+          <p class="mb-4">今すぐスイカゲームを楽しんでいる何千人ものプレイヤーに参加しましょう！</p>
+          <a href="#game-section" class="cta-button">スイカをプレイし始める</a>
+      </div>
+  </div>
+</section>
+
+<!-- よくある質問 (FAQ) Section -->
+<section id="faq" class="faq-section py-5">
+  <div class="container">
+      <div class="row justify-content-center mb-5">
+          <div class="col-lg-8 text-center">
+              <h2 class="japanese-text glow-text mb-4">よくある質問</h2>
+              <div class="section-divider animated-divider mb-4"></div>
+              <p class="section-subheading">スイカゲームについてのよくある質問とその回答をご覧ください</p>
+          </div>
+      </div>
+
+      <div class="row">
+          <div class="col-lg-8 mx-auto">
+              <!-- FAQ Search Bar -->
+              <div class="faq-search-container mb-5">
+                  <div class="faq-search-box">
+                      <i class="fas fa-search search-icon"></i>
+                      <input type="text" id="faqSearch" class="faq-search-input" placeholder="質問を検索...">
+                      <div class="search-pulse"></div>
+                  </div>
+                  <div class="popular-tags">
+                      <span class="popular-tag" data-tag="プレイ方法">プレイ方法</span>
+                      <span class="popular-tag" data-tag="スコア">スコア</span>
+                      <span class="popular-tag" data-tag="戦略">戦略</span>
+                      <span class="popular-tag" data-tag="デバイス">デバイス</span>
+                  </div>
+              </div>
+
+              <!-- Interactive FAQ Accordion -->
+              <div class="faq-accordion" id="faqAccordion">
+                  <!-- FAQ Item 1 -->
+                  <div class="faq-item">
+                      <div class="faq-question">
+                          <div class="faq-question-text">
+                              <span class="faq-question-badge">Q1</span>
+                              <h3>スイカゲームの基本的なプレイ方法を教えてください</h3>
+                          </div>
+                          <div class="faq-toggle-icon">
+                              <i class="fas fa-plus"></i>
+                              <i class="fas fa-minus"></i>
+                          </div>
+                      </div>
+                      <div class="faq-answer">
+                          <div class="faq-answer-badge">A</div>
+                          <div class="faq-answer-content">
+                              <p>スイカゲームは、フルーツを落として同じ種類を合体させるシンプルなゲームです。基本操作は以下の通りです：</p>
+                              <div class="key-controls-container">
+                                  <div class="key-control">
+                                      <div class="key-button">A</div>
+                                      <span>左に移動</span>
+                                  </div>
+                                  <div class="key-control">
+                                      <div class="key-button">D</div>
+                                      <span>右に移動</span>
+                                  </div>
+                                  <div class="key-control">
+                                      <div class="key-button">S</div>
+                                      <span>ドロップ</span>
+                                  </div>
+                              </div>
+                              <p class="mt-3">また、モバイルデバイスでは画面をタップして左右に動かし、落とす位置を決めることができます。同じ種類のフルーツ同士が接触すると、より大きなフルーツに合体します。最終的にはスイカを作ることが目標です。</p>
+                              <div class="helpful-hint">
+                                  <i class="fas fa-lightbulb"></i>
+                                  <p>プロのヒント：最初は小さいフルーツを端に配置し、中央部分を大きなフルーツ用に空けておきましょう！</p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+
+                  <!-- FAQ Item 2 -->
+                  <div class="faq-item" data-tags="スコア 戦略">
+                      <div class="faq-question">
+                          <div class="faq-question-text">
+                              <span class="faq-question-badge">Q2</span>
+                              <h3>ハイスコアを出すためのコツはありますか？</h3>
+                          </div>
+                          <div class="faq-toggle-icon">
+                              <i class="fas fa-plus"></i>
+                              <i class="fas fa-minus"></i>
+                          </div>
+                      </div>
+                      <div class="faq-answer">
+                          <div class="faq-answer-badge">A</div>
+                          <div class="faq-answer-content">
+                              <p>ハイスコアを出すには以下の戦略が効果的です：</p>
+                              <ul class="faq-strategy-list">
+                                  <li>
+                                      <i class="fas fa-check-circle"></i>
+                                      <span>低層を安定させる：小さいフルーツを底に配置して安定した基盤を作りましょう</span>
+                                  </li>
+                                  <li>
+                                      <i class="fas fa-check-circle"></i>
+                                      <span>壁際を活用する：フルーツを壁際に沿って積み重ねると安定します</span>
+                                  </li>
+                                  <li>
+                                      <i class="fas fa-check-circle"></i>
+                                      <span>中央を空ける：大きなフルーツ用に中央部分を空けておきます</span>
+                                  </li>
+                                  <li>
+                                      <i class="fas fa-check-circle"></i>
+                                      <span>連鎖反応を狙う：複数のフルーツが連続して合体すると高得点が得られます</span>
+                                  </li>
+                              </ul>
+                              <div class="faq-media">
+                                  <img src="./Images/suika game featured.webp" alt="スイカゲーム戦略" class="img-fluid rounded">
+                                  <div class="faq-media-caption">ハイスコアを達成するためのフルーツ配置例</div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+
+                  <!-- FAQ Item 3 -->
+                  <div class="faq-item" data-tags="デバイス プレイ方法">
+                      <div class="faq-question">
+                          <div class="faq-question-text">
+                              <span class="faq-question-badge">Q3</span>
+                              <h3>スイカゲームはどのデバイスでプレイできますか？</h3>
+                          </div>
+                          <div class="faq-toggle-icon">
+                              <i class="fas fa-plus"></i>
+                              <i class="fas fa-minus"></i>
+                          </div>
+                      </div>
+                      <div class="faq-answer">
+                          <div class="faq-answer-badge">A</div>
+                          <div class="faq-answer-content">
+                              <p>スイカゲームは以下のデバイスでプレイ可能です：</p>
+                              <div class="device-compatibility">
+                                  <div class="device-item">
+                                      <i class="fas fa-laptop"></i>
+                                      <div class="device-info">
+                                          <h4>パソコン/マック</h4>
+                                          <div class="compatibility-bar">
+                                              <div class="compatibility-fill" style="width: 100%"></div>
+                                          </div>
+                                          <span>完全対応</span>
+                                      </div>
+                                  </div>
+                                  <div class="device-item">
+                                      <i class="fas fa-mobile-alt"></i>
+                                      <div class="device-info">
+                                          <h4>スマートフォン</h4>
+                                          <div class="compatibility-bar">
+                                              <div class="compatibility-fill" style="width: 95%"></div>
+                                          </div>
+                                          <span>ほぼ全機種対応</span>
+                                      </div>
+                                  </div>
+                                  <div class="device-item">
+                                      <i class="fas fa-tablet-alt"></i>
+                                      <div class="device-info">
+                                          <h4>タブレット</h4>
+                                          <div class="compatibility-bar">
+                                              <div class="compatibility-fill" style="width: 90%"></div>
+                                          </div>
+                                          <span>対応</span>
+                                      </div>
+                                  </div>
+                              </div>
+                              <p class="mt-3">ブラウザベースのゲームなので、インターネット接続と最新のブラウザがあれば、ほとんどのデバイスでプレイ可能です。タッチ操作にも対応しているため、モバイルデバイスでも快適にプレイできます。</p>
+                          </div>
+                      </div>
+                  </div>
+
+                  <!-- FAQ Item 4 -->
+                  <div class="faq-item" data-tags="戦略 フルーツ">
+                      <div class="faq-question">
+                          <div class="faq-question-text">
+                              <span class="faq-question-badge">Q4</span>
+                              <h3>フルーツの進化順序を教えてください</h3>
+                          </div>
+                          <div class="faq-toggle-icon">
+                              <i class="fas fa-plus"></i>
+                              <i class="fas fa-minus"></i>
+                          </div>
+                      </div>
+                      <div class="faq-answer">
+                          <div class="faq-answer-badge">A</div>
+                          <div class="faq-answer-content">
+                              <p>スイカゲームのフルーツは以下の順序で進化します：</p>
+                              <div class="fruit-evolution-chart">
+                                  <div class="fruit-evolution-item">
+                                      <img src="./icons/00_cherry.png" alt="さくらんぼ">
+                                      <div class="evolution-arrow">
+                                          <i class="fas fa-plus"></i>
+                                          <i class="fas fa-arrow-right"></i>
+                                      </div>
+                                      <img src="./icons/00_cherry.png" alt="さくらんぼ">
+                                      <div class="evolution-arrow">
+                                          <i class="fas fa-equals"></i>
+                                      </div>
+                                      <img src="./icons/01_strawberry.png" alt="いちご">
+                                  </div>
+                                  <div class="fruit-evolution-continues">
+                                      <i class="fas fa-ellipsis-h"></i>
+                                  </div>
+                                  <p class="evolution-explanation">このパターンで、さくらんぼからスイカまで進化していきます。同じ種類のフルーツが2つ接触すると、次のレベルのフルーツに合体します。</p>
+                                  <div class="evolution-complete-chart">
+                                      <div class="fruit-chart-row">
+                                          <div class="fruit-chart-item">
+                                              <img src="./icons/00_cherry.png" alt="さくらんぼ">
+                                              <span>さくらんぼ</span>
+                                          </div>
+                                          <i class="fas fa-arrow-right"></i>
+                                          <div class="fruit-chart-item">
+                                              <img src="./icons/01_strawberry.png" alt="いちご">
+                                              <span>いちご</span>
+                                          </div>
+                                          <i class="fas fa-arrow-right"></i>
+                                          <div class="fruit-chart-item">
+                                              <img src="./icons/02_grape.png" alt="ぶどう">
+                                              <span>ぶどう</span>
+                                          </div>
+                                      </div>
+                                      <div class="fruit-chart-row">
+                                          <div class="fruit-chart-item">
+                                              <img src="./icons/03_orange.png" alt="オレンジ">
+                                              <span>オレンジ</span>
+                                          </div>
+                                          <i class="fas fa-arrow-right"></i>
+                                          <div class="fruit-chart-item">
+                                              <img src="./icons/04_lemon.png" alt="レモン">
+                                              <span>レモン</span>
+                                          </div>
+                                          <i class="fas fa-arrow-right"></i>
+                                          <div class="fruit-chart-item">
+                                              <img src="./icons/05_pear.png" alt="梨">
+                                              <span>梨</span>
+                                          </div>
+                                      </div>
+                                      <div class="fruit-chart-row">
+                                          <div class="fruit-chart-item">
+                                              <img src="./icons/06_apple.png" alt="りんご">
+                                              <span>りんご</span>
+                                          </div>
+                                          <i class="fas fa-arrow-right"></i>
+                                          <div class="fruit-chart-item">
+                                              <img src="./icons/07_peach.png" alt="桃">
+                                              <span>桃</span>
+                                          </div>
+                                          <i class="fas fa-arrow-right"></i>
+                                          <div class="fruit-chart-item">
+                                              <img src="./icons/08_pineapple.png" alt="パイナップル">
+                                              <span>パイナップル</span>
+                                          </div>
+                                      </div>
+                                      <div class="fruit-chart-row">
+                                          <div class="fruit-chart-item">
+                                              <img src="./icons/09_melon.png" alt="メロン">
+                                              <span>メロン</span>
+                                          </div>
+                                          <i class="fas fa-arrow-right"></i>
+                                          <div class="fruit-chart-item">
+                                              <img src="./icons/10_watermelon.png" alt="スイカ">
+                                              <span>スイカ</span>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+
+                  <!-- FAQ Item 5 -->
+                  <div class="faq-item" data-tags="プレイ方法 戦略">
+                      <div class="faq-question">
+                          <div class="faq-question-text">
+                              <span class="faq-question-badge">Q5</span>
+                              <h3>suikaゲームオーバーになる条件は何ですか？</h3>
+                          </div>
+                          <div class="faq-toggle-icon">
+                              <i class="fas fa-plus"></i>
+                              <i class="fas fa-minus"></i>
+                          </div>
+                      </div>
+                      <div class="faq-answer">
+                          <div class="faq-answer-badge">A</div>
+                          <div class="faq-answer-content">
+                              <p>スイカゲームでゲームオーバーになる主な条件は、フルーツが上限ラインを超えることです。上部に設けられた赤いラインを超えてフルーツが積み上がると、ゲームオーバーとなります。</p>
+                              <div class="game-over-illustration">
+                                  <img src="./Images/suika-2.webp" alt="ゲームオーバー例" class="img-fluid rounded">
+                                  <div class="warning-line"></div>
+                                  <div class="game-over-explanation">
+                                      <i class="fas fa-exclamation-triangle"></i>
+                                      <p>この赤線を超えるとゲームオーバーです！</p>
+                                  </div>
+                              </div>
+                              <div class="helpful-hint mt-4">
+                                  <i class="fas fa-lightbulb"></i>
+                                  <p>プロのヒント：危険な状況に陥ったら、小さいフルーツを使って隙間を埋め、大きなフルーツが安定するように工夫しましょう。</p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              
+              <!-- Community Question Form -->
+              <div class="community-question-container mt-5">
+                  <h3 class="japanese-text text-center mb-4">質問が見つかりませんでしたか？</h3>
+                  <div class="community-question-form">
+                      <div class="form-floating mb-3">
+                          <textarea class="form-control" placeholder="あなたの質問を入力してください" id="communityQuestion" style="height: 100px"></textarea>
+                          <label for="communityQuestion">あなたの質問を入力してください</label>
+                      </div>
+                      <div class="d-grid">
+                          <button class="btn btn-primary community-submit-btn" type="button">
+                              <i class="fas fa-paper-plane me-2"></i>質問を送信する
+                          </button>
+                      </div>
+                      <div class="submitted-message">
+                          <i class="fas fa-check-circle"></i>
+                          <p>質問を受け付けました！回答をお待ちください。</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          
+          <!-- Most Popular Questions -->
+          <div class="col-lg-4 d-none d-lg-block">
+              <div class="popular-questions-container">
+                  <div class="popular-questions-header">
+                      <h3 class="japanese-text">人気の質問</h3>
+                      <div class="popularity-indicator">
+                          <i class="fas fa-fire"></i>
+                          <span>急上昇中</span>
+                      </div>
+                  </div>
+                  <div class="popular-questions-list">
+                      <div class="popular-question-item" data-question="1">
+                          <div class="question-popularity">
+                              <i class="fas fa-chart-line"></i>
+                              <span>92%</span>
+                          </div>
+                          <p>スイカゲームのフルーツ最大サイズは何ですか？</p>
+                      </div>
+                      <div class="popular-question-item" data-question="2">
+                          <div class="question-popularity">
+                              <i class="fas fa-chart-line"></i>
+                              <span>87%</span>
+                          </div>
+                          <p>現在の世界記録スコアはいくつですか？</p>
+                      </div>
+                      <div class="popular-question-item" data-question="3">
+                          <div class="question-popularity">
+                              <i class="fas fa-chart-line"></i>
+                              <span>81%</span>
+                          </div>
+                          <p>オフラインでもプレイできますか？</p>
+                      </div>
+                      <div class="popular-question-item" data-question="4">
+                          <div class="question-popularity">
+                              <i class="fas fa-chart-line"></i>
+                              <span>76%</span>
+                          </div>
+                          <p>フルーツが転がる物理演算は何を使っていますか？</p>
+                      </div>
+                      <div class="popular-question-item" data-question="5">
+                          <div class="question-popularity">
+                              <i class="fas fa-chart-line"></i>
+                              <span>68%</span>
+                          </div>
+                          <p>マルチプレイヤーモードはありますか？</p>
+                      </div>
+                  </div>
+                  
+                  <!-- User Tips Container -->
+                  <div class="user-tips-container mt-4">
+                      <div class="user-tips-header">
+                          <h3 class="japanese-text">コミュニティのヒント</h3>
+                          <div class="tips-badge">
+                              <i class="fas fa-users"></i>
+                          </div>
+                      </div>
+                      <div class="user-tips-carousel">
+                          <div class="user-tip">
+                              <div class="user-tip-avatar" style="background-image: url('./Images/田中 春樹.webp')"></div>
+                              <div class="user-tip-content">
+                                  <div class="user-tip-name">田中 春樹</div>
+                                  <p>「端から積み上げていくと安定します。中央は大きいフルーツ用に空けておきましょう！」</p>
+                              </div>
+                          </div>
+                          <div class="user-tip">
+                              <div class="user-tip-avatar" style="background-image: url('./Images/小林 陸.webp')"></div>
+                              <div class="user-tip-content">
+                                  <div class="user-tip-name">小林 陸</div>
+                                  <p>「大きなフルーツほど点数が高いです。ブドウ以上を優先的に作りましょう！」</p>
+                              </div>
+                          </div>
+                          <div class="user-tip">
+                              <div class="user-tip-avatar" style="background-image: url('./Images/坂本 結衣.webp')"></div>
+                              <div class="user-tip-content">
+                                  <div class="user-tip-name">坂本 結衣</div>
+                                  <p>「次に来るフルーツを予測して戦略を立てるのがコツです！」</p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="tip-navigation">
+                          <button class="tip-nav-btn prev-tip">
+                              <i class="fas fa-chevron-left"></i>
+                          </button>
+                          <div class="tip-indicators">
+                              <span class="tip-indicator active"></span>
+                              <span class="tip-indicator"></span>
+                              <span class="tip-indicator"></span>
+                          </div>
+                          <button class="tip-nav-btn next-tip">
+                              <i class="fas fa-chevron-right"></i>
+                          </button>
+                      </div>
+                      <div class="share-your-tip">
+                          <button class="share-tip-btn">
+                              <i class="fas fa-plus-circle"></i>
+                              <span>あなたのヒントを共有する</span>
+                          </button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer" style="background-color: #FFEDC9; padding: 40px 0 20px;">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-4 mb-5 mb-lg-0">
+              <div class="footer-brand mb-4">
+                  <img src="./Images/Suika Game.webp" alt="スイカゲーム" class="img-fluid me-2">
+              </div>
+              <p>
+                  Suika では、それぞれの融合ごとに、謙虚な果物が豊かさと成長の象徴となる変化の可能性が発見されます。</p>
+              <div class="social-links mt-4">
+                  <a href="#" class="social-link facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="social-link twitter" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="social-link instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                  <a href="#" class="social-link youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+              </div>
+          </div>
+          
+          <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+              <h4 class="footer-title">クイックリンク</h4>
+              <ul class="footer-links list-unstyled">
+                  <li><a href="/contact-us" class="footer-link">お問い合わせ</a></li>
+                  <li><a href="/about-us" class="footer-link">私たちについて</a></li>
+                  <li><a href="#game-section" class="footer-link">ゲームをプレイ</a></li>
+                  <li><a href="#features" class="footer-link">特徴</a></li>
+              </ul>
+          </div>
+          
+          <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+              <h4 class="footer-title">法的情報</h4>
+              <ul class="footer-links list-unstyled">
+                  <li><a href="/terms-of-service" class="footer-link">利用規約</a></li>
+                  <li><a href="/privacy-policy" class="footer-link">プライバシーポリシー</a></li>
+                  <li><a href="/disclaimer" class="footer-link">免責事項</a></li>
+              </ul>
+          </div>
+          
+          <div class="col-lg-4">
+              <h4 class="footer-title">ニュースレター</h4>
+              <p>スイカゲームの最新情報を入手するにはご登録ください。</p>
+              <form class="newsletter-form">
+                  <div class="input-group mb-3">
+                      <input type="email" class="form-control" placeholder="メールアドレス" aria-label="メールアドレス">
+                      <button class="btn btn-primary" type="submit">登録</button>
+                  </div>
+              </form>
+          </div>
+      </div> 
+      
+      <div class="footer-bottom text-center pt-4 mt-5 border-top">
+          <div class="row">
+              <div class="col-md-12">
+                  <p class="copyright mb-0 text-wrap text-md-nowrap">suikagame.pro &copy; 2025 ウォーターメロンは株式会社ポップインとは一切関係ありません。</p>
+              </div>
+          </div>
+      </div>
+  </div>
+</footer>
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.14.2/matter.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+
+
+
+
+    <!-- Scroll to Top Button Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollToTopButton = document.querySelector('.scroll-to-top');
+            
+            // Show button when user scrolls down
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollToTopButton.classList.add('visible');
+                } else {
+                    scrollToTopButton.classList.remove('visible');
+                }
+            });
+            
+            // Scroll to top when button is clicked
+            scrollToTopButton.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
-</html>
+</html> 
