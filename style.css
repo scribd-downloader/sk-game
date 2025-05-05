@@ -1,4 +1,3 @@
-
 #game-container {
   margin-top: 55px;
   width: 400px;  
@@ -593,4 +592,23 @@ canvas {
   margin: 10px auto;
   width: 200px; /* Adjust icon size */
   height: 200px;
+}
+
+/* Ad section styling - simplified */
+.ad-section {
+  margin: 15px 0;
+}
+
+.ad-content-direct {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Mobile optimization for ads */
+@media (max-width: 768px) {
+  .ad-section {
+    margin: 10px 0;
+  }
 }

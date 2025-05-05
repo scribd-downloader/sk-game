@@ -19,42 +19,39 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', () => {
+    // Check if on mobile device
+    const isMobile = window.innerWidth < 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     
-    // Initialize animations on scroll
-    initScrollAnimations();
+    // Only run heavy animations on desktop
+    if (!isMobile) {
+        // Initialize animations on scroll
+        initScrollAnimations();
+        
+        // Initialize floating fruits background
+        initFloatingFruits();
+        
+        // Initialize staggered animations
+        initStaggeredAnimations();
+        
+        // Initialize text animations
+        initTextAnimations();
+        
+        // Initialize floating fruits
+        animateFloatingFruits();
+        
+        // Initialize scroll reveal animations
+        initScrollReveal();
+    } else {
+        // Minimal setup for mobile - only essential functions
+        console.log('Mobile device detected. Disabling heavy animations for better performance.');
+    }
     
-    // Initialize floating fruits background
-    initFloatingFruits();
-    
-    // Initialize custom cursor
+    // Essential functionality for all devices
     initCustomCursor();
-    
-    // Initialize staggered animations
-    initStaggeredAnimations();
-    
-    // Initialize text animations
-    initTextAnimations();
-    
-    // Initialize smooth navigation
     initSmoothNav();
-    
-    // Initialize floating fruits
-    animateFloatingFruits();
-    
-    // Initialize responsive navigation
     initResponsiveNav();
-    
-    // Initialize smooth scrolling
     initSmoothScroll();
-    
-    // Initialize game start functionality
     initGameStart();
-    
-    // Initialize scroll reveal animations
-    initScrollReveal();
-    
-    // Preload images for better performance
-    preloadImages();
 });
 
 /**
@@ -111,36 +108,45 @@ function initFloatingFruits() {
     // Exit if container is not found
     if (!fruitsContainer) return;
     
+    // Check if on mobile device
+    const isMobile = window.innerWidth < 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    // Don't show fruits on mobile at all
+    if (isMobile) {
+        fruitsContainer.style.display = 'none';
+        return;
+    }
+    
     // Clear existing content
     fruitsContainer.innerHTML = '';
     
     // Fruit images to use
     const fruitIcons = [
-        './icons/00_cherry.png',
-        './icons/01_strawberry.png',
-        './icons/02_grape.png',
-        './icons/03_orange.png',
-        './icons/04_lemon.png',
-        './icons/05_pear.png',
-        './icons/06_apple.png',
-        './icons/07_peach.png',
-        './icons/08_pineapple.png',
-        './icons/09_melon.png',
-        './icons/10_watermelon.png'
+        './icons/00_cherry.webp',
+        './icons/01_strawberry.webp',
+        './icons/02_grape.webp',
+        './icons/03_orange.webp',
+        './icons/04_lemon.webp',
+        './icons/05_pear.webp',
+        './icons/06_apple.webp',
+        './icons/07_peach.webp',
+        './icons/08_pineapple.webp',
+        './icons/09_melon.webp',
+        './icons/10_watermelon.webp'
     ];
     
     // Create initial fruit elements
     createInitialFruits();
     
-    // Continue creating fruits at intervals
-    setInterval(createRandomFruit, 3000);
+    // Continue creating fruits at intervals - less frequently than before
+    setInterval(createRandomFruit, 5000);
     
     /**
      * Create initial fruits
      */
     function createInitialFruits() {
-        // Create multiple fruits initially
-        for (let i = 0; i < 12; i++) {
+        // Create multiple fruits initially - fewer than before
+        for (let i = 0; i < 6; i++) {
             createRandomFruit();
         }
     }
@@ -153,6 +159,7 @@ function initFloatingFruits() {
         const fruit = document.createElement('img');
         fruit.className = 'floating-fruit';
         fruit.alt = 'Floating Fruit';
+        fruit.loading = 'lazy'; // Add lazy loading
         
         // Select random fruit image
         const randomIndex = Math.floor(Math.random() * fruitIcons.length);
@@ -184,7 +191,7 @@ function initFloatingFruits() {
         // Add to container
         fruitsContainer.appendChild(fruit);
         
-        // Remove after some time to avoid too many elements
+        // Remove after some time to avoid too many elements - shorter time
         setTimeout(() => {
             fruit.classList.add('fade-out');
             setTimeout(() => {
@@ -192,7 +199,7 @@ function initFloatingFruits() {
                     fruitsContainer.removeChild(fruit);
                 }
             }, 1000);
-        }, (duration + delay + 15) * 1000);
+        }, (duration + delay + 5) * 1000); // Reduced from 15 to 5
     }
 }
 
@@ -522,42 +529,61 @@ function initGameStart() {
     if (startGameBtn) {
         startGameBtn.addEventListener('click', function() {
             // Here you would normally initialize the game
-            // For this example, we'll just show an alert
-            alert('ゲームが開始されます！');
+            // Alert removed to improve user experience
+            console.log('Game started');
+            // Scroll to game section instead
+            const gameSection = document.getElementById('game-section');
+            if (gameSection) {
+                window.scrollTo({
+                    top: gameSection.offsetTop - 70,
+                    behavior: 'smooth'
+                });
+            }
         });
     }
 }
 
 /**
- * Preload game images
+ * Preload game images - Modified to only load essential images on mobile
  */
 function preloadImages() {
-    const imagesToPreload = [
-        // Fruit icons - matching the actual files we have
-        './icons/00_cherry.png',
-        './icons/01_strawberry.png',
-        './icons/02_grape.png',
-        './icons/03_orange.png',
-        './icons/04_lemon.png',
-        './icons/05_pear.png',
-        './icons/06_apple.png',
-        './icons/07_peach.png',
-        './icons/08_pineapple.png',
-        './icons/09_melon.png',
-        './icons/10_watermelon.png',
-        './icons/Replay Suika Game Again.png',
-        // Game feature images
+    // Check if on mobile device
+    const isMobile = window.innerWidth < 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    // Essential images needed for the game itself
+    const essentialImages = [
+        './icons/00_cherry.webp',
+        './icons/01_strawberry.webp',
+        './icons/02_grape.webp',
+        './icons/03_orange.webp',
+        './icons/04_lemon.webp',
+        './icons/05_pear.webp',
+        './icons/06_apple.webp',
+        './icons/07_peach.webp',
+        './icons/08_pineapple.webp',
+        './icons/09_melon.webp',
+        './icons/10_watermelon.webp',
+        './icons/Replay Suika Game Again.webp',
+    ];
+    
+    // Additional images for desktop only
+    const desktopImages = [
+        // Game feature images - skip on mobile
         './Images/play suika watermelon game step 1.webp',
         './Images/play suika watermelon game step 2.webp',
         './Images/play suika watermelon game step 3.webp'
     ];
     
+    // Only preload essential images on mobile
+    const imagesToPreload = isMobile ? essentialImages : [...essentialImages, ...desktopImages];
+    
+    // Load images with lower priority on mobile
     imagesToPreload.forEach(src => {
         const img = new Image();
         img.src = src;
-        img.onerror = () => {
-            console.warn(`Failed to preload image: ${src}`);
-        };
+        if (isMobile) {
+            img.fetchPriority = "low";
+        }
     });
 }
 

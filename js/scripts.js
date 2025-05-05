@@ -5,22 +5,54 @@
 
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize Bootstrap navbar toggler functionality
-    initBootstrapNavbar();
+    // Check if on mobile device
+    const isMobile = window.innerWidth < 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     
-    // Initialize smooth scrolling for anchor links
+    // Essential functionality
+    initBootstrapNavbar();
     initSmoothScroll();
     
-    // Initialize the new components
-    initReviewsSlider();
+    // Performance-heavy components - only run on desktop or selectively on mobile
+    if (!isMobile) {
+        // Desktop-only components
+        initFloatingFruits();
+    }
+    
+    // Components with reduced functionality on mobile
+    initReviewsSlider(isMobile);
     initGameCarousel();
+    initFeatureCards(isMobile);
     
-    // Initialize floating fruits
-    initFloatingFruits();
+    // Add defer attribute to non-essential scripts
+    if (isMobile) {
+        deferNonEssentialScripts();
+    }
     
-    // Initialize interactive feature cards
-    initFeatureCards();
+    // Call preloadImages function with the isMobile flag if it exists
+    if (typeof preloadImages === 'function') {
+        preloadImages();
+    }
 });
+
+/**
+ * Defer loading of non-essential scripts on mobile
+ */
+function deferNonEssentialScripts() {
+    // Find all script tags
+    const scripts = document.querySelectorAll('script');
+    scripts.forEach(script => {
+        // Skip scripts without src attribute or already deferred/async
+        if (!script.src || script.defer || script.async) return;
+        
+        // Skip essential scripts
+        if (script.src.includes('bootstrap') || 
+            script.src.includes('jquery') || 
+            script.src.includes('bundle.js')) return;
+        
+        // Mark others as deferred
+        script.defer = true;
+    });
+}
 
 /**
  * Initialize Bootstrap navbar toggler functionality
@@ -121,9 +153,9 @@ function initSmoothScroll() {
 }
 
 /**
- * Initialize the reviews slider
+ * Initialize the reviews slider with mobile optimizations
  */
-function initReviewsSlider() {
+function initReviewsSlider(isMobile = false) {
     try {
         // Safely check if jQuery and slick are available
         if (typeof $ === 'undefined') {
@@ -157,9 +189,10 @@ function initReviewsSlider() {
                     speed: 500,
                     slidesToShow: 3,
                     slidesToScroll: 1,
-                    autoplay: true,
+                    autoplay: !isMobile, // Disable autoplay on mobile to save resources
                     autoplaySpeed: 5000,
                     pauseOnHover: true,
+                    lazyLoad: 'ondemand', // Enable lazy loading
                     responsive: [
                         {
                             breakpoint: 1024,
@@ -172,29 +205,44 @@ function initReviewsSlider() {
                             breakpoint: 768,
                             settings: {
                                 slidesToShow: 1,
-                                slidesToScroll: 1
+                                slidesToScroll: 1,
+                                autoplay: false, // Ensure autoplay is off on small screens
+                                arrows: false // Hide arrows on mobile for better display
                             }
                         }
                     ]
                 });
                 console.log('Reviews slider initialized successfully');
                 
-                // Add interactive animations for reviews
-                $('.review-card').mouseenter(function() {
-                    $(this).find('.review-card-inner').css('transform', 'translateY(-8px)');
-                    $(this).find('.reviewer-avatar img').css('transform', 'scale(1.1)');
-                }).mouseleave(function() {
-                    $(this).find('.review-card-inner').css('transform', 'translateY(0)');
-                    $(this).find('.reviewer-avatar img').css('transform', 'scale(1)');
-                });
+                // Add interactive animations for reviews - reduced on mobile
+                if (!isMobile) {
+                    $('.review-card').mouseenter(function() {
+                        $(this).find('.review-card-inner').css('transform', 'translateY(-8px)');
+                        $(this).find('.reviewer-avatar img').css('transform', 'scale(1.1)');
+                    }).mouseleave(function() {
+                        $(this).find('.review-card-inner').css('transform', 'translateY(0)');
+                        $(this).find('.reviewer-avatar img').css('transform', 'scale(1)');
+                    });
+                }
                 
                 // Set up button behaviors
                 $('.leave-review-btn').click(function() {
-                    alert('Review functionality will be implemented soon. Thank you for your interest!');
+                    // Alert removed to improve user experience
+                    console.log('Leave review button clicked');
+                    return false;
                 });
                 
                 $('.view-more-reviews-btn').click(function() {
-                    alert('More reviews will be loaded soon. Thank you for your interest!');
+                    // Alert removed to improve user experience
+                    console.log('View more reviews button clicked');
+                    return false;
+                });
+                
+                // Disable share tip button alerts
+                $('.share-tip-btn').click(function() {
+                    // Alert removed to improve user experience
+                    console.log('Share tip button clicked');
+                    return false;
                 });
                 
             } catch (slickError) {
@@ -296,9 +344,9 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 /**
- * Initialize the interactive features section
+ * Initialize the interactive features section with mobile optimizations
  */
-function initFeatureCards() {
+function initFeatureCards(isMobile = false) {
     // Feature cards expansion
     const featureCards = document.querySelectorAll('.feature-card.interactive');
     
@@ -321,15 +369,28 @@ function initFeatureCards() {
         }
         
         // Optional: Allow clicking the entire card to expand
-        card.addEventListener('click', function(e) {
-            if (!card.classList.contains('expanded') && 
-                !e.target.classList.contains('play-now-btn') && 
-                !e.target.classList.contains('read-less-btn')) {
-                card.classList.add('expanded');
-            }
-        });
+        // Disable on mobile to avoid accidental touches
+        if (!isMobile) {
+            card.addEventListener('click', function(e) {
+                if (!card.classList.contains('expanded') && 
+                    !e.target.classList.contains('play-now-btn') && 
+                    !e.target.classList.contains('read-less-btn')) {
+                    card.classList.add('expanded');
+                }
+            });
+        }
     });
     
+    // Only initialize counters if not on mobile to save resources
+    if (!isMobile) {
+        initCounters();
+    }
+}
+
+/**
+ * Separate counter initialization to reduce initial load
+ */
+function initCounters() {
     // Animate counters when they come into view
     const counterElements = document.querySelectorAll('.counter');
     let countersStarted = false;

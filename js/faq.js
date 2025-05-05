@@ -78,12 +78,21 @@ function initCommunityQuestions() {
     
     console.log('Community question elements found, setting up submit handler');
     
+    // Create error message element
+    const errorMessage = document.createElement('div');
+    errorMessage.className = 'text-danger mt-2 d-none';
+    errorMessage.textContent = '質問を入力してください';
+    questionInput.parentNode.appendChild(errorMessage);
+    
     // Directly add click event to the submit button
     submitBtn.addEventListener('click', function(e) {
         console.log('Submit button clicked');
         e.preventDefault();
         
         if (questionInput.value.trim() !== '') {
+            // Hide error if it was showing
+            errorMessage.classList.add('d-none');
+            
             // Show the success message
             submittedMessage.classList.add('show');
             console.log('Success message should be visible now');
@@ -96,7 +105,11 @@ function initCommunityQuestions() {
                 submittedMessage.classList.remove('show');
             }, 5000);
         } else {
-            alert('質問を入力してください');
+            // Show error message instead of alert
+            errorMessage.classList.remove('d-none');
+            setTimeout(() => {
+                errorMessage.classList.add('d-none');
+            }, 3000);
         }
     });
 } 
