@@ -39,6 +39,27 @@
     
     
     <style>
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+            width: 100%;
+        }
+
         .policy-section {
             background-color: rgba(255, 255, 255, 0.9);
             border-radius: 15px;
@@ -46,6 +67,11 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             margin-bottom: 2rem;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
+            position: relative;
+            z-index: 1;
         }
         
         .policy-section:hover {
@@ -58,6 +84,7 @@
             color: #2d922d;
             font-weight: 700;
             margin-bottom: 1.5rem;
+            word-wrap: break-word;
         }
         
         h2.policy-heading {
@@ -68,12 +95,14 @@
             margin-bottom: 1rem;
             border-bottom: 2px solid #F8B840;
             padding-bottom: 0.5rem;
+            word-wrap: break-word;
         }
         
         .policy-text {
             font-size: 1.05rem;
             line-height: 1.8;
             color: #333;
+            word-wrap: break-word;
         }
         
         .policy-link {
@@ -81,6 +110,7 @@
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s ease;
+            word-wrap: break-word;
         }
         
         .policy-link:hover {
@@ -91,11 +121,13 @@
         .policy-list {
             margin-left: 1.5rem;
             margin-bottom: 1.5rem;
+            padding-right: 1rem;
         }
         
         .policy-list li {
             margin-bottom: 0.75rem;
             position: relative;
+            word-wrap: break-word;
         }
         
         .policy-list li::before {
@@ -112,17 +144,99 @@
             padding: 1.5rem;
             border-radius: 10px;
             margin-top: 2rem;
+            word-wrap: break-word;
         }
         
         .last-updated {
             font-style: italic;
             color: #666;
             margin-bottom: 2rem;
+            word-wrap: break-word;
         }
-        
+
+        .page-header {
+            background: linear-gradient(135deg, #FF9800, #E64A19);
+            padding: 120px 0 60px;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            z-index: 2;
+        }
+
+        /* Ad container styles */
+        .ad-section {
+            width: 100%;
+            padding: 1.5rem 0;
+            margin: 1.5rem 0;
+            background: transparent;
+            position: relative;
+            z-index: 1;
+        }
+
+        .ad-container {
+            width: 100%;
+            min-height: 100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+        }
+
+        .ad-content-direct {
+            width: 100%;
+            min-height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .adsbygoogle {
+            display: block !important;
+            width: 100% !important;
+            min-height: 100px !important;
+            position: relative !important;
+            z-index: 1 !important;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 1200px) {
+            .container {
+                max-width: 1140px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .container {
+                max-width: 960px;
+            }
+            
+            h1.policy-title {
+                font-size: 2.2rem;
+            }
+            
+            h2.policy-heading {
+                font-size: 1.6rem;
+            }
+        }
+
         @media (max-width: 768px) {
+            .container {
+                max-width: 720px;
+                padding: 0 15px;
+            }
+            
             .policy-section {
                 padding: 1.5rem;
+                margin: 1rem;
+                width: calc(100% - 2rem);
             }
             
             h1.policy-title {
@@ -132,6 +246,93 @@
             h2.policy-heading {
                 font-size: 1.5rem;
             }
+
+            .policy-text {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+
+            .policy-list {
+                margin-left: 1rem;
+                padding-right: 0.5rem;
+            }
+
+            .page-header {
+                padding: 80px 0 40px;
+            }
+
+            .ad-section {
+                padding: 1rem 0;
+                margin: 1rem 0;
+            }
+
+            .ad-container {
+                min-height: 90px;
+            }
+
+            .ad-content-direct {
+                min-height: 90px;
+            }
+
+            .adsbygoogle {
+                min-height: 90px !important;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                max-width: 540px;
+                padding: 0 10px;
+            }
+            
+            .policy-section {
+                padding: 1rem;
+                margin: 0.5rem;
+                width: calc(100% - 1rem);
+            }
+            
+            h1.policy-title {
+                font-size: 1.8rem;
+            }
+            
+            h2.policy-heading {
+                font-size: 1.3rem;
+            }
+
+            .policy-text {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* Ensure content is properly centered */
+        .row {
+            margin: 0 -15px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .col-12 {
+            padding: 0 15px;
+            width: 100%;
+        }
+
+        /* Fix for content sections */
+        section {
+            width: 100%;
+            position: relative;
+        }
+
+        .py-5 {
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Fix for fade-in animation */
+        .fade-in {
+            opacity: 1;
+            visibility: visible;
         }
     </style>
   <script type="module" crossorigin src="/assets/scripts-b1dcece2.js"></script>
@@ -192,20 +393,24 @@
     </header>
 
     <!-- Responsive Display Ad (Top) -->
-    <section class="ad-section py-3">
+    <section class="ad-section">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="ad-content-direct">
-                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4055661957455705" 
-                                crossorigin="anonymous" loading="lazy"></script>
-                        <ins class="adsbygoogle"
-                             style="display:block"
-                             data-ad-client="ca-pub-4055661957455705"
-                             data-ad-slot="5465745368"
-                             data-ad-format="auto"
-                             data-full-width-responsive="true"></ins>
-                        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                <div class="col-12">
+                    <div class="ad-container">
+                        <div class="ad-content-direct">
+                            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4055661957455705" 
+                                    crossorigin="anonymous"></script>
+                            <ins class="adsbygoogle"
+                                 style="display:block; width:100%; min-height:100px;"
+                                 data-ad-client="ca-pub-4055661957455705"
+                                 data-ad-slot="5465745368"
+                                 data-ad-format="auto"
+                                 data-full-width-responsive="true"></ins>
+                            <script>
+                                (adsbygoogle = window.adsbygoogle || []).push({});
+                            </script>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -216,7 +421,7 @@
     <section class="py-5">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-10">
+                <div class="col-12">
                     <div class="policy-section fade-in">
                         <div class="last-updated mb-4">
                             <p><strong>最終更新日:</strong> 2024年5月25日</p>
@@ -275,7 +480,7 @@
                         
                         <h2 class="policy-heading">連絡先</h2>
                         
-                        <p class="policy-text fw-semibold">本プライバシー・ポリシーに関するご質問やご不明な点がございましたら、下記までお問い合わせください。
+                        <p class="policy-text fw-semibold">本プライバシーポリシーに関するご質問やご不明な点がございましたら、下記までお問い合わせください。
                         <a href="/contact-us" class="policy-link">お問い合わせ</a>で :</p>
                         
                         <div class="policy-contact">
@@ -289,20 +494,24 @@
     </section>
 
     <!-- Responsive Display Ad (Bottom) -->
-    <section class="ad-section py-3">
+    <section class="ad-section">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="ad-content-direct">
-                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4055661957455705" 
-                                crossorigin="anonymous" loading="lazy"></script>
-                        <ins class="adsbygoogle"
-                             style="display:block"
-                             data-ad-client="ca-pub-4055661957455705"
-                             data-ad-slot="5465745368"
-                             data-ad-format="auto"
-                             data-full-width-responsive="true"></ins>
-                        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                <div class="col-12">
+                    <div class="ad-container">
+                        <div class="ad-content-direct">
+                            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4055661957455705" 
+                                    crossorigin="anonymous"></script>
+                            <ins class="adsbygoogle"
+                                 style="display:block; width:100%; min-height:100px;"
+                                 data-ad-client="ca-pub-4055661957455705"
+                                 data-ad-slot="5465745368"
+                                 data-ad-format="auto"
+                                 data-full-width-responsive="true"></ins>
+                            <script>
+                                (adsbygoogle = window.adsbygoogle || []).push({});
+                            </script>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -397,29 +606,52 @@
             });
         });
     </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4055661957455705"
+    crossorigin="anonymous"></script>
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4055661957455705"
-     crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-4055661957455705"
-     data-ad-slot="7900337019"></ins>
+    style="display:block; text-align:center;"
+    data-ad-layout="in-article"
+    data-ad-format="fluid"
+    data-ad-client="ca-pub-4055661957455705"
+    data-ad-slot="7900337019"></ins>
 <script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4055661957455705"
-     crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
-     style="display:block"
-     data-ad-format="fluid"
-     data-ad-layout-key="-6t+ed+2i-1n-4w"
-     data-ad-client="ca-pub-4055661957455705"
-     data-ad-slot="1526500357"></ins>
+    style="display:block"
+    data-ad-format="fluid"
+    data-ad-layout-key="-6t+ed+2i-1n-4w"
+    data-ad-client="ca-pub-4055661957455705"
+    data-ad-slot="1526500357"></ins>
 <script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4055661957455705"
+    crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+    style="display:block"
+    data-ad-format="autorelaxed"
+    data-ad-client="ca-pub-4055661957455705"
+    data-ad-slot="5274173677"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4055661957455705"
+    crossorigin="anonymous"></script>
+<!-- arslan -->
+<ins class="adsbygoogle"
+    style="display:block"
+    data-ad-client="ca-pub-4055661957455705"
+    data-ad-slot="5465745368"
+    data-ad-format="auto"
+    data-full-width-responsive="true"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 </body>
 </html> 
+

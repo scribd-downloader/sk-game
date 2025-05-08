@@ -39,6 +39,94 @@
     
     
     
+    
+    <!-- Ad Display Fix -->
+    <style>
+      /* Ad container styling */
+      .ad-section {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        overflow: visible !important;
+        min-height: 280px; /* Minimum height for ad containers */
+        margin: 20px 0;
+        clear: both;
+      }
+      
+      .ad-content-direct {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        min-height: 250px; /* Standard ad height */
+        width: 100%;
+        text-align: center;
+        overflow: visible !important;
+        position: relative;
+        z-index: 1; /* Ensure ads appear above other content */
+      }
+      
+      .adsbygoogle {
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 250px !important;
+        overflow: visible !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+      }
+      
+      /* Ensure ads are visible on all devices */
+      @media (max-width: 768px) {
+        .ad-section, .ad-content-direct, .adsbygoogle {
+          display: block !important;
+          visibility: visible !important;
+          opacity: 1 !important;
+        }
+      }
+    </style>
+    
+    <!-- Mobile-specific fixes -->
+    <style>
+      /* Fix fade-in animations on mobile so content is always visible */
+      @media (max-width: 768px) {
+        /* Force all sections to be visible */
+        section, .py-5, .team-section, .game-mechanics-section, .contact-card {
+          display: block !important;
+          visibility: visible !important;
+          opacity: 1 !important;
+          transform: none !important;
+          animation: none !important;
+        }
+        
+        /* Force fade-in elements to be visible */
+        .fade-in, .animate__animated {
+          opacity: 1 !important;
+          visibility: visible !important;
+          animation: none !important;
+          transform: none !important;
+          transition: none !important;
+        }
+        
+        /* Make all cards visible */
+        .team-card, .game-mechanic-card, .contact-card {
+          display: block !important;
+          visibility: visible !important;
+          opacity: 1 !important;
+        }
+        
+        /* Fix for any delayed animations */
+        [data-delay] {
+          animation-delay: 0s !important;
+          transition-delay: 0s !important;
+        }
+        
+        /* Remove any animations that might cause issues */
+        * {
+          animation-duration: 0s !important;
+          transition-duration: 0s !important;
+        }
+      }
+    </style>
   <script type="module" crossorigin src="/assets/scripts-b1dcece2.js"></script>
   <link rel="stylesheet" href="/assets/scripts-f9dfd330.css">
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
@@ -101,13 +189,16 @@
             <div class="ad-content-direct">
               <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4055661957455705" 
                       crossorigin="anonymous"></script>
+              <!-- arslan -->
               <ins class="adsbygoogle"
                    style="display:block"
                    data-ad-client="ca-pub-4055661957455705"
                    data-ad-slot="5465745368"
                    data-ad-format="auto"
                    data-full-width-responsive="true"></ins>
-              <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+              <script>
+                   (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
             </div>
           </div>
         </div>
@@ -389,13 +480,16 @@
             <div class="ad-content-direct">
               <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4055661957455705" 
                       crossorigin="anonymous"></script>
+              <!-- arslan -->
               <ins class="adsbygoogle"
                    style="display:block"
                    data-ad-client="ca-pub-4055661957455705"
                    data-ad-slot="5465745368"
                    data-ad-format="auto"
                    data-full-width-responsive="true"></ins>
-              <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+              <script>
+                   (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
             </div>
           </div>
         </div>
@@ -493,28 +587,182 @@
         });
     </script>
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4055661957455705"
-     crossorigin="anonymous"></script>
+    <!-- Mobile Performance Optimization Script -->
+    <script>
+        // Detect if on mobile device
+        const isMobile = window.innerWidth < 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        
+        // Only run on mobile devices
+        if (isMobile) {
+            // Disable animation functions before they run
+            window.addEventListener('DOMContentLoaded', function() {
+                console.log('Disabling background animations for mobile performance');
+                
+                // Remove floating fruits which cause performance issues
+                const fruitsContainer = document.getElementById('fruits-container');
+                if (fruitsContainer) {
+                    fruitsContainer.style.display = 'none';
+                }
+                
+                // Hide all individual floating fruits
+                const floatingFruits = document.querySelectorAll('.floating-fruit');
+                floatingFruits.forEach(fruit => {
+                    fruit.style.display = 'none';
+                });
+                
+                // Disable animated background candies
+                const animatedElements = document.querySelectorAll('.fruits-animation, .candy-animation');
+                animatedElements.forEach(el => {
+                    el.style.display = 'none';
+                });
+                
+                // Make sure content sections and ads remain visible
+                const contentSections = document.querySelectorAll('section, .py-5, .team-section, .ad-section, .contact-card, .game-mechanic-card');
+                contentSections.forEach(section => {
+                    section.style.display = 'block';
+                    section.style.opacity = '1';
+                    section.style.visibility = 'visible';
+                });
+                
+                // Specifically ensure ad sections are visible
+                const adSections = document.querySelectorAll('.ad-section, .ad-content-direct, .adsbygoogle');
+                adSections.forEach(adEl => {
+                    adEl.style.display = 'block';
+                    adEl.style.opacity = '1';
+                    adEl.style.visibility = 'visible';
+                    adEl.style.overflow = 'visible';
+                });
+            });
+            
+            // Ensure visibility after page load
+            window.addEventListener('load', function() {
+                console.log('Ensuring section visibility for mobile');
+                
+                // Ensure content sections are visible on mobile
+                document.querySelectorAll('section, .team-card, .contact-card, .game-mechanic-card, .fade-in').forEach(el => {
+                    el.classList.add('active');
+                    el.style.opacity = '1';
+                    el.style.visibility = 'visible';
+                    el.style.transform = 'none';
+                });
+                
+                // Make sure AdSense ads are properly displayed after page load
+                setTimeout(function() {
+                    const adElements = document.querySelectorAll('.ad-section, .ad-content-direct, .adsbygoogle');
+                    adElements.forEach(adEl => {
+                        adEl.style.display = 'block';
+                        adEl.style.visibility = 'visible';
+                        adEl.style.opacity = '1';
+                    });
+                }, 1000);
+            });
+        }
+    </script>
+
+    <!-- Additional AdSense Ads (Bottom of Page) -->
+    <div class="container mt-4 mb-4">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="ad-content-direct">
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4055661957455705"
+                         crossorigin="anonymous"></script>
+                    <!-- arslan - in-article -->
+                    <ins class="adsbygoogle"
+                         style="display:block; text-align:center;"
+                         data-ad-layout="in-article"
+                         data-ad-format="fluid"
+                         data-ad-client="ca-pub-4055661957455705"
+                         data-ad-slot="7900337019"></ins>
+                    <script>
+                         (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Mobile Visibility Enforcement Script -->
+    <script>
+        // This script will run after all other scripts and ensure content is visible on mobile
+        document.addEventListener('DOMContentLoaded', function() {
+            const isMobile = window.innerWidth < 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            
+            if (isMobile) {
+                // Force visibility of all important sections
+                const forceVisible = function() {
+                    // Target all main content containers
+                    const elements = document.querySelectorAll('section, .py-5, .team-section, .game-mechanic-card, .team-card, .contact-card, .fade-in, .animate__animated');
+                    
+                    elements.forEach(function(el) {
+                        el.style.display = 'block';
+                        el.style.visibility = 'visible';
+                        el.style.opacity = '1';
+                        el.style.transform = 'none';
+                        el.style.animationName = 'none';
+                        el.classList.add('active');
+                        
+                        // Add class to indicate we've processed this element
+                        el.classList.add('mobile-visible');
+                    });
+                    
+                    console.log('Mobile visibility enforced');
+                };
+                
+                // Run immediately
+                forceVisible();
+                
+                // Run again after a delay to catch any elements that might have been modified by other scripts
+                setTimeout(forceVisible, 500);
+                setTimeout(forceVisible, 1500);
+                setTimeout(forceVisible, 3000);
+            }
+        });
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4055661957455705"
+    crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-4055661957455705"
-     data-ad-slot="7900337019"></ins>
+    style="display:block; text-align:center;"
+    data-ad-layout="in-article"
+    data-ad-format="fluid"
+    data-ad-client="ca-pub-4055661957455705"
+    data-ad-slot="7900337019"></ins>
 <script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4055661957455705"
-     crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
-     style="display:block"
-     data-ad-format="fluid"
-     data-ad-layout-key="-6t+ed+2i-1n-4w"
-     data-ad-client="ca-pub-4055661957455705"
-     data-ad-slot="1526500357"></ins>
+    style="display:block"
+    data-ad-format="fluid"
+    data-ad-layout-key="-6t+ed+2i-1n-4w"
+    data-ad-client="ca-pub-4055661957455705"
+    data-ad-slot="1526500357"></ins>
 <script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4055661957455705"
+    crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+    style="display:block"
+    data-ad-format="autorelaxed"
+    data-ad-client="ca-pub-4055661957455705"
+    data-ad-slot="5274173677"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4055661957455705"
+    crossorigin="anonymous"></script>
+<!-- arslan -->
+<ins class="adsbygoogle"
+    style="display:block"
+    data-ad-client="ca-pub-4055661957455705"
+    data-ad-slot="5465745368"
+    data-ad-format="auto"
+    data-full-width-responsive="true"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 </body>
 </html> 

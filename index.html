@@ -48,12 +48,11 @@
     <style>
       /* Disable background animations on mobile devices */
       @media (max-width: 768px) {
-        /* Hide floating fruits and animations */
+        /* Hide only floating fruits and purely decorative animations */
         #fruits-container, 
         .floating-fruit,
         .fruits-animation,
-        .candy-animation,
-        [class*="float-"] {
+        .candy-animation {
           display: none !important;
         }
 
@@ -72,9 +71,110 @@
           transition: none !important;
           transform: none !important;
         }
+        
+        /* Ensure content sections remain visible */
+        .how-to-play, 
+        .features-section, 
+        .ad-section,
+        .reviews-section,
+        .cta-section,
+        .faq-section,
+        .reveal, 
+        .reveal-up,
+        [class*="section"] {
+          display: block !important;
+          opacity: 1 !important;
+          visibility: visible !important;
+        }
+        
+        /* Keep animation attribute classes visible but disable actual animations */
+        [data-animation] {
+          opacity: 1 !important;
+          visibility: visible !important;
+          transform: none !important;
+          animation: none !important;
+        }
       }
     </style>
     <!-- Ultra-aggressive mobile menu fix (highest priority) -->
+    <!-- Mobile sections visibility fix -->
+    <style>
+      /* Mobile feature card fixes */
+      @media (max-width: 768px) {
+        /* Make feature cards visible on mobile */
+        .feature-card-wrapper,
+        .feature-card,
+        .feature-cards-container,
+        .feature-content-toggle,
+        .feature-content-short,
+        .feature-content-full {
+          display: block !important;
+          opacity: 1 !important;
+          visibility: visible !important;
+        }
+        
+        /* Fix feature section spacing on mobile */
+        .features-section {
+          padding: 30px 0 !important;
+        }
+        
+        /* Ensure feature cards display in single column on mobile */
+        .feature-card-wrapper {
+          width: 100% !important;
+          margin-bottom: 20px !important;
+        }
+        
+        /* Fix animation delays that might cause elements to remain hidden */
+        [data-delay] {
+          transition-delay: 0s !important;
+          animation-delay: 0s !important;
+        }
+      }
+    </style>
+    <!-- Ad Display Fix -->
+    <style>
+      /* Ad container styling */
+      .ad-section {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        overflow: visible !important;
+        min-height: 280px; /* Minimum height for ad containers */
+        margin: 20px 0;
+        clear: both;
+      }
+      
+      .ad-content-direct {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        min-height: 250px; /* Standard ad height */
+        width: 100%;
+        text-align: center;
+        overflow: visible !important;
+        position: relative;
+        z-index: 1; /* Ensure ads appear above other content */
+      }
+      
+      .adsbygoogle {
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 250px !important;
+        overflow: visible !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+      }
+      
+      /* Ensure ads are visible on all devices */
+      @media (max-width: 768px) {
+        .ad-section, .ad-content-direct, .adsbygoogle {
+          display: block !important;
+          visibility: visible !important;
+          opacity: 1 !important;
+        }
+      }
+    </style>
 </head>
 <body class="suika-bg index-page">
 
@@ -244,13 +344,16 @@
         <div class="ad-content-direct">
           <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4055661957455705" 
                   crossorigin="anonymous"></script>
+          <!-- arslan -->
           <ins class="adsbygoogle"
                style="display:block"
                data-ad-client="ca-pub-4055661957455705"
                data-ad-slot="5465745368"
                data-ad-format="auto"
                data-full-width-responsive="true"></ins>
-          <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+          <script>
+               (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
         </div>
       </div>
     </div>
@@ -363,13 +466,16 @@
         <div class="ad-content-direct">
           <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4055661957455705" 
                   crossorigin="anonymous"></script>
+          <!-- arslan -->
           <ins class="adsbygoogle"
                style="display:block"
                data-ad-client="ca-pub-4055661957455705"
                data-ad-slot="5465745368"
                data-ad-format="auto"
                data-full-width-responsive="true"></ins>
-          <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+          <script>
+               (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
         </div>
       </div>
     </div>
@@ -564,13 +670,16 @@
         <div class="ad-content-direct">
           <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4055661957455705" 
                   crossorigin="anonymous"></script>
+          <!-- arslan -->
           <ins class="adsbygoogle"
                style="display:block"
                data-ad-client="ca-pub-4055661957455705"
                data-ad-slot="5465745368"
                data-ad-format="auto"
                data-full-width-responsive="true"></ins>
-          <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+          <script>
+               (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
         </div>
       </div>
     </div>
@@ -1256,9 +1365,37 @@
       });
       
       // Disable animated background candies
-      const animatedElements = document.querySelectorAll('.fruits-animation, .candy-animation, [class*="float"]');
+      const animatedElements = document.querySelectorAll('.fruits-animation, .candy-animation');
       animatedElements.forEach(el => {
         el.style.display = 'none';
+      });
+      
+      // Make sure content sections and ads remain visible
+      const contentSections = document.querySelectorAll('.how-to-play, .features-section, .ad-section, .reviews-section, .cta-section, .faq-section, [class*="section"]');
+      contentSections.forEach(section => {
+        section.style.display = 'block';
+        section.style.opacity = '1';
+        section.style.visibility = 'visible';
+      });
+      
+      // Specifically ensure ad sections are visible
+      const adSections = document.querySelectorAll('.ad-section, .ad-content-direct, .adsbygoogle');
+      adSections.forEach(adEl => {
+        adEl.style.display = 'block';
+        adEl.style.opacity = '1';
+        adEl.style.visibility = 'visible';
+        adEl.style.overflow = 'visible';
+        adEl.style.height = 'auto';
+        adEl.style.minHeight = adEl.classList.contains('ad-section') ? '280px' : '250px';
+      });
+      
+      // Show animation elements but disable the actual animations
+      const animationElements = document.querySelectorAll('[data-animation]');
+      animationElements.forEach(el => {
+        el.style.opacity = '1';
+        el.style.visibility = 'visible';
+        el.style.transform = 'none';
+        el.style.animation = 'none';
       });
     });
     
@@ -1266,14 +1403,31 @@
     window.addEventListener('load', function() {
       console.log('Optimizing performance for mobile device');
       
-      // Disable any remaining animations that might have been added dynamically
-      const additionalFruits = document.querySelectorAll('.floating-fruit, [class*="candy-"], [class*="fruit-"]');
+      // Disable only pure decorative animations that might have been added dynamically
+      const additionalFruits = document.querySelectorAll('.floating-fruit, [class*="candy-"]');
       additionalFruits.forEach(fruit => {
         if (!fruit.closest('#game-container')) { // Make sure we don't affect game elements
           fruit.style.animation = 'none';
           fruit.style.display = 'none';
         }
       });
+      
+      // Ensure content sections are visible on mobile
+      document.querySelectorAll('.reveal, .reveal-up').forEach(el => {
+        el.classList.add('active');
+        el.style.opacity = '1';
+        el.style.visibility = 'visible';
+      });
+      
+      // Make sure AdSense ads are properly displayed after page load
+      setTimeout(function() {
+        const adElements = document.querySelectorAll('.ad-section, .ad-content-direct, .adsbygoogle');
+        adElements.forEach(adEl => {
+          adEl.style.display = 'block';
+          adEl.style.visibility = 'visible';
+          adEl.style.opacity = '1';
+        });
+      }, 1000);
     });
   }
 </script>
@@ -1289,6 +1443,43 @@
     window.initCandyBackground = function() { return false; };
     window.createBurstPool = function() { return false; };
     window.addBurstAnimation = function() { return false; };
+    
+    // Add a new function to ensure content sections are visible
+    window.ensureContentVisibility = function() {
+      // Force all content sections to be visible
+      const sections = [
+        '.how-to-play',
+        '.features-section',
+        '.ad-section',
+        '.reviews-section',
+        '.cta-section',
+        '.faq-section',
+        '.feature-card',
+        '.feature-card-wrapper',
+        '.feature-cards-container',
+        '.section-divider',
+        '.reveal',
+        '.reveal-up'
+      ];
+      
+      // Apply these styles to ensure visibility
+      sections.forEach(selector => {
+        document.querySelectorAll(selector).forEach(el => {
+          el.style.display = 'block';
+          el.style.opacity = '1';
+          el.style.visibility = 'visible';
+          el.classList.add('active');
+        });
+      });
+    };
+    
+    // Run the function after DOM content is loaded and again after full load
+    document.addEventListener('DOMContentLoaded', window.ensureContentVisibility);
+    window.addEventListener('load', window.ensureContentVisibility);
+    
+    // Run again after a short delay to catch any late-loading elements
+    setTimeout(window.ensureContentVisibility, 500);
+    setTimeout(window.ensureContentVisibility, 1500);
   }
 </script>
 
@@ -1314,29 +1505,6 @@
             });
         });
     });
-</script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4055661957455705"
-     crossorigin="anonymous"></script>
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-4055661957455705"
-     data-ad-slot="7900337019"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4055661957455705"
-     crossorigin="anonymous"></script>
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-format="fluid"
-     data-ad-layout-key="-6t+ed+2i-1n-4w"
-     data-ad-client="ca-pub-4055661957455705"
-     data-ad-slot="1526500357"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 </body>
 </html> 
