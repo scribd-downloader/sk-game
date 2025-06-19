@@ -3365,30 +3365,6 @@ button, a, [role="button"] {
     padding: 80px 0;
 }
 
-.features-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('../icons/10_watermelon.webp');
-    background-repeat: repeat;
-    background-size: 50px;
-    opacity: 0.05;
-    z-index: 0;
-    animation: slow-move 120s linear infinite;
-}
-
-@keyframes slow-move {
-    0% {
-        background-position: 0 0;
-    }
-    100% {
-        background-position: 1000px 1000px;
-    }
-}
-
 .glow-text {
     text-shadow: 0 0 15px rgba(248, 184, 64, 0.6);
     animation: glow 3s ease-in-out infinite alternate;
@@ -3814,20 +3790,6 @@ button, a, [role="button"] {
     z-index: 2;
 }
 
-.feature-cta::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('../icons/10_watermelon.webp');
-    background-repeat: repeat;
-    background-size: 30px;
-    opacity: 0.05;
-    z-index: -1;
-}
-
 .feature-cta h2 {
     color: #1A1718;
     margin-bottom: 15px;
@@ -3983,22 +3945,6 @@ button, a, [role="button"] {
     overflow: hidden;
     padding: 80px 0;
 }
-
-.faq-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('../icons/10_watermelon.webp');
-    background-repeat: repeat;
-    background-size: 40px;
-    opacity: 0.03;
-    z-index: 0;
-    animation: slow-move 150s linear infinite;
-}
-
 /* FAQ Search Styles */
 .faq-search-container {
     position: relative;
