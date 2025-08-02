@@ -19,7 +19,8 @@ export default defineConfig({
         '/suika-crimson-walk',
         '/suika-halloween-party',
         '/suika-christmas-night',
-        '/suika-new-year-sunrise'],
+        '/suika-new-year-sunrise',
+        '/yandex_443208e609085be4'],
     }),
     copy({
       targets: [
@@ -50,6 +51,7 @@ export default defineConfig({
         suikaHalloweenParty: resolve(__dirname, 'suika-halloween-party.html'),
         suikaChristmasNight: resolve(__dirname, 'suika-christmas-night.html'),
         suikaNewYearSunrise: resolve(__dirname, 'suika-new-year-sunrise.html'),
+        yandex_443208e609085be4: resolve(__dirname, 'yandex_443208e609085be4.html'),
       },
     },
   },
@@ -77,6 +79,7 @@ export default defineConfig({
         '/suika-halloween-party': '/suika-halloween-party.html',
         '/suika-christmas-night': '/suika-christmas-night.html',
         '/suika-new-year-sunrise': '/suika-new-year-sunrise.html',
+        '/yandex_443208e609085be4': '/yandex_443208e609085be4.html',
         };
 
         const sanitizedUrl = req.url.replace(/\/$/, ''); // Remove trailing slash
@@ -142,6 +145,9 @@ export default defineConfig({
       });
       server.middlewares.use('/suika-new-year-sunrise.html', (req, res) => {
         res.sendFile(resolve(__dirname, 'suika-new-year-sunrise.html'));
+      });
+      server.middlewares.use('/yandex_443208e609085be4.html', (req, res) => {
+        res.sendFile(resolve(__dirname, 'yandex_443208e609085be4.html'));
       });
     },
   },
