@@ -1,5 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f8dcab;
+  box-sizing: border-box;
+}
+.nav-bg{
+  background-color: #F8B840;
+  height: 40px;
+}
+.ft-bg{
+  background-color: #F8B840;
+}
+/* Change the text color to white */
+.navbar-brand,
+.nav-link {
+  color: #fff !important; 
+  font-weight: bold;
+}
+
 #game-container {
-  margin-top: 55px;
   width: 400px;  
   height: 540px; 
   position: relative;
@@ -12,7 +33,7 @@
   height: 200px;
   display: inline-block;
   position: absolute;
-  top: 110px;
+  top: 13%;
   left: 70%;
   transform: translateX(-50%);
   box-shadow: inset 0 0 25px rgba(250, 144, 45, 0.75);
@@ -47,7 +68,7 @@
   height: 200px;
   display: inline-block;
   position: absolute;
-  top: 110px;
+  top: 15%;
   left: 15%;
   transform: translateX(-50%);
   box-shadow: inset 0 0 25px rgba(250, 144, 45, 0.75);
@@ -137,8 +158,15 @@ canvas {
 .candies_display{
   width: 400px;
   position: absolute;
-  top: 330px;
+  top: 50%;
   left: 82%;
+  transform: translateX(-50%);
+}
+.key_controls{
+  width: 400px;
+  position: absolute;
+  top: 55%;
+  left: 18%;
   transform: translateX(-50%);
 }
 
@@ -185,6 +213,18 @@ canvas {
   font-weight: bold;
   color: #333;
 }
+ /* Style for the half-outside image */
+
+.half-outside-image {
+        position: absolute;
+        top: -50px; /* Adjust this to control how much of the image is outside */
+        left: 50%; /* Center the image horizontally in its column */
+        transform: translateX(-50%);
+        z-index: 1;
+        border-radius: 50px;
+}
+
+
 /* Responsiveness */
 @media (max-width: 768px) {
   body {
@@ -204,7 +244,7 @@ canvas {
   height: 130px;
   display: inline-block;
   position: absolute;
-  top: 180px;
+  top: 11%;
   left: 78%;
   transform: translateX(-50%);
   box-shadow: inset 0 0 25px rgba(250, 144, 45, 0.75);
@@ -238,7 +278,7 @@ canvas {
   height: 130px;
   display: inline-block;
   position: absolute;
-  top: 170px;
+  top: 11%;
   left: 5%;
   transform: translateX(-50%);
   box-shadow: inset 0 0 25px rgba(250, 144, 45, 0.75);
@@ -309,6 +349,10 @@ canvas {
   width: 50px;
 }
 
+.nav-bg{
+  background-color: #F8B840;
+  height: 50px;
+}
 
 .modal-custom {
       max-width: 100%;
@@ -334,8 +378,15 @@ canvas {
 .candies_display{
   width: 350px;
   position: relative;
-  top: 170%;
-  left: 50%;
+  top: 100%;
+  left: 70%;
+  transform: translateX(-50%);
+}
+.key_controls{
+  width: 300px;
+  position: absolute;
+  top: 60%;
+  left: 21%;
   transform: translateX(-50%);
 }
 }
@@ -349,15 +400,15 @@ canvas {
     position: relative;
     overflow: visible;
     background-color: #E9C163;
-    margin-top: 70px;
+    margin-top: 110px;
   }
   #nextCandy{
     width: 100px;
     height: 100px;
     display: inline-block;
     position: absolute;
-    top: 150px;
-    left: 65%;
+    top: 11%;
+    left: 60%;
     transform: translateX(-50%);
     box-shadow: inset 0 0 25px rgba(250, 144, 45, 0.75);
     border-radius: 50%;
@@ -390,8 +441,8 @@ canvas {
     height: 100px;
     display: inline-block;
     position: absolute;
-    top: 150px;
-    left: 7%;
+    top: 11%;
+    left: 15%;
     transform: translateX(-50%);
     box-shadow: inset 0 0 25px rgba(250, 144, 45, 0.75);
     border-radius: 50%;
@@ -465,11 +516,17 @@ canvas {
     background-color: #F8B840;
     height: 50px;
   }
+  .key_controls{
+    width: 300px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 
   .candies_display{
     width: 350px;
     position: relative;
-    top: 40px;
+    top: 90%;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -592,23 +649,4 @@ canvas {
   margin: 10px auto;
   width: 200px; /* Adjust icon size */
   height: 200px;
-}
-
-/* Ad section styling - simplified */
-.ad-section {
-  margin: 15px 0;
-}
-
-.ad-content-direct {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-/* Mobile optimization for ads */
-@media (max-width: 768px) {
-  .ad-section {
-    margin: 10px 0;
-  }
 }

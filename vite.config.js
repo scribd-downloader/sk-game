@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [
     vitePluginSitemap({
       hostname: 'https://suikagame.pro',
-      routes: ['/', '/disclaimer', '/privacy-policy', '/terms-of-service', '/contact-us','/about-us', '/suika-game-version',
+      routes: ['/', '/disclaimer', '/privacy-policy', '/terms-of-service', '/contact-us', '/suika-game-version',
         '/suika-game-multiple-player',
         '/suika-game-summer-holiday',
         '/suika-game-sunset-beach',
@@ -19,8 +19,7 @@ export default defineConfig({
         '/suika-crimson-walk',
         '/suika-halloween-party',
         '/suika-christmas-night',
-        '/suika-new-year-sunrise',
-        '/yandex_443208e609085be4'],
+        '/suika-new-year-sunrise'],
     }),
     copy({
       targets: [
@@ -37,7 +36,6 @@ export default defineConfig({
         privacyPolicy: resolve(__dirname, 'privacy-policy.html'),
         termsOfService: resolve(__dirname, 'terms-of-service.html'),
         contactUs: resolve(__dirname, 'contact-us.html'),
-        aboutUs: resolve(__dirname, 'about-us.html'),
         suikaGameVersion: resolve(__dirname, 'suika-game-version.html'),
         suikaGameMultiplePlayer: resolve(__dirname, 'suika-game-multiple-player.html'),
         suikaGameSummerHoliday: resolve(__dirname, 'suika-game-summer-holiday.html'),
@@ -51,7 +49,6 @@ export default defineConfig({
         suikaHalloweenParty: resolve(__dirname, 'suika-halloween-party.html'),
         suikaChristmasNight: resolve(__dirname, 'suika-christmas-night.html'),
         suikaNewYearSunrise: resolve(__dirname, 'suika-new-year-sunrise.html'),
-        yandex_443208e609085be4: resolve(__dirname, 'yandex_443208e609085be4.html'),
       },
     },
   },
@@ -65,7 +62,6 @@ export default defineConfig({
           '/privacy-policy': '/privacy-policy.html',
           '/terms-of-service': '/terms-of-service.html',
           '/contact-us': '/contact-us.html',
-          '/about-us': '/about-us.html',
           '/suika-game-version': '/suika-game-version.html',
           '/suika-game-multiple-player': '/suika-game-multiple-player.html',
         '/suika-game-summer-holiday': '/suika-game-summer-holiday.html',
@@ -79,7 +75,6 @@ export default defineConfig({
         '/suika-halloween-party': '/suika-halloween-party.html',
         '/suika-christmas-night': '/suika-christmas-night.html',
         '/suika-new-year-sunrise': '/suika-new-year-sunrise.html',
-        '/yandex_443208e609085be4': '/yandex_443208e609085be4.html',
         };
 
         const sanitizedUrl = req.url.replace(/\/$/, ''); // Remove trailing slash
@@ -103,9 +98,6 @@ export default defineConfig({
       });
       server.middlewares.use('/contact-us.html', (req, res) => {
         res.sendFile(resolve(__dirname, 'contact-us.html'));
-      });
-      server.middlewares.use('/about-us.html', (req, res) => {
-        res.sendFile(resolve(__dirname, 'about-us.html'));
       });
       server.middlewares.use('/suika-game-version.html', (req, res) => {
         res.sendFile(resolve(__dirname, 'suika-game-version.html'));
@@ -145,9 +137,6 @@ export default defineConfig({
       });
       server.middlewares.use('/suika-new-year-sunrise.html', (req, res) => {
         res.sendFile(resolve(__dirname, 'suika-new-year-sunrise.html'));
-      });
-      server.middlewares.use('/yandex_443208e609085be4.html', (req, res) => {
-        res.sendFile(resolve(__dirname, 'yandex_443208e609085be4.html'));
       });
     },
   },

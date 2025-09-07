@@ -3,741 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#F8B840">
-    <title>お問合せ - Contact Us</title>
     <meta name="description" content="Suikaゲームサポートへようこそ ご質問やサポートが必要ですか？ 下記のフォームよりお問い合わせください。"/>
-    
-    <!-- SEO Meta Tags -->
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@SuikaGameJP" />
-    <meta name="twitter:title" content="お問合せ - Contact Us" />
-    <meta name="twitter:description" content="Suikaゲームサポートへようこそ ご質問やサポートが必要ですか？ 下記のフォームよりお問い合わせください。" />
-    <meta name="twitter:image" content="https://suikagame.pro/Images/suika-game-featured.webp" />
-    <meta name="twitter:url" content="https://suikagame.pro/contact-us" />
+     <!-- Twitter Card -->
+     <meta name="twitter:card" content="summary_large_image" />
+     <meta name="twitter:site" content="@SuikaGameJP" />
+     <meta name="twitter:title" content="お問合せ - Contact Us" />
+     <meta name="twitter:description" content="Suikaゲームサポートへようこそ ご質問やサポートが必要ですか？ 下記のフォームよりお問い合わせください。" />
+     <meta name="twitter:image" content="https://suikagame.pro/Images/suika-game-featured.webp" />
+     <meta name="twitter:url" content="https://suikagame.pro/contact-us" />
 
-    <meta name="robots" content="index, follow">
-    <meta property="og:title" content="お問合せ - Contact Us" />
-    <meta property="og:site_name" content="Suika Game" />
-    <meta property="og:url" content="https://suikagame.pro/contact-us" />
-    <meta property="og:description" content="Suikaゲームサポートへようこそ ご質問やサポートが必要ですか？ 下記のフォームよりお問い合わせください。" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://suikagame.pro/Images/suika-game-featured.webp" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4055661957455705"
-     crossorigin="anonymous"></script>
+     <meta name="robots" content="index, follow">
+     <meta property="og:title" content="お問合せ - Contact Us" />
+     <meta property="og:site_name" content="Suika Game" />
+     <meta property="og:url" content="https://suikagame.pro/contact-us" />
+     <meta property="og:description" content="Suikaゲームサポートへようこそ ご質問やサポートが必要ですか？ 下記のフォームよりお問い合わせください。" />
+     <meta property="og:type" content="website" />
+     <meta property="og:image" content="https://suikagame.pro/Images/suika-game-featured.webp" />
+     <meta property="og:image:width" content="1200" />
+     <meta property="og:image:height" content="630" />
+
     <link rel="icon" type="image/png" href="./favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="./favicon/favicon.svg" />
     <link rel="shortcut icon" href="./favicon/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
     <link rel="manifest" href="./favicon/site.webmanifest" />
-    
-    <!-- Preload critical assets -->
-    <link rel="preload" href="./Images/Suika Game.webp" as="image">
-    
-    <!-- Stylesheets -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    
-    
-    
-    
-    
-    <!-- Ultra-aggressive mobile menu fix (highest priority) -->
-    
-    <!-- Ad Display Fix -->
-    <style>
-      /* Ad container styling */
-      .ad-section {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        overflow: visible !important;
-        min-height: 280px; /* Minimum height for ad containers */
-        margin: 20px 0;
-        clear: both;
-      }
-      
-      .ad-content-direct {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        min-height: 250px; /* Standard ad height */
-        width: 100%;
-        text-align: center;
-        overflow: visible !important;
-        position: relative;
-        z-index: 1; /* Ensure ads appear above other content */
-      }
-      
-      .adsbygoogle {
-        display: block !important;
-        width: 100% !important;
-        height: auto !important;
-        min-height: 250px !important;
-        overflow: visible !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-      }
-      
-      /* Ensure ads are visible on all devices */
-      @media (max-width: 768px) {
-        .ad-section, .ad-content-direct, .adsbygoogle {
-          display: block !important;
-          visibility: visible !important;
-          opacity: 1 !important;
-        }
-      }
-    </style>
-    
-    <!-- Mobile-specific fixes -->
-    <style>
-      /* Fix fade-in animations on mobile so content is always visible */
-      @media (max-width: 768px) {
-        /* Force all sections to be visible */
-        section, .py-5, .contact-card, .contact-form-card, .accordion, .map-container {
-          display: block !important;
-          visibility: visible !important;
-          opacity: 1 !important;
-          transform: none !important;
-          animation: none !important;
-        }
-        
-        /* Force fade-in elements to be visible */
-        .fade-in, .animate__animated {
-          opacity: 1 !important;
-          visibility: visible !important;
-          animation: none !important;
-          transform: none !important;
-          transition: none !important;
-        }
-        
-        /* Fix for any delayed animations */
-        [data-delay] {
-          animation-delay: 0s !important;
-          transition-delay: 0s !important;
-        }
-        
-        /* Remove any animations that might cause issues */
-        * {
-          animation-duration: 0s !important;
-          transition-duration: 0s !important;
-        }
-      }
-    </style>
-  <script type="module" crossorigin src="/assets/scripts-e74a5656.js"></script>
-  <link rel="stylesheet" href="/assets/scripts-ed149acd.css">
+    <title>お問合せ - Contact Us</title>
+  <link rel="stylesheet" href="/assets/style-54f8b096.css">
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 </head>
-<body class="suika-bg contact-us-page">
-    <!-- Custom Cursor -->
-    <div class="custom-cursor"></div>
+<style>
+    a{
+        text-decoration: none;
+    }
+</style>
+<body>
+     <!-- Header section with a navbar -->
 
-    <!-- Floating Fruits Background -->
-    <div class="fruits-container" id="fruits-container"></div>
+     <header>
+        <nav class="navbar navbar-expand-lg nav-bg sticky-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">
+                    <img src="./Images/Suika Game.webp" alt="スイカゲーム" title="スイカゲーム" width="200" height="20">
+                  </a>
+                  <a class="nav-link text-white" href="/suika-game-version">
+                    スイカバージョン</a>
+            </div>
+        </nav>
+    </header>
+<br/>
+  <div class="container">
+    <section>
+        <h1  class="text-center"> お問合せ </h1> 
+        <br/>
+        <br/>
+        <p>Suikaゲームサポートへようこそ！ ご質問やサポートが必要ですか？ 下記のフォームよりお問い合わせください。</p>
 
-    <!-- Scroll to Top Button -->
-    <div class="scroll-to-top">
-        <i class="fas fa-arrow-up"></i>
-    </div>
+<p>お困りですか？ 下記よりご連絡ください。送信前に<a href="/privacy-policy">プライバシーポリシー</a> と <a href="/disclaimer">免責事項</a>ルールをご確認ください。</p>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg fixed-top nav-bg" id="mainNav">
-        <div class="container">
-            <a class="d-flex align-items-center" href="/">
-                <img src="./Images/Suika Game.webp" alt="Suika Game" class="me-2">
-            </a>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="/suika-game-version">スイカバージョン</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/about-us">私たちについて</a></li>
+<p>ご連絡をお待ちしております！ Suika Gameについてご質問、改善のご提案、またはご意見をお聞かせください。 <a href="mailto:suika@gmail.com">suika@gmail.com</a>までメールでお問い合わせいただくか、下記のフォームをご利用ください。できる限り迅速に対応いたします。</p>
+
+<p>皆様からのフィードバックは大変重要です。 Suika Gameコミュニティに参加して、ゲームを最高のものにするためにご協力ください。ご意見をお聞かせください、ご質問をお寄せください。一緒に素晴らしいゲーム体験を作りましょう！</p>
+        <form id="contactForm" class="row g-3">
+            <div class="col-md-8 mx-auto">
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+                    <label for="email">メールアドレスを入力してください</label>
+                </div>
+            </div>
+            <div class="col-md-8 mx-auto">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                    <label for="name">フルネーム</label>
+                </div>
+            </div>
+            <div class="col-md-8 mx-auto">
+                <div class="form-floating mb-3">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="message" style="height: 100px" required></textarea>
+                    <label for="message">メッセージ</label>
+                </div>
+                <p>ご不明な点がございましたら、お気軽にお問い合わせください。コンタクトフォームのご利用に問題がある場合は、<a href="mailto:suika@gmail.com">suika@gmail.com</a>までメールにてご連絡ください。皆様からのフィードバックを大切にしておりますので、ご連絡いただけるよう努めております。</p>
+            </div>
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button type="submit" class="btn btn-warning text-light fw-semibold btn-lg">
+                    提出する</button>
+            </div>
+        </form>
+        <div id="responseMessage" class="mt-3"></div>
+    </section>
+  </div>
+</div>
+<br/>
+ <!-- Footer Start -->
+ <footer class="ft-bg p-1">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 text-md-start text-center mb-2 mb-md-0">
+                <p class="mb-0 text-light fw-bold">suikagame.pro &copy; 2025 ウォーターメロンは株式会社ポップインとは一切関係ありません。</p>
+            </div>
+            <div class="col-md-6 text-md-end text-center">
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item d-block d-md-inline">
+                        <a class="ft-link text-light fw-bold text-decoration-none" href="/disclaimer">免責事項</a>
+                    </li>
+                    <li class="list-inline-item d-block d-md-inline">
+                        <a class="ft-link text-light fw-bold text-decoration-none" href="/terms-of-service">利用規約</a>
+                    </li>
+                    <li class="list-inline-item d-block d-md-inline">
+                        <a class="ft-link text-light fw-bold text-decoration-none" href="/privacy-policy">プライバシーポリシー</a>
+                    </li>
+                    <li class="list-inline-item d-block d-md-inline">
+                        <a class="ft-link text-light fw-bold text-decoration-none" href="/contact-us">お問合せ</a>
+                    </li>
                 </ul>
             </div>
         </div>
-    </nav>
-
-    <!-- Mobile Only Navigation (visible only on small screens) -->
-    <div class="mobile-nav d-lg-none">
-        <div class="container">
-            <div class="mobile-nav-links">
-                <a href="/suika-game-version" class="mobile-nav-link active">スイカバージョン</a>
-                <a href="/about-us" class="mobile-nav-link">私たちについて</a>
-            </div>
-        </div>
     </div>
-
-    <!-- Page Header -->
-    <header class="page-header">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <h1 class="page-title animate__animated animate__fadeIn">お問い合わせ</h1>
-                    <div class="section-divider"></div>
-                    <p class="lead mb-0 animate__animated animate__fadeIn animate__delay-1s">ご質問、フィードバック、またはパートナーシップに関するお問い合わせなど、お気軽にご連絡ください。</p>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Responsive Display Ad (Top) -->
-    <section class="ad-section py-3">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-10">
-            <div class="ad-content-direct">
-             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4055661957455705"
-     crossorigin="anonymous"></script>
-<!-- 300x250 -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:300px;height:250px"
-     data-ad-client="ca-pub-4055661957455705"
-     data-ad-slot="8593084464"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 mb-4 mb-lg-0">
-                    <div class="contact-card fade-in">
-                        <h2 class="mb-4">連絡先情報</h2>
-                        <p class="mb-4">スイカゲームに関するご質問がございましたら、お気軽にお問い合わせください。当チームはゲームプレイのヒント、技術的な問題、またはパートナーシップの機会についてサポートいたします。</p>
-                        
-                        <div class="contact-info mb-4">
-                            <div class="d-flex align-items-center mb-3">
-                                <div class="contact-icon me-3">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                </div>
-                                <div>
-                                    <h5 class="mb-0">住所</h5>
-                                    <p class="mb-0">〒150-0002 東京都渋谷区桜通り1-2-3</p>
-                                </div>
-                            </div>
-                            
-                            <div class="d-flex align-items-center mb-3">
-                                <div class="contact-icon me-3">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <div>
-                                    <h5 class="mb-0">メールアドレス</h5>
-                                    <p class="mb-0"><a href="mailto:info@suikagame.com">info@suikagame.com</a></p>
-                                </div>
-                            </div>
-                            
-                            <div class="d-flex align-items-center">
-                                <div class="contact-icon me-3">
-                                    <i class="fas fa-phone-alt"></i>
-                                </div>
-                                <div>
-                                    <h5 class="mb-0">電話番号</h5>
-                                    <p class="mb-0">03-1234-5678</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="social-media mb-4">
-                            <h5 class="mb-3">フォローする</h5>
-                            <div class="social-icons">
-                                <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                                <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                                <a href="#" class="social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                            </div>
-                        </div>
-                        
-                        <div class="office-hours">
-                            <h5 class="mb-3">営業時間</h5>
-                            <p>月曜日〜金曜日：午前9時〜午後6時（日本時間）</p>
-                            <p>土曜日・日曜日：休業</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-6">
-                    <div class="contact-form-card fade-in" data-delay="200">
-                        <h2 class="mb-4">メッセージを送信</h2>
-                        <form id="contactForm" class="contact-form">
-                            <div class="mb-3">
-                                <label for="name" class="form-label">お名前</label>
-                                <input type="text" class="form-control" id="name" placeholder="お名前を入力してください" required>
-                            </div>
-                            
-                            <div class="mb-3">
-                                <label for="email" class="form-label">メールアドレス</label>
-                                <input type="email" class="form-control" id="email" placeholder="メールアドレスを入力してください" required>
-                            </div>
-                            
-                            <div class="mb-3">
-                                <label for="subject" class="form-label">件名</label>
-                                <select class="form-select" id="subject" required>
-                                    <option value="" selected disabled>件名を選択してください</option>
-                                    <option value="General Inquiry">一般的なお問い合わせ</option>
-                                    <option value="Technical Support">技術サポート</option>
-                                    <option value="Partnership">パートナーシップ</option>
-                                    <option value="Feedback">ゲームフィードバック</option>
-                                    <option value="Other">その他</option>
-                                </select>
-                            </div>
-                            
-                            <div class="mb-4">
-                                <label for="message" class="form-label">メッセージ</label>
-                                <textarea class="form-control" id="message" rows="5" placeholder="メッセージを入力してください" required></textarea>
-                            </div>
-                            
-                            <div class="form-check mb-4">
-                                <input class="form-check-input" type="checkbox" id="agreeTerms" required>
-                                <label class="form-check-label" for="agreeTerms">
-                                    <a href="/privacy-policy">プライバシーポリシー</a>に同意します
-                                </label>
-                            </div>
-                            
-                            <div class="text-center">
-                                <button type="submit" class="btn btn-primary send-btn">
-                                    <span>メッセージを送信</span>
-                                    <i class="fas fa-paper-plane ms-2"></i>
-                                </button>
-                            </div>
-                            
-                            <div class="form-response mt-3" id="formResponse"></div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Responsive Display Ad (Bottom) -->
-    <section class="ad-section py-3">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-10">
-            <div class="ad-content-direct">
-              <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4055661957455705"
-     crossorigin="anonymous"></script>
-<!-- 336x280 -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:336px;height:280px"
-     data-ad-client="ca-pub-4055661957455705"
-     data-ad-slot="7280002798"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="py-5 bg-light">
-        <div class="container">
-            <div class="row justify-content-center mb-5">
-                <div class="col-lg-8 text-center">
-                    <h2 class="section-heading fade-in">よくある質問</h2>
-                    <div class="section-divider"></div>
-                    <p class="section-subheading fade-in" data-delay="100">よくある質問への回答をすぐに見つけることができます</p>
-                </div>
-            </div>
-            
-            <div class="row">
-                <div class="col-lg-10 mx-auto">
-                    <div class="accordion fade-in" id="faqAccordion" data-delay="200">
-                        <div class="accordion-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
-                                    スイカゲームはモバイルデバイスでプレイできますか？
-                                </button>
-                            </h3>
-                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    <p>はい！スイカゲームはiOSとAndroidデバイスの両方でプレイできるほか、ウェブブラウザからもプレイできます。モバイルデバイスで当サイトにアクセスするだけで、ダウンロードなしですぐにプレイを開始できます。</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
-                                    ゲームの進行状況はどのように保存されますか？
-                                </button>
-                            </h3>
-                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    <p>ゲームの進行状況はブラウザのローカルストレージに自動的に保存されます。デバイス間で進行状況を保存するには、ゲーム画面の右上にある「サインアップ」ボタンをクリックして無料アカウントを作成できます。</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
-                                    スイカゲームで作成できる最大のフルーツは何ですか？
-                                </button>
-                            </h3>
-                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    <p>スイカゲームの最終目標は、最大のフルーツであるスイカを作ることです。ただし、特別イベントや一部のゲームモードでは、スイカよりもさらに大きなユニークな巨大フルーツが登場することもあります！</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
-                                    さまざまなゲームモードはありますか？
-                                </button>
-                            </h3>
-                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    <p>はい、スイカゲームには「クラシックモード」「タイムトライアル」「チャレンジモード」など複数のゲームモードがあります。各モードでは、異なる目標と難易度で独自のゲームプレイ体験を提供し、飽きることなく楽しめます。</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">
-                                    スイカゲームでスコアを向上させるにはどうすればよいですか？
-                                </button>
-                            </h3>
-                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    <p>スコアを向上させるには、効率的な合体を最大化するために戦略的にフルーツを配置することに集中してください。容器のバランスを保ち、倒れやすい高い積み重ねを避けるよう心がけましょう。大きなフルーツを作ると指数関数的に多くのポイントが獲得できるので、常に可能な限り大きなフルーツを作ることを目指しましょう。</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Map Section -->
-    <section class="py-5">
-        <div class="container">
-            <div class="row justify-content-center mb-4">
-                <div class="col-lg-8 text-center">
-                    <h2 class="section-heading fade-in">オフィスへのアクセス</h2>
-                    <div class="section-divider"></div>
-                    <p class="section-subheading fade-in" data-delay="100">私たちのチームは東京の中心部にあります</p>
-                </div>
-            </div>
-            
-            <div class="row">
-                <div class="col-12">
-                    <div class="map-container fade-in" data-delay="200">
-                        <!-- For optimization, loading map in a performant way -->
-                        <div class="map-placeholder" id="mapPlaceholder">
-                            <div style="width:100%; height:450px; background-color:#f5f5f5; display:flex; align-items:center; justify-content:center; border-radius:8px; position:relative;">
-                                <p style="color:#666; position:absolute; top:40%; width:100%; text-align:center;">東京マップ</p>
-                                <div class="map-overlay d-flex align-items-center justify-content-center">
-                                    <button class="btn btn-primary load-map-btn" onclick="loadMap()">
-                                        <i class="fas fa-map-marked-alt me-2"></i> 地図を読み込む
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="mapFrame" class="d-none">
-                            <!-- Map will be loaded here when button is clicked -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer" style="background-color: #F8B840; padding: 40px 0 20px;">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mb-5 mb-lg-0">
-                    <div class="footer-brand mb-4">
-                        <img src="./Images/Suika Game.webp" alt="Suika Game" class="img-fluid me-2">
-                    </div>
-                    <p>
-                        スイカゲーム：一滴の果実、可能性の海。</p>
-                    <div class="social-links mt-4">
-                        <a href="#" class="social-link facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link twitter" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                
-                <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
-                    <h4 class="footer-title">クイックリンク</h4>
-                    <ul class="footer-links list-unstyled">
-                        <li><a href="/" class="footer-link">メインページ</a></li>
-                        <li><a href="/suika-game-version" class="footer-link">スイカバージョン</a></li>
-                        <li><a href="/about-us" class="footer-link">私たちについて</a></li>
-                    </ul>
-                </div>
-                
-                <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
-                    <h4 class="footer-title">法的情報</h4>
-                    <ul class="footer-links list-unstyled">
-                        <li><a href="/terms-of-service" class="footer-link">利用規約</a></li>
-                        <li><a href="/privacy-policy" class="footer-link">プライバシーポリシー</a></li>
-                        <li><a href="/disclaimer" class="footer-link">免責事項</a></li>
-                    </ul>
-                </div>
-                
-                <div class="col-lg-4">
-                    <h4 class="footer-title">ニュースレター</h4>
-                    <p>スイカゲームの最新情報を入手するにはご登録ください。</p>
-                    <form class="newsletter-form">
-                        <div class="input-group mb-3">
-                            <input type="email" class="form-control" placeholder="メールアドレス" aria-label="メールアドレス">
-                            <button class="btn btn-primary" type="submit">登録</button>
-                        </div>
-                    </form>
-                </div>
-            </div> 
-            
-            <div class="footer-bottom text-center pt-4 mt-5 border-top">
-                <div class="row">
-                    <div class="col-md-12">
-                        <p class="copyright mb-0 text-wrap text-md-nowrap">suikagame.pro &copy; 2025 ウォーターメロンは株式会社ポップインとは一切関係ありません。</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    
-    <!-- Load vanilla menu script first - before anything else -->
-    
-    
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    
-    
-
-    <!-- Scroll to Top Button Script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const scrollToTopButton = document.querySelector('.scroll-to-top');
-            
-            // Show button when user scrolls down
-            window.addEventListener('scroll', function() {
-                if (window.pageYOffset > 300) {
-                    scrollToTopButton.classList.add('visible');
-                } else {
-                    scrollToTopButton.classList.remove('visible');
-                }
-            });
-            
-            // Scroll to top when button is clicked
-            scrollToTopButton.addEventListener('click', function() {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
-
-    <!-- Mobile Performance Optimization Script -->
-    <script>
-        // Detect if on mobile device
-        const isMobile = window.innerWidth < 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-        
-        // Only run on mobile devices
-        if (isMobile) {
-            // Disable animation functions before they run
-            window.addEventListener('DOMContentLoaded', function() {
-                console.log('Disabling background animations for mobile performance');
-                
-                // Remove floating fruits which cause performance issues
-                const fruitsContainer = document.getElementById('fruits-container');
-                if (fruitsContainer) {
-                    fruitsContainer.style.display = 'none';
-                }
-                
-                // Hide all individual floating fruits
-                const floatingFruits = document.querySelectorAll('.floating-fruit');
-                floatingFruits.forEach(fruit => {
-                    fruit.style.display = 'none';
-                });
-                
-                // Disable animated background candies
-                const animatedElements = document.querySelectorAll('.fruits-animation, .candy-animation');
-                animatedElements.forEach(el => {
-                    el.style.display = 'none';
-                });
-                
-                // Make sure content sections and ads remain visible
-                const contentSections = document.querySelectorAll('section, .py-5, .contact-card, .contact-form-card, .accordion, .map-container');
-                contentSections.forEach(section => {
-                    section.style.display = 'block';
-                    section.style.opacity = '1';
-                    section.style.visibility = 'visible';
-                });
-                
-                // Specifically ensure ad sections are visible
-                const adSections = document.querySelectorAll('.ad-section, .ad-content-direct, .adsbygoogle');
-                adSections.forEach(adEl => {
-                    adEl.style.display = 'block';
-                    adEl.style.opacity = '1';
-                    adEl.style.visibility = 'visible';
-                    adEl.style.overflow = 'visible';
-                });
-                
-                // Force fade-in elements to be visible
-                const fadeElements = document.querySelectorAll('.fade-in, .animate__animated');
-                fadeElements.forEach(el => {
-                    el.style.opacity = '1';
-                    el.style.visibility = 'visible';
-                    el.style.transform = 'none';
-                    el.style.animation = 'none';
-                    el.classList.add('active');
-                });
-            });
-            
-            // Ensure visibility after page load
-            window.addEventListener('load', function() {
-                console.log('Ensuring section visibility for mobile');
-                
-                // Ensure content sections are visible on mobile
-                document.querySelectorAll('section, .contact-card, .contact-form-card, .accordion, .map-container, .fade-in').forEach(el => {
-                    el.classList.add('active');
-                    el.style.opacity = '1';
-                    el.style.visibility = 'visible';
-                    el.style.transform = 'none';
-                });
-                
-                // Make sure AdSense ads are properly displayed after page load
-                setTimeout(function() {
-                    const adElements = document.querySelectorAll('.ad-section, .ad-content-direct, .adsbygoogle');
-                    adElements.forEach(adEl => {
-                        adEl.style.display = 'block';
-                        adEl.style.visibility = 'visible';
-                        adEl.style.opacity = '1';
-                    });
-                }, 1000);
-            });
-        }
-    </script>
-
-    <!-- Mobile Visibility Enforcement Script -->
-    <script>
-        // This script will run after all other scripts and ensure content is visible on mobile
-        document.addEventListener('DOMContentLoaded', function() {
-            const isMobile = window.innerWidth < 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-            
-            if (isMobile) {
-                // Force visibility of all important sections
-                const forceVisible = function() {
-                    // Target all main content containers
-                    const elements = document.querySelectorAll('section, .py-5, .contact-card, .contact-form-card, .accordion, .map-container, .fade-in, .animate__animated');
-                    
-                    elements.forEach(function(el) {
-                        el.style.display = 'block';
-                        el.style.visibility = 'visible';
-                        el.style.opacity = '1';
-                        el.style.transform = 'none';
-                        el.style.animationName = 'none';
-                        el.classList.add('active');
-                        
-                        // Add class to indicate we've processed this element
-                        el.classList.add('mobile-visible');
-                    });
-                    
-                    console.log('Mobile visibility enforced');
-                };
-                
-                // Run immediately
-                forceVisible();
-                
-                // Run again after a delay to catch any elements that might have been modified by other scripts
-                setTimeout(forceVisible, 500);
-                setTimeout(forceVisible, 1500);
-                setTimeout(forceVisible, 3000);
-            }
-        });
-    </script>
-
-    <!-- Additional AdSense Ads (Bottom of Page) -->
-    <div class="container mt-4 mb-4">
-        <div class="row justify-content-center">
-            <div class="col-lg-10">
-                <div class="ad-content-direct">
-                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4055661957455705"
-                         crossorigin="anonymous"></script>
-                    <ins class="adsbygoogle"
-                         style="display:block; text-align:center;"
-                         data-ad-layout="in-article"
-                         data-ad-format="fluid"
-                         data-ad-client="ca-pub-4055661957455705"
-                         data-ad-slot="7900337019"></ins>
-                    <script>
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-                </div>
-            </div>
-        </div>
-    </div>
- 
- 
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4055661957455705"
-     crossorigin="anonymous"></script>
-     <ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-4055661957455705"
-     data-ad-slot="7900337019"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4055661957455705"
-     crossorigin="anonymous"></script>
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-format="fluid"
-     data-ad-layout-key="-6t+ed+2i-1n-4w"
-     data-ad-client="ca-pub-4055661957455705"
-     data-ad-slot="1526500357"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4055661957455705"
-     crossorigin="anonymous"></script>
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-format="autorelaxed"
-     data-ad-client="ca-pub-4055661957455705"
-     data-ad-slot="5274173677"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4055661957455705"
-     crossorigin="anonymous"></script>
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-4055661957455705"
-     data-ad-slot="5465745368"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-
+</footer>
+<!-- Footer End -->
+  <script src="./contact.js"></script>
 </body>
-</html> 
+</html>
