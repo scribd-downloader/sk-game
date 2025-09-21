@@ -24,6 +24,7 @@ export default defineConfig({
     copy({
       targets: [
         { src: 'ads.txt', dest: 'dist' }, // Ensure ads.txt is copied
+        { src: '_redirects', dest: 'dist' }, // Ensure _redirects is copied for Ezoic verification
       ],
       hook: 'closeBundle',
     }),
