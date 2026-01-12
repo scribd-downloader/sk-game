@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Suika Game Multi-Player - スイカゲームのマルチプレイヤーモード </title>
 
-    <meta name="Keywords" content="スイカゲーム, スイカゲームマルチプレイヤー, スイカゲーム二人用, スイカゲーム対戦, スイカゲームオンライン対戦, スイカゲームモード, スイカゲームオリジナル, スイカゲーム時間制限, スイカゲームアタック, スイカゲームDLC, スイカゲーム協力プレイ, スイカゲーム友達と, スイカゲーム対戦モード, スイカゲームオンライン, スイカゲーム無料, スイカゲームブラウザ">
-    <meta name="description" content="大人気のスイカゲームが、新鮮なひねりを加えた2人用モードで登場！フルーツフュージョンの世界へ飛び込み、友達と戦略的な対決を繰り広げよう。"/>
+    <meta name="Keywords"
+        content="スイカゲーム, スイカゲームマルチプレイヤー, スイカゲーム二人用, スイカゲーム対戦, スイカゲームオンライン対戦, スイカゲームモード, スイカゲームオリジナル, スイカゲーム時間制限, スイカゲームアタック, スイカゲームDLC, スイカゲーム協力プレイ, スイカゲーム友達と, スイカゲーム対戦モード, スイカゲームオンライン, スイカゲーム無料, スイカゲームブラウザ">
+    <meta name="description" content="大人気のスイカゲームが、新鮮なひねりを加えた2人用モードで登場！フルーツフュージョンの世界へ飛び込み、友達と戦略的な対決を繰り広げよう。" />
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="Suika Game Multi-Player - スイカゲームのマルチプレイヤーモード " />
     <meta property="og:site_name" content="Suika Game" />
@@ -17,7 +19,7 @@
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
-<!-- Twitter Card -->
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@SuikaGameJP" />
     <meta name="twitter:title" content="Suika Game Multi-Player - スイカゲームのマルチプレイヤーモード " />
@@ -34,8 +36,6 @@
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="./style.css">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4055661957455705"
-     crossorigin="anonymous"></script>
 </head>
 <style>
     .game-container {
@@ -127,192 +127,309 @@
         border-radius: 10px;
     }
 </style>
+
 <body>
-        <!-- Header section with a navbar -->
+    <!-- Header section with a navbar -->
 
-        <header>
-            <nav class="navbar navbar-expand-lg nav-bg sticky-top">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="/">
-                        <img src="./Images/Suika Game.webp" alt="スイカゲーム" title="スイカゲーム" width="200" height="20">
-                      </a>
-                      <a class="nav-link text-white" href="/suika-game-version">
-                        スイカバージョン</a>
-                </div>
-            </nav>
-        </header>
-        <!-- Header section End with a navbar -->
+    <header>
+        <nav class="navbar navbar-expand-lg nav-bg sticky-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">
+                    <img src="./Images/Suika Game.webp" alt="スイカゲーム" title="スイカゲーム" width="200" height="20">
+                </a>
+                <a class="nav-link text-white" href="/suika-game-version">
+                    スイカバージョン</a>
+            </div>
+        </nav>
+    </header>
+    <!-- Header section End with a navbar -->
 
-        <div class="container mt-4">
-            <div class="game-container">
-                <div class="row">
-                    <!-- Left Side - Game Image & Slider with Carousel -->
-                    <div class="col-md-6">
-                        <div id="gameCarousel" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img id="mainImage" src="./Images/suika game multi-player mode.webp" class="game-img d-block w-100"
-                                        alt="suika game multi-player mode" title="suika game multi-player mode">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="./Images/suika game multiplayer mode 2.webp" class="game-img d-block w-100" alt="suika game multiplayer mode 2" title="suika game multi-player mode 2">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="./Images/suika game multiplayer mode 3.webp" class="game-img d-block w-100" alt="suika game multiplayer mode 3" title="suika game multi-player mode 3">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="./Images/suika game multiplayer mode 4.webp" class="game-img d-block w-100" alt="suika game multiplayer mode 4" title="suika game multi-player mode 4">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="./Images/suika game multiplayer mode 5.webp" class="game-img d-block w-100" alt="suika game multiplayer mode 5" title="suika game multi-player mode 5">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="./Images/suika game multiplayer mode 6.webp" class="game-img d-block w-100" alt="suika game multiplayer mode 6" title="suika game multi-player mode 6">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="./Images/suika game multiplayer mode 7.webp" class="game-img d-block w-100" alt="suika game multiplayer mode 7" title="suika game multi-player mode 7">
-                                </div>
+    <div class="container mt-4">
+        <div class="game-container">
+            <div class="row">
+                <!-- Left Side - Game Image & Slider with Carousel -->
+                <div class="col-md-6">
+                    <div id="gameCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img id="mainImage" src="./Images/suika game multi-player mode.webp"
+                                    class="game-img d-block w-100" alt="suika game multi-player mode"
+                                    title="suika game multi-player mode">
                             </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#gameCarousel"
-                                data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">
-                                    前の</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#gameCarousel"
-                                data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">
-                                    次</span>
-                            </button>
+                            <div class="carousel-item">
+                                <img src="./Images/suika game multiplayer mode 2.webp" class="game-img d-block w-100"
+                                    alt="suika game multiplayer mode 2" title="suika game multi-player mode 2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./Images/suika game multiplayer mode 3.webp" class="game-img d-block w-100"
+                                    alt="suika game multiplayer mode 3" title="suika game multi-player mode 3">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./Images/suika game multiplayer mode 4.webp" class="game-img d-block w-100"
+                                    alt="suika game multiplayer mode 4" title="suika game multi-player mode 4">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./Images/suika game multiplayer mode 5.webp" class="game-img d-block w-100"
+                                    alt="suika game multiplayer mode 5" title="suika game multi-player mode 5">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./Images/suika game multiplayer mode 6.webp" class="game-img d-block w-100"
+                                    alt="suika game multiplayer mode 6" title="suika game multi-player mode 6">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./Images/suika game multiplayer mode 7.webp" class="game-img d-block w-100"
+                                    alt="suika game multiplayer mode 7" title="suika game multi-player mode 7">
+                            </div>
                         </div>
-    
-                        <div class="d-flex justify-content-center mt-3 slider">
-                            <img src="./Images/suika game multi-player mode.webp" onclick="changeImage(this.src)" alt="suika game multi-player mode" title="suika game multi-player mode">
-                            <img src="./Images/suika game multiplayer mode 2.webp" onclick="changeImage(this.src)" alt="suika game multi-player mode 2" title="suika game multi-player mode 2">
-                            <img src="./Images/suika game multiplayer mode 3.webp" onclick="changeImage(this.src)" alt="suika game multi-player mode 3" title="suika game multi-player mode 3">
-                            <img src="./Images/suika game multiplayer mode 4.webp" onclick="changeImage(this.src)" alt="suika game multi-player mode 4" title="suika game multi-player modem 4">
-                            <img src="./Images/suika game multiplayer mode 5.webp" onclick="changeImage(this.src)" alt="suika game multi-player mode5" title="suika game multi-player mode 5">
-                            <img src="./Images/suika game multiplayer mode 6.webp" onclick="changeImage(this.src)" alt="suika game multi-player mode 6" title="suika game multi-player mode 6">
-                            <img src="./Images/suika game multiplayer mode 7.webp" onclick="changeImage(this.src)" alt="suika game multi-player mode 7" title="suika game multi-player mode 7">
-                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#gameCarousel"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">
+                                前の</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#gameCarousel"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">
+                                次</span>
+                        </button>
                     </div>
-    
-                    <!-- Right Side - Game Info -->
-                    <div class="col-md-6">
-                        <h1 class="fw-bold">スイカゲーム マルチプレイヤーモード拡張パック</h1>
-                        <p class="text-danger fw-semibold">
-                            DLCを見る</p>
-    
-                        <!-- Game Selection -->
-                        <div class="border border-dark rounded  p-3 d-flex justify-content-between align-items-center">
-                            <strong>$2.25</strong>
-                            <span><i class="fa fa-heart" style="color: #E60012;"></i></span>
-                        </div>
-                        <br/>
-                        <p class="text-muted">最大<strong> 12 </strong>ゴールドポイントまで獲得可能</p>
-                        <!-- Download Button -->
-                        <a href="https://www.nintendo.com/us/store/products/suika-game-multi-player-mode-expansion-pack-70070000020969-switch/" target="_blank"
-                            rel="nofollow" class="download-btn mt-3">
-                            <i class="fa fa-download"></i> 直接ダウンロード Nitendo
-                        </a>
+
+                    <div class="d-flex justify-content-center mt-3 slider">
+                        <img src="./Images/suika game multi-player mode.webp" onclick="changeImage(this.src)"
+                            alt="suika game multi-player mode" title="suika game multi-player mode">
+                        <img src="./Images/suika game multiplayer mode 2.webp" onclick="changeImage(this.src)"
+                            alt="suika game multi-player mode 2" title="suika game multi-player mode 2">
+                        <img src="./Images/suika game multiplayer mode 3.webp" onclick="changeImage(this.src)"
+                            alt="suika game multi-player mode 3" title="suika game multi-player mode 3">
+                        <img src="./Images/suika game multiplayer mode 4.webp" onclick="changeImage(this.src)"
+                            alt="suika game multi-player mode 4" title="suika game multi-player modem 4">
+                        <img src="./Images/suika game multiplayer mode 5.webp" onclick="changeImage(this.src)"
+                            alt="suika game multi-player mode5" title="suika game multi-player mode 5">
+                        <img src="./Images/suika game multiplayer mode 6.webp" onclick="changeImage(this.src)"
+                            alt="suika game multi-player mode 6" title="suika game multi-player mode 6">
+                        <img src="./Images/suika game multiplayer mode 7.webp" onclick="changeImage(this.src)"
+                            alt="suika game multi-player mode 7" title="suika game multi-player mode 7">
                     </div>
+                </div>
+
+                <!-- Right Side - Game Info -->
+                <div class="col-md-6">
+                    <h1 class="fw-bold">スイカゲーム マルチプレイヤーモード拡張パック</h1>
+                    <p class="text-danger fw-semibold">
+                        DLCを見る</p>
+
+                    <!-- Game Selection -->
+                    <div class="border border-dark rounded  p-3 d-flex justify-content-between align-items-center">
+                        <strong>$2.25</strong>
+                        <span><i class="fa fa-heart" style="color: #E60012;"></i></span>
+                    </div>
+                    <br />
+                    <p class="text-muted">最大<strong> 12 </strong>ゴールドポイントまで獲得可能</p>
+                    <!-- Download Button -->
+                    <a href="https://www.nintendo.com/us/store/products/suika-game-multi-player-mode-expansion-pack-70070000020969-switch/"
+                        target="_blank" rel="nofollow" class="download-btn mt-3">
+                        <i class="fa fa-download"></i> 直接ダウンロード Nitendo
+                    </a>
                 </div>
             </div>
         </div>
-        <br />
-        <br />
-
-       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4055661957455705"
-     crossorigin="anonymous"></script>
-<!-- arslan -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-4055661957455705"
-     data-ad-slot="5465745368"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-        <div class="container">
-            <!-- New Section Start -->
-            <div class="card border-0 shadow-lg mb-4" style="background: #E9C163;">
-              <div class="row g-0 align-items-start">
+    </div>
+    <br />
+    <br />
+    <div class="container">
+        <!-- New Section Start -->
+        <div class="card border-0 shadow-lg mb-4" style="background: #E9C163;">
+            <div class="row g-0 align-items-start">
                 <!-- Left Side: Heading and Paragraphs -->
                 <div class="col-md-6 px-4 py-3">
-                  <h2 class="mb-3 text-center">
-                      スイカ ゲームは、ダウンロードせずに無料でオンラインでプレイできます。</h2>
-                  <p>最適化されたブラウザベースのバージョンにより、デスクトップ タブレットでも携帯電話でも、あらゆるデバイスでスイカ ゲームをプレイできるスムーズなゲームプレイが保証されます。収納スペースをとらずに、中毒性のあるスイカ ゲームを体験してください。すでにこの魅力的なフルーツ マージ ゲームをプレイしている無数のプレイヤーに加わって、どれだけ高得点を獲得できるか試してみましょう。今すぐスイカ ゲームをオンラインで無料でプレイし、究極のフルーツ マージ チャレンジをすぐに体験してください。</p>
-                  <a href="/"
-                 class="download-btn mt-3">
-                  <i class="fa fa-gamepad"></i> 
-                  今すぐスイカをプレイする
-              </a>
+                    <h2 class="mb-3 text-center">
+                        スイカ ゲームは、ダウンロードせずに無料でオンラインでプレイできます。</h2>
+                    <p>最適化されたブラウザベースのバージョンにより、デスクトップ タブレットでも携帯電話でも、あらゆるデバイスでスイカ
+                        ゲームをプレイできるスムーズなゲームプレイが保証されます。収納スペースをとらずに、中毒性のあるスイカ ゲームを体験してください。すでにこの魅力的なフルーツ マージ
+                        ゲームをプレイしている無数のプレイヤーに加わって、どれだけ高得点を獲得できるか試してみましょう。今すぐスイカ ゲームをオンラインで無料でプレイし、究極のフルーツ マージ
+                        チャレンジをすぐに体験してください。</p>
+                    <a href="/" class="download-btn mt-3">
+                        <i class="fa fa-gamepad"></i>
+                        今すぐスイカをプレイする
+                    </a>
                 </div>
                 <!-- Right Side: Images -->
                 <div class="col-md-6 text-center position-relative">
-                  <img
-                    src="./Images/merge suika fruits.webp"
-                    class="img-fluid position-relative"
-                    alt="スイカで遊ぶ"
-                    title="スイカで遊ぶ"
-                    style="max-width: 40%;"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-
-      <!-- New Section Start End -->
-        <div class="container my-5">
-            <div class="row align-items-center game-card">
-                <div class="col-md-6">
-                    <h2>スイカゲーム「ツープレイヤー・レボリューション」にまったく新しい2人用モードが登場</h2>
-                    <p>
-                        愛されるスイカゲームに、新鮮なひねりを加えた二人用モードが登場  友達と一緒に、フルーツの融合と戦略的な対決の世界に飛び込みましょう。 一人だけのスコアは忘れ、直接対決であなたのスキルを試す時が来ました。
-                      </p>
-                      
-                      <p>
-                        3つの爽快なゲームモードから戦場を選びましょう：
-                      </p>
-                      
-                      <p>
-                        <strong>オリジナル対決</strong> 二人用として再考案された、古典的なスイカゲーム。 正確にフルーツを融合させて、対戦相手を上回りましょう。 しかし、警告です。最初に箱をいっぱいにした人が常に勝つとは限りません。狡猾な逆転は常に手の届くところにあります。 あなたはライバルを出し抜き、勝利を手にすることができますか. 
-                      </p>
-                      
-                      <p>
-                        <strong>時間制限の熱狂</strong> 5分間の激しい、ハイステークスなアクション 最高スコアを蓄積するために時間と競争するので、毎秒が重要です。 そして、ポピーに注意してください レインボーゲージが空になると、彼女はフルーツの滝を解き放ち、稲妻のような反射神経と戦略的な決断を要求します。 あなたはプレッシャーに屈しますか、それとも勝利を収めますか？
-                      </p>
-                      <p>
-                        <strong>攻撃モードの大混乱</strong> 消耗戦の戦略的な戦い 目標は 対戦相手の箱を溢れさせ、ゲームを終了させることです。 5回ごとの融合で、対戦相手の側に「沈む」フルーツを送る力を得ます。 大きなフルーツを戦略的に展開して、彼らの注意深く練られた計画を混乱させ、ゲームの支配権を握りましょう。
-                      </p>
-                      
-                      <p>
-                        しかし、興奮はそれだけではありません！ 私たちは、世界中のプレイヤーに挑戦できるオンラインマルチプレイヤーモードの開発に熱心に取り組んでいます。 そして、献身的なコミュニティへの感謝として、「スイカゲームマルチプレイヤー」DLCを購入すると、リリース時にオンラインプレイアップデートへの無料アクセスが付与されます。 最新情報をお楽しみに。これまでにないスイカゲームを体験する準備をしてください。
-                      </p>
-                </div>
-                <div class="col-md-6 text-center">
-                    <img src="./Images/suika game multi-player mode.webp" alt="suika game multi-player mode" title="suika game multi-player mode" class="game-img">
+                    <img src="./Images/merge suika fruits.webp" class="img-fluid position-relative" alt="スイカで遊ぶ"
+                        title="スイカで遊ぶ" style="max-width: 40%;" />
                 </div>
             </div>
         </div>
-<br/>
-<br/>
+    </div>
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4055661957455705"
-     crossorigin="anonymous"></script>
-<!-- arslan -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-4055661957455705"
-     data-ad-slot="5465745368"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-            <!-- Footer Start -->
+    <!-- New Section Start End -->
+    <div class="container my-5">
+        <div class="row align-items-center game-card">
+            <div class="col-md-6">
+                <h2>スイカゲーム「ツープレイヤー・レボリューション」にまったく新しい2人用モードが登場</h2>
+                <p>
+                    愛されるスイカゲームに、新鮮なひねりを加えた二人用モードが登場 友達と一緒に、フルーツの融合と戦略的な対決の世界に飛び込みましょう。
+                    一人だけのスコアは忘れ、直接対決であなたのスキルを試す時が来ました。
+                </p>
+
+                <p>
+                    3つの爽快なゲームモードから戦場を選びましょう：
+                </p>
+
+                <p>
+                    <strong>オリジナル対決</strong> 二人用として再考案された、古典的なスイカゲーム。 正確にフルーツを融合させて、対戦相手を上回りましょう。
+                    しかし、警告です。最初に箱をいっぱいにした人が常に勝つとは限りません。狡猾な逆転は常に手の届くところにあります。 あなたはライバルを出し抜き、勝利を手にすることができますか.
+                </p>
+
+                <p>
+                    <strong>時間制限の熱狂</strong> 5分間の激しい、ハイステークスなアクション 最高スコアを蓄積するために時間と競争するので、毎秒が重要です。 そして、ポピーに注意してください
+                    レインボーゲージが空になると、彼女はフルーツの滝を解き放ち、稲妻のような反射神経と戦略的な決断を要求します。 あなたはプレッシャーに屈しますか、それとも勝利を収めますか？
+                </p>
+                <p>
+                    <strong>攻撃モードの大混乱</strong> 消耗戦の戦略的な戦い 目標は 対戦相手の箱を溢れさせ、ゲームを終了させることです。
+                    5回ごとの融合で、対戦相手の側に「沈む」フルーツを送る力を得ます。 大きなフルーツを戦略的に展開して、彼らの注意深く練られた計画を混乱させ、ゲームの支配権を握りましょう。
+                </p>
+
+                <p>
+                    しかし、興奮はそれだけではありません！ 私たちは、世界中のプレイヤーに挑戦できるオンラインマルチプレイヤーモードの開発に熱心に取り組んでいます。
+                    そして、献身的なコミュニティへの感謝として、「スイカゲームマルチプレイヤー」DLCを購入すると、リリース時にオンラインプレイアップデートへの無料アクセスが付与されます。
+                    最新情報をお楽しみに。これまでにないスイカゲームを体験する準備をしてください。
+                </p>
+            </div>
+            <div class="col-md-6 text-center">
+                <img src="./Images/suika game multi-player mode.webp" alt="suika game multi-player mode"
+                    title="suika game multi-player mode" class="game-img">
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+                <div class="card">
+                    <img src="./Images/suika game multi-player mode.webp" class="card-img-top"
+                        alt="suika game multi-player mode">
+                    <div class="card-body">
+                        <h3 class="card-title">スイカゲーム マルチプレイヤー</h3>
+                        <a href="/suika-game-multiple-player" class="text-decoration-none">今すぐプレイ</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+                <div class="card">
+                    <img src="./Images/suika sunset beach.webp" class="card-img-top" alt="suika sunset beach">
+                    <div class="card-body">
+                        <h3 class="card-title">スイカ サンセットビーチゲーム</h3>
+                        <a href="/suika-game-sunset-beach" class="text-decoration-none">今すぐプレイ</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+                <div class="card">
+                    <img src="./Images/Suika Summer Holiday.webp" class="card-img-top" alt="Suika Summer Holiday">
+                    <div class="card-body">
+                        <h3 class="card-title">スイカ サマーホリデー</h3>
+                        <a href="/suika-game-summer-holiday" class="text-decoration-none">今すぐプレイ</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+                <div class="card">
+                    <img src="./Images/Suika Sunflower Farm.webp" class="card-img-top" alt="Suika Sunflower Farm">
+                    <div class="card-body">
+                        <h3 class="card-title">スイカ ひまわり農園</h3>
+                        <a href="/suika-sunflower-farm" class="text-decoration-none">今すぐプレイ</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+                <div class="card">
+                    <img src="./Images/Suika Fireworks Display.webp" class="card-img-top" alt="Suika Fireworks Display">
+                    <div class="card-body">
+                        <h3 class="card-title">スイカ 花火大会</h3>
+                        <a href="/suika-fireworks-display" class="text-decoration-none">今すぐプレイ</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+                <div class="card">
+                    <img src="./Images/Suika Moonlight and Lanterns.webp" class="card-img-top"
+                        alt="Suika Moonlight and Lanterns">
+                    <div class="card-body">
+                        <h3 class="card-title">スイカ 月夜と提灯</h3>
+                        <a href="/suika-moonlight-and-lanterns" class="text-decoration-none">今すぐプレイ</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+                <div class="card">
+                    <img src="./Images/Suika Wagashi Whispers.webp" class="card-img-top" alt="Suika Wagashi Whispers">
+                    <div class="card-body">
+                        <h3 class="card-title">スイカ 和菓子のささやき</h3>
+                        <a href="/suika-wagashi-whispers" class="text-decoration-none">今すぐプレイ</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+                <div class="card">
+                    <img src="./Images/Suika Melodies of Fall.webp" class="card-img-top" alt="Suika Melodies of Fall">
+                    <div class="card-body">
+                        <h3 class="card-title">スイカ 秋のメロディー</h3>
+                        <a href="/suika-melodies-of-fall" class="text-decoration-none">今すぐプレイ</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+                <div class="card">
+                    <img src="./Images/Suika Crismon Walk.webp" class="card-img-top" alt="Suika Crismon Walk">
+                    <div class="card-body">
+                        <h3 class="card-title">スイカ 真紅の道</h3>
+                        <a href="/suika-crimson-walk" class="text-decoration-none">今すぐプレイ</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+                <div class="card">
+                    <img src="./Images/Suika Halloween Party.webp" class="card-img-top" alt="Suika Halloween Party">
+                    <div class="card-body">
+                        <h3 class="card-title">スイカ ハロウィンパーティー</h3>
+                        <a href="/suika-halloween-party" class="text-decoration-none">今すぐプレイ</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+                <div class="card">
+                    <img src="./Images/Suika Christmas night.webp" class="card-img-top" alt="Suika Christmas night">
+                    <div class="card-body">
+                        <h3 class="card-title">スイカ クリスマスの夜</h3>
+                        <a href="/suika-christmas-night" class="text-decoration-none">今すぐプレイ</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+                <div class="card">
+                    <img src="./Images/Suika New Year Sunrise.webp" class="card-img-top" alt="Suika New Year Sunrise">
+                    <div class="card-body">
+                        <h3 class="card-title">スイカ 初日の出</h3>
+                        <a href="/suika-new-year-sunrise" class="text-decoration-none">今すぐプレイ</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Footer Start -->
     <footer class="ft-bg p-1">
         <div class="container-fluid">
             <div class="row">
@@ -328,7 +445,8 @@
                             <a class="ft-link text-light fw-bold text-decoration-none" href="/terms-of-service">利用規約</a>
                         </li>
                         <li class="list-inline-item d-block d-md-inline">
-                            <a class="ft-link text-light fw-bold text-decoration-none" href="/privacy-policy">プライバシーポリシー</a>
+                            <a class="ft-link text-light fw-bold text-decoration-none"
+                                href="/privacy-policy">プライバシーポリシー</a>
                         </li>
                         <li class="list-inline-item d-block d-md-inline">
                             <a class="ft-link text-light fw-bold text-decoration-none" href="/contact-us">お問合せ</a>
@@ -340,11 +458,12 @@
     </footer>
     <!-- Footer End -->
     <!-- JavaScript includes -->
-        <script>
-            function changeImage(src) {
-                document.getElementById("mainImage").src = src;
-            }
-        </script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function changeImage(src) {
+            document.getElementById("mainImage").src = src;
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
